@@ -1,7 +1,6 @@
 <template>
   <LayoutHeader />
   <LandingHeader />
-  <UnfairAdvantages />
   <OverviewImage />
   <Section>
     <SectionHeader
@@ -30,7 +29,6 @@
       title="Global WYSIWYG ecosystem"
       text="Editor.js is not just an editor. It is the large community of developers around the world creating new tools, integrations, building new products and features. And we really need your star to support the community growth."
     />
-    <Star />
   </Section>
   <Section>
     <SectionHeader
@@ -50,3 +48,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 </style>
+<script>
+import EditorLogo from "./components/EditorLogo";
+export default {
+  components: {EditorLogo}
+}
+</script>
