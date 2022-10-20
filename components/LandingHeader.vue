@@ -14,34 +14,38 @@
 
 <style>
 .landing-header {
-  background: linear-gradient(180deg, var(--color-background-secondary) 0%, white 80%);;
+  background: linear-gradient(180deg, var(--color-background-secondary) 0%, white 98%);
   padding-top: 110px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
 
-.landing-header__description {
-  margin-top: 56px;
-  margin-bottom: 56px;
-  font-size: 16px;
-  color: var(--color-text-secondary);
-  padding: 0 30% 0 30%;
-  text-align: center;
-}
+  &__description {
+    margin-top: 56px;
+    margin-bottom: 56px;
+    max-width: 460px;
+    line-height: 130%;
+    width: 100%;
+    font-size: 16px;
+    color: var(--color-text-secondary);
+    text-align: center;
+  }
 
-.landing-header__title {
-  margin-top: 56px;
-  text-align: center;
-  font-size: 47px;
-  font-weight: 800;
-  padding: 0 20% 0 20%;
-}
+  &__title {
+    line-height: 100%;
+    margin-top: 56px;
+    text-align: center;
+    font-size: 47px;
+    max-width: 651px;
+    width: 100%;
+    font-weight: 800;
+  }
 
-.landing-header__ua {
-  margin-top: 85px;
-  margin-bottom: 130px;
+  &__ua {
+    margin-top: 85px;
+    margin-bottom: 130px;
+  }
 }
 </style>
 <script>

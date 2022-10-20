@@ -22,7 +22,7 @@ const advantages = [
     text: 'Improved by the whole world. You could join.'
   },
   {
-    title: 'Clean UI and UX',
+    title: 'Clean UI/UX',
     text: 'Modern look. Customizable. Out of the box.'
   },
   {
@@ -39,30 +39,40 @@ const advantages = [
 <style scoped>
   .ua {
     display: flex;
-    padding: 0 20% 0 20%;
+    max-width: 1024px;
+    width: 100%;
+    margin-top: 120px;
     & .ua__item__wrapper:last-child > .ua__delimiter {
       display: none;
     }
-  }
 
-  .ua__item {
-    width: auto;
-  }
+    &__delimiter {
+      align-self: center;
+      height: 15px;
+      border: 0.5px solid var(--color-text-secondary);
+      margin: 0 24px 0 24px;
+    }
 
-  .ua__item-title {
-    font-weight: 700;
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
+    &__item {
+      align-self: center;
+      width: auto;
+      max-width: 240px;
+      height: 68px;
 
-  .ua__delimiter {
-    align-self: center;
-    height: 15px;
-    border: 0.5px solid var(--color-text-secondary);
-    margin: 0 25px 0 25px;
-  }
+      &__wrapper {
+        display: flex;
+      }
 
-  .ua__item__wrapper {
-    display: flex;
+      &-title {
+        white-space: nowrap;
+        font-weight: 700;
+        font-size: 20px;
+        margin-bottom: 5px;
+      }
+
+      &-text {
+        line-height: 110%;
+      }
+    }
   }
 </style>
