@@ -25,7 +25,7 @@
     margin-top: 56px;
     margin-bottom: 56px;
     max-width: 460px;
-    line-height: 130%;
+    line-height: 22px;
     width: 100%;
     font-size: 16px;
     color: var(--color-text-secondary);
@@ -33,7 +33,7 @@
   }
 
   &__title {
-    line-height: 100%;
+    line-height: 50px;
     margin-top: 56px;
     text-align: center;
     font-size: 47px;

@@ -16,8 +16,7 @@
 <style scoped>
 
 .menu {
-  max-width: 721px;
-  padding-left: 160px;
+  max-width: 560px;
   width: 100%;
   align-items: center;
   display: flex;
@@ -34,17 +33,16 @@
 
 .header {
   display: flex;
-  align-items: center;
   justify-content: center;
   width: 100%;
   height: 60px;
   border: 1px solid rgba(255, 255, 255, 0.3);
 
   &__container {
-    display: inline-flex;
-    max-width: 1180px;
+    display: flex;
+    max-width: var(--layout-container-width);
     width: 100%;
-    padding: 20px;
+    padding: 0 20px 0 20px;
     justify-content: space-between;
     align-items: center;
   }

@@ -4,7 +4,7 @@
     'button--primary': type === 'primary',
   }">
     <img v-if="icon" :src="icon" class="button__icon"/>
-    {{ text }}
+    <p class="button__text">{{ text }}</p>
   </a>
 </template>
 
@@ -40,6 +40,11 @@ defineProps<{
   color: white;
   cursor: pointer;
   font-size: 14px;
+}
+
+.button__text {
+  align-self: center;
+  text-align: center;
 }
 
 .button--support {

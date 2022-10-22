@@ -1,11 +1,11 @@
 <template>
-  <div class="editor-logo" :class="{
+  <a href="/" class="editor-logo" :class="{
     'editor-logo--small': size === 'small',
     'editor-logo--general': size === 'general',
   }">
     <img class="editor-logo__icon" src="assets/logo.svg"/>
     <p class="editor-logo__title"> Editor.js </p>
-  </div>
+  </a>
 </template>
 
 <script setup lang="ts">
@@ -19,43 +19,45 @@ defineProps<{
 
 <style scoped>
 
-  .editor-logo {
-    display: flex;
-    align-items: center;
+.editor-logo {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 
-    &__title {
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--color-text-primary);
-      padding: 0;
-    }
+  &__title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    padding: 0;
+  }
+}
+
+.editor-logo--small {
+  .editor-logo__icon {
+    height: 23px;
+    width: 23px;
   }
 
-  .editor-logo--small {
-    .editor-logo__icon {
-      height: 23px;
-      width: 23px;
-    }
+  .editor-logo__title {
+    margin-left: 8px;
+  }
+}
 
-    .editor-logo__title {
-      margin-left: 8px;
-    }
+.editor-logo--general {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .editor-logo__icon {
+    width: 86px;
+    height: 86px;
+    -webkit-filter: drop-shadow(0 10px 5px rgba(0, 148, 255, 0.4));
   }
 
-  .editor-logo--general {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    .editor-logo__icon {
-      width: 86px;
-      height: 86px;
-      -webkit-filter: drop-shadow(0 10px 5px rgba(0, 148, 255, 0.4));
-    }
-
-    .editor-logo__title {
-      font-size: 40px;
-      margin-top: 15px;
-    }
+  .editor-logo__title {
+    font-size: 40px;
+    margin-top: 15px;
   }
+}
 </style>

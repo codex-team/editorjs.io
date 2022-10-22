@@ -71,7 +71,8 @@ const advantages = [
       }
 
       &-text {
-        line-height: 110%;
+        line-height: 19px;
+        font-size: 15px;
       }
     }
   }
