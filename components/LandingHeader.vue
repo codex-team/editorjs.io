@@ -14,7 +14,7 @@
 
 <style>
 .landing-header {
-  background: linear-gradient(180deg, var(--color-background-secondary) 0%, white 98%);
+  background: linear-gradient(180deg, #E3F2FF 0%, rgb(250, 253, 255) 98%);
   padding-top: 110px;
   display: flex;
   flex-direction: column;
@@ -34,7 +34,7 @@
 
   &__title {
     line-height: 50px;
-    margin-top: 56px;
+    margin-top: 51px;
     text-align: center;
     font-size: 47px;
     max-width: 651px;

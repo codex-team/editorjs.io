@@ -17,7 +17,7 @@ defineProps<{
 }>()
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 
 .editor-logo {
   text-decoration: none;

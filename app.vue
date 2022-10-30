@@ -2,7 +2,7 @@
   <LayoutHeader />
   <LandingHeader />
   <OverviewImage />
-  <Section>
+  <Section :type="'output'">
     <SectionHeader
       title="And here is the generated clean output"
       text="Use it in Web, iOS, Android, AMP, Instant Articles, speech readers — everywhere. Easy to sanitize, extend and integrate with your logic. Developers will thank you."
@@ -14,7 +14,7 @@
       title="API is the feature"
       text="Each Block is provided via a plugin. It's easy to create your own. Dozens of created. Same with Inline Formatting and Block Tunes."
     />
-    <img src="" alt="">
+    <img src="assets/api.svg" alt="" class="api-image">
   </Section>
   <Section>
     <SectionHeader
@@ -47,10 +47,17 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.api-image {
+  max-width: 715px !important;
+  height: 321px;
+  margin-top: 40px;
+}
 </style>
 <script>
 import EditorLogo from "./components/EditorLogo";
+import Section from "./components/Section";
 export default {
-  components: {EditorLogo}
+  components: {Section, EditorLogo}
 }
 </script>

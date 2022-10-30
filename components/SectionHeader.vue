@@ -22,9 +22,15 @@ defineProps<{
 <style>
 .section-header {
   &__title {
+    font-size: 30px;
+    line-height: 23px;
+    font-weight: 600;
   }
 
   &__text {
+    margin-top: 20px;
+    font-size: 17px;
+    line-height: 26px;
   }
 }
 </style>
