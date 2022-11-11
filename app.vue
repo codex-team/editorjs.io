@@ -5,7 +5,7 @@
   <Section :type="'output'">
     <SectionHeader
       title="And here is the generated clean output"
-      text="Use it in Web, iOS, Android, AMP, Instant Articles, speech readers — everywhere. Easy to sanitize, extend and integrate with your logic. Developers will thank you."
+      text="Use it in Web, iOS, Android, AMP, Instant Articles, speech readers — everywhere. Easy to sanitize, extend and integrate with your logic. <b>Developers will thank you</b>."
     />
     <OutputExample />
   </Section>
@@ -26,7 +26,7 @@
   <Section>
     <SectionHeader
       title="Global WYSIWYG ecosystem"
-      text="Editor.js is not just an editor. It is the large community of developers around the world creating new tools, integrations, building new products and features. And we really need your star to support the community growth."
+      text="Editor.js is not just an editor. It is the large community of developers around the world creating new tools, integrations, building new products and features. And <b>we really need your star</b> to support the community growth."
     />
     <Star/>
   </Section>

@@ -15,7 +15,7 @@ defineProps<{
 <template>
   <div class="section-header">
     <h2 class="section-header__title"> {{ title }}</h2>
-    <div class="section-header__text"> {{ text }}</div>
+    <div class="section-header__text"> <span v-html="text"></span></div>
   </div>
 </template>
 
