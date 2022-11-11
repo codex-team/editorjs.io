@@ -14,7 +14,7 @@
       title="API is the feature"
       text="Each Block is provided via a plugin. It's easy to create your own. Dozens of created. Same with Inline Formatting and Block Tunes."
     />
-    <img src="assets/api.svg" alt="" class="api-image">
+    <img src="assets/api.svg" alt="API" class="api-image">
   </Section>
   <Section>
     <SectionHeader
@@ -22,13 +22,13 @@
       text="For the evolution of Editor.js, we need your help. Become a sponsor by subscribing to a donation and supporting product development."
     />
     <BecomeASponsor />
-    <Sponsors />
   </Section>
   <Section>
     <SectionHeader
       title="Global WYSIWYG ecosystem"
       text="Editor.js is not just an editor. It is the large community of developers around the world creating new tools, integrations, building new products and features. And we really need your star to support the community growth."
     />
+    <Star/>
   </Section>
   <Section>
     <SectionHeader
@@ -37,7 +37,9 @@
     />
     <LovedBy />
   </Section>
-  <Join />
+  <Section>
+    <Join />
+  </Section>
   <LayoutFooter />
 </template>
 
@@ -57,7 +59,8 @@ body {
 <script>
 import EditorLogo from "./components/EditorLogo";
 import Section from "./components/Section";
+import Star from "./components/Star";
 export default {
-  components: {Section, EditorLogo}
+  components: {Star, Section, EditorLogo}
 }
 </script>

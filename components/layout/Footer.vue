@@ -1,29 +1,53 @@
 <template>
-<div class="footer">
-  <div class="footer__left">
-    Copyright © 2019-present <a href="//codex.so">CodeX</a><br>
-    Released under <a href="https://github.com/codex-team/editor.js/blob/next/LICENSE">the Apache 2 License</a>
+  <div class="footer">
+    <div class="footer__container">
+      <div class="footer__license">
+        Copyright © 2019-present <a href="//codex.so">CodeX</a><br>
+        Released under <a href="https://github.com/codex-team/editor.js/blob/next/LICENSE"><span class="footer__license__apache">the Apache 2 License</span></a>
+      </div>
+      <Button link="team@codex.so" text="Contact us" type="secondary" class="footer__contact"/>
+    </div>
   </div>
-
-  <div class="footer__right">
-    <a href="team@codex.so">
-      Contact us
-    </a>
-  </div>
-
-</div>
 </template>
 
 <style scoped>
 .footer {
+  border-top: var(--color-line) solid 1px;
+  padding: 20px 0 20px 0;
   display: flex;
+  align-items: center;
+  justify-content: center;
 
-  &__left {
-
+  &__container {
+    max-width: var(--layout-container-width);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
   }
 
-  &__right {
+  &__license {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 19px;
+
+    &__apache {
+      font-weight: 700;
+    }
+
+    & > a {
+      text-decoration: none;
+      color: var(--color-text-primary);
+    }
+  }
+
+  &__contact {
 
   }
 }
 </style>
+<script>
+import Button from "../UI/Button";
+export default {
+  components: {Button}
+}
+</script>

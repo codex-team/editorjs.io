@@ -2,7 +2,9 @@
   <a :href="link" class="button" :class="{
     'button--support': type === 'support',
     'button--primary': type === 'primary',
-    'button--demo': type === 'demo'
+    'button--demo': type === 'demo',
+    'button--sponsor': type === 'sponsor',
+    'button--secondary': type === 'secondary'
   }">
     <img v-if="icon" :src="icon" class="button__icon"/>
     <p class="button__text">{{ text }}</p>
@@ -79,6 +81,28 @@ defineProps<{
 
   .button__icon {
     margin-right: 8px;
+  }
+}
+
+.button--sponsor {
+  padding: 7px 10px;
+  font-weight: 700;
+  font-size: 14px;
+  color: white;
+  border-radius: 10px;
+  background: linear-gradient(194.57deg, #6BB8FF 6.66%, #3B7CDF 88.43%);
+  box-shadow: 0 2px 4px rgba(37, 123, 225, 0.32);
+}
+
+.button--secondary {
+  border: 1px solid var(--color-text-primary);
+  border-radius: 9px;
+  padding: 6px 11px;
+
+  .button__text {
+    color: var(--color-text-primary);
+    font-weight: 500;
+    font-size: 15px;
   }
 }
 </style>

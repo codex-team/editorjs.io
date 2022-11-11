@@ -1,7 +1,7 @@
 <template>
   <div class="overview">
     <div class="container">
-      <img class="overview__image" src="assets/editor.svg"/>
+      <img class="overview__image" src="assets/editor.svg" alt="Editor.js example"/>
       <Button class="overview__cta" type="demo" text="Open Demo" icon="assets/marker.svg"/>
     </div>
   </div>
@@ -16,6 +16,7 @@
 
   &__image {
     border-radius: 20px;
+    box-shadow: 0 7px 41px -10px rgba(76, 96, 146, 0.21);
   }
 
   &__cta {

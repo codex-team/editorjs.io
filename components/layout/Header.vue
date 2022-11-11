@@ -28,6 +28,7 @@
     color: var(--color-text-primary);
     text-decoration: none;
     padding: 9px 6px;
+    font-weight: 500;
   }
 }
 

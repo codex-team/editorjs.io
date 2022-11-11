@@ -1,173 +1,103 @@
 <template>
   <div class="star">
-    Star
+    <div class="star__arrows-line">
+      <img src="assets/arrow.svg" class="star__arrows-line__arrow" alt="arrow">
+      <img src="assets/arrow.svg" class="star__arrows-line__arrow" alt="arrow">
+    </div>
+    <div class="star__arrows-line star__arrows-line--left">
+      <img src="assets/arrow.svg" class="star__arrows-line__arrow" alt="arrow">
+      <img src="assets/arrow.svg" class="star__arrows-line__arrow" alt="arrow">
+    </div>
+    <div class="star__arrows-line star__arrows-line--right">
+      <img src="assets/arrow.svg" class="star__arrows-line__arrow" alt="arrow">
+      <img src="assets/arrow.svg" class="star__arrows-line__arrow" alt="arrow">
+    </div>
+    <div class="star__button">
+      <img src="assets/git_star.svg">
+      <div class="star__button__text">
+        Star
+      </div>
+      <div class="star__button__count">
+        19.5k
+      </div>
+    </div>
   </div>
 </template>
 
 <style lang="postcss">
-  .star {
-/* Star button */
+.star {
+  margin-top: 30px;
+  width: 200px;
+  height: 250px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-box-sizing: border-box;
+  &__button {
+    padding: 9px 9px 9px 14px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(239.67deg, #FCFCFC 18.14%, #F9F9F9 77.61%);
+    border: 1px solid #E1E1E1;
+    border-radius: 11px;
+    width: 160px;
+    height: 53px;
+    font-weight: 700;
+    font-size: 18px;
 
-/* Auto layout */
-display: flex;
-flex-direction: row;
-align-items: center;
-padding: 9px;
-gap: 9px;
+    &__text {
+      margin-left: 6px;
+    }
 
-width: 160px;
-height: 53px;
-
-background: linear-gradient(239.67deg, #FCFCFC 18.14%, #F9F9F9 77.61%);
-border: 1px solid #E1E1E1;
-border-radius: 11px;
-
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
-z-index: 0;
-
-
-/* github-icon 1 */
-
-display: none;
-width: 28.67px;
-height: 28px;
-
-
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
-
-
-/* Group */
-
-position: absolute;
-left: 0%;
-right: 0%;
-top: 0%;
-bottom: 0.13%;
-
-
-
-/* Vector */
-
-position: absolute;
-left: 0%;
-right: 0%;
-top: 0%;
-bottom: 0.13%;
-
-background: #000000;
-
-
-/* Frame 6 */
-
-/* Auto layout */
-display: flex;
-flex-direction: row;
-align-items: center;
-padding: 0px;
-gap: 2px;
-
-width: 65px;
-height: 28px;
-
-
-/* Inside auto layout */
-flex: none;
-order: 1;
-flex-grow: 0;
-
-
-/* star */
-
-width: 28px;
-height: 28px;
-
-
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
-
-
-/* Star 1 */
-
-position: absolute;
-width: 15.53px;
-height: 14.77px;
-left: 6.23px;
-top: 6.61px;
-
-border: 2.33333px solid #000000;
-
-
-/* Star */
-
-width: 35px;
-height: 23px;
-
-font-family: 'SF Pro Rounded';
-font-style: normal;
-font-weight: 700;
-font-size: 18px;
-line-height: 23px;
-/* identical to box height, or 128% */
-
-color: #000000;
-
-
-/* Inside auto layout */
-flex: none;
-order: 1;
-flex-grow: 0;
-
-
-/* Frame 6 */
-
-/* Auto layout */
-display: flex;
-flex-direction: row;
-align-items: flex-start;
-padding: 6px 11px;
-gap: 10px;
-
-width: 68px;
-height: 35px;
-
-background: rgba(0, 0, 0, 0.04);
-border-radius: 32px;
-
-/* Inside auto layout */
-flex: none;
-order: 2;
-flex-grow: 0;
-
-
-/* 19.5k */
-
-width: 46px;
-height: 23px;
-
-font-family: 'SF Pro Rounded';
-font-style: normal;
-font-weight: 700;
-font-size: 18px;
-line-height: 23px;
-/* identical to box height, or 128% */
-
-color: #000000;
-
-
-/* Inside auto layout */
-flex: none;
-order: 0;
-flex-grow: 0;
-
+    &__count {
+      background-color: rgba(0, 0, 0, 4%);
+      border-radius: 32px;
+      padding: 6px 11px;
+      margin-left: auto;
+    }
   }
+
+  &__arrows-line {
+    margin: 0;
+    position: absolute;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    animation: moveArrows 1s linear infinite alternate;
+
+    &__arrow {
+      height: 20px;
+    }
+
+    &__arrow:last-child {
+      transform: rotate(180deg);
+    }
+
+    &--left {
+      transform: rotate(70deg);
+      writing-mode: horizontal-tb;
+      height: 130%;
+    }
+
+    &--right {
+      transform: rotate(-70deg);
+      writing-mode: horizontal-tb;
+      height: 130%;
+    }
+  }
+}
+
+@keyframes moveArrows {
+  from {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  to {
+    padding-top: 10%;
+    padding-bottom: 10%;
+  }
+}
 </style>
