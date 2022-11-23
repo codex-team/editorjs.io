@@ -7,7 +7,7 @@
         <a href="/" class="menu__link">Awesome Plugins</a>
         <a href="/" class="menu__link">Digest</a>
         <a href="/" class="menu__link">GitHub</a>
-        <Button icon="assets/star.svg" type="support" text="Support Editor.js"/>
+        <Button icon="/assets/star.svg" type="support" text="Support Editor.js"/>
       </div>
     </div>
   </div>
