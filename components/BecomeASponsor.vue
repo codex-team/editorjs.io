@@ -39,13 +39,14 @@
 
 <script setup>
 import Button from "./UI/Button";
+import logo from '~/assets/bucerius.jpeg';
 
 const sponsors = [
   {
     label: 'Gold',
     items: [
       {
-        picture: '/assets/bucerius.jpeg',
+        picture: logo,
         title: 'Bucerius',
         link: '//'
       },
@@ -56,7 +57,7 @@ const sponsors = [
     label: 'Silver',
     items: [
       {
-        picture: '/assets/bucerius.jpeg',
+        picture: '~/assets/bucerius.jpeg',
         title: 'Bucerius',
         link: '//'
       },

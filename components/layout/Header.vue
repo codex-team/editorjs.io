@@ -7,7 +7,7 @@
         <a href="/" class="menu__link">Awesome Plugins</a>
         <a href="/" class="menu__link">Digest</a>
         <a href="/" class="menu__link">GitHub</a>
-        <Button icon="/assets/star.svg" type="support" text="Support Editor.js"/>
+        <Button :icon="starIcon" type="support" text="Support Editor.js"/>
       </div>
     </div>
   </div>
@@ -52,8 +52,14 @@
 <script>
 import EditorLogo from "../EditorLogo";
 import Button from "../UI/Button";
+import starIcon from "~/assets/star.svg";
 
 export default {
+  data() {
+    return {
+      starIcon,
+    };
+  },
   components: {Button, EditorLogo}
 }
 </script>
