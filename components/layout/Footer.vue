@@ -5,7 +5,7 @@
         Copyright © 2022 <a href="//codex.so">CodeX</a><br>
         Released under <a href="https://github.com/codex-team/editor.js/blob/next/LICENSE"><span class="footer__license__apache">the Apache 2 License</span></a>
       </div>
-      <Button link="team@codex.so" text="Contact us" type="secondary" class="footer__contact"/>
+      <Button link="mailto:team@codex.so" text="Contact us" type="secondary" class="footer__contact"/>
     </div>
   </div>
 </template>
