@@ -33,6 +33,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  user-select: none;
+  cursor: pointer;
 
   &__button {
     padding: 9px 9px 9px 14px;

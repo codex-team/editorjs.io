@@ -2,7 +2,7 @@
   <div class="overview">
     <div class="container">
       <img class="overview__image" src="assets/editor.svg" alt="Editor.js example"/>
-      <Button class="overview__cta" type="demo" text="Open Demo" icon="assets/marker.svg"/>
+      <Button class="overview__cta" type="demo" text="Open Demo" :icon="markerIcon"/>
     </div>
   </div>
 </template>
@@ -39,8 +39,14 @@
 </style>
 <script>
 import Button from "./UI/Button";
+import markerIcon from "~/assets/marker.svg";
 
 export default {
+  data() {
+    return {
+      markerIcon
+    }
+  },
   components: {Button}
 }
 </script>

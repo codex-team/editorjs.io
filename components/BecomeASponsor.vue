@@ -57,7 +57,7 @@ const sponsors = [
     label: 'Silver',
     items: [
       {
-        picture: '~/assets/bucerius.jpeg',
+        picture: logo,
         title: 'Bucerius',
         link: '//'
       },

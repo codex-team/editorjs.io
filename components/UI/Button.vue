@@ -43,6 +43,7 @@ defineProps<{
   color: white;
   cursor: pointer;
   font-size: 14px;
+  user-select: none;
 
   &__text {
     align-self: center;
