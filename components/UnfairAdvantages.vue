@@ -87,7 +87,7 @@ const advantages = [
       &__item{
         margin-top: 20px;
         text-align: center;
-        
+
         &__wrapper{
           flex-direction: column;
         }

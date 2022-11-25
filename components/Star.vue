@@ -64,11 +64,11 @@
   &__arrows-line {
     margin: 0;
     position: absolute;
-    height: 80%;
+    height: 90%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    animation: moveArrows 1s linear infinite alternate;
+    animation: moveArrows 0.8s linear infinite alternate;
 
     &__arrow {
       height: 20px;
@@ -99,8 +99,8 @@
   }
 
   to {
-    padding-top: 10%;
-    padding-bottom: 10%;
+    padding-top: 25%;
+    padding-bottom: 25%;
   }
 }
 </style>
