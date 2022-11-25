@@ -29,6 +29,7 @@
     text-decoration: none;
     padding: 9px 6px;
     font-weight: 500;
+    white-space: nowrap;
   }
 }
 
@@ -46,6 +47,16 @@
     padding: 0 20px 0 20px;
     justify-content: space-between;
     align-items: center;
+  }
+
+  @media (--small-viewport) {
+    height: 100px;
+    padding: 10px;
+
+    &__container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
 }
 </style>

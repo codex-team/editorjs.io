@@ -61,6 +61,21 @@ defineProps<{
     height: 12px;
     margin-right: 7px;
   }
+
+  @media (--small-viewport) {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    justify-content: center;
+    .button__text {
+      display: none;
+    }
+
+    .button__icon {
+      margin-right: 0;
+      align-self: center;
+    }
+  }
 }
 
 .button--primary {

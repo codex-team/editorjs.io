@@ -28,7 +28,8 @@
 }
 
 .container {
-  width: 840px;
+  max-width: 840px;
+  width: 100%;
   border-radius: 20px;
   height: 1236px;
   position: absolute;
