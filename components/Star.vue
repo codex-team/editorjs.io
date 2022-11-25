@@ -34,9 +34,10 @@
   align-items: center;
   justify-content: center;
   user-select: none;
-  cursor: pointer;
 
   &__button {
+    z-index: 1;
+    cursor: pointer;
     padding: 9px 9px 9px 14px;
     display: flex;
     align-items: center;
