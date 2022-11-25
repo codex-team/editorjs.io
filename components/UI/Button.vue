@@ -37,6 +37,7 @@ defineProps<{
 
 <style lang="postcss" scoped>
 .button {
+  text-decoration: none;
   display: flex;
   align-items: center;
   border: 0;

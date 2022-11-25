@@ -2,9 +2,9 @@
 
 <template>
   <div class="resources">
-    <a href=""><img src="assets/tj.svg" alt="tj.ru"></a>
-    <a href=""><img src="assets/dtf.svg" alt="dtf.ru"></a>
-    <a href=""><img src="assets/vc.svg" alt="vc.ru"></a>
+    <a href="https://tj.ru"><img src="assets/tj.svg" alt="tj.ru"></a>
+    <a href="https://dtf.ru"><img src="assets/dtf.svg" alt="dtf.ru"></a>
+    <a href="https://vc.ru"><img src="assets/vc.svg" alt="vc.ru"></a>
   </div>
   <div class="grades">
     <img src="assets/medal_first.svg" alt="medal">

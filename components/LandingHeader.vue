@@ -7,7 +7,7 @@
     <div class="landing-header__description">
       Editor.js provides maximum power for developers and products staying focused on the end-user experience
     </div>
-    <Button type="primary" text="Get Started"/>
+    <Button type="primary" text="Get Started" link="https://editorjs.io/getting-started"/>
     <UnfairAdvantages :class="'landing-header__ua'"/>
   </div>
 </template>

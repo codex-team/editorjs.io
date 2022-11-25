@@ -138,6 +138,7 @@ const sponsors = [
 }
 
 .sponsor {
+  cursor: pointer;
   border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: 10px;
   overflow: hidden;

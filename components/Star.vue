@@ -12,7 +12,7 @@
       <img src="assets/arrow.svg" class="star__arrows-line__arrow" alt="arrow">
       <img src="assets/arrow.svg" class="star__arrows-line__arrow" alt="arrow">
     </div>
-    <div class="star__button">
+    <a href="https://github.com/codex-team/editor.js" class="star__button">
       <img src="assets/git_star.svg">
       <div class="star__button__text">
         Star
@@ -20,7 +20,7 @@
       <div class="star__button__count">
         19.5k
       </div>
-    </div>
+    </a>
   </div>
 </template>
 
@@ -36,6 +36,8 @@
   user-select: none;
 
   &__button {
+    text-decoration: none;
+    color: var(--color-text-primary);
     z-index: 1;
     cursor: pointer;
     padding: 9px 9px 9px 14px;
