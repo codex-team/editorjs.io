@@ -75,5 +75,27 @@ const advantages = [
         font-size: 15px;
       }
     }
+    @media (--small-viewport) {
+      flex-direction: column;
+      align-items: center;
+
+      &__container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      &__item{
+        margin-top: 20px;
+        text-align: center;
+        
+        &__wrapper{
+          flex-direction: column;
+        }
+      }
+
+      &__delimiter {
+        display: none;
+      }
+    }
   }
 </style>
