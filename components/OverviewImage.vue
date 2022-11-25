@@ -1,7 +1,7 @@
 <template>
   <div class="overview">
     <div class="container">
-      <img class="overview__image" src="assets/editor.svg" alt="Editor.js example"/>
+      <img class="overview__image" src="assets/editor.png" alt="Editor.js example"/>
       <Button class="overview__cta" type="demo" text="Open Demo" :icon="markerIcon"/>
     </div>
   </div>
