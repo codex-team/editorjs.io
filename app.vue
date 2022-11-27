@@ -51,7 +51,8 @@ body {
 }
 
 .api-image {
-  max-width: 715px !important;
+  max-width: 715px;
+  width: 100%;
   height: 321px;
   margin-top: 40px;
 }
