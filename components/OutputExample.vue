@@ -39,6 +39,8 @@
 
 <style lang="postcss">
   .output {
+    overflow: hidden;
+    text-overflow: ellipsis;
     margin-top: 72px;
     text-align: left;
     width: 100%;
