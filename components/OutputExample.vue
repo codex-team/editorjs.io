@@ -14,7 +14,7 @@
             "id" : "ClI-SnQBe-",
             "type" : <span class="output__type">"paragraph"</span>,
             "data" : <span class="output__data"> {
-                "text" : "Hey. Meet the new Editor. On this page you can see
+                "text" : "Hey. Meet the new Editor. On this page you can see"
             }</span>
         },
         {
