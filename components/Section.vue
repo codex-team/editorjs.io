@@ -31,6 +31,10 @@ defineProps<{
     width: 100%;
   }
 
+  @media (--small-viewport) {
+    padding-top: 20px
+  }
+
   &--output {
     padding-top: 280px;
     background-color: #E5F3FF;
