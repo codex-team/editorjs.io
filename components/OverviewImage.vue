@@ -2,7 +2,7 @@
   <div class="overview">
     <div class="container">
       <img class="overview__image" src="assets/editor.png" alt="Editor.js example"/>
-      <Button class="overview__cta" type="demo" text="Open Demo" :icon="markerIcon"/>
+      <Button class="overview__cta" type="demo" text="Open Demo" :icon="IconMarker"/>
     </div>
   </div>
   <img class="mobile-image" src="assets/editor.png" alt="Editor.js example"/>
@@ -55,12 +55,12 @@
 </style>
 <script>
 import Button from "./UI/Button";
-import markerIcon from "~/assets/marker.svg";
+import { IconMarker } from "@codexteam/icons"
 
 export default {
   data() {
     return {
-      markerIcon
+      IconMarker
     }
   },
   components: {Button}

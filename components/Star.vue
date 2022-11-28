@@ -13,7 +13,7 @@
       <img src="assets/arrow.svg" class="star__arrows-line__arrow" alt="arrow">
     </div>
     <a href="https://github.com/codex-team/editor.js" class="star__button">
-      <img src="assets/git_star.svg">
+      <div v-html="IconStar" class="star__button__icon"/>
       <div class="star__button__text">
         Star
       </div>
@@ -23,6 +23,10 @@
     </a>
   </div>
 </template>
+
+<script setup>
+import { IconStar } from "@codexteam/icons";
+</script>
 
 <style lang="postcss">
 .star {
@@ -40,7 +44,7 @@
     color: var(--color-text-primary);
     z-index: 1;
     cursor: pointer;
-    padding: 9px 9px 9px 14px;
+    padding: 9px 9px 9px 12px;
     display: flex;
     align-items: center;
     background: linear-gradient(239.67deg, #FCFCFC 18.14%, #F9F9F9 77.61%);
@@ -51,8 +55,12 @@
     font-weight: 700;
     font-size: 18px;
 
-    &__text {
-      margin-left: 6px;
+    &__icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
     }
 
     &__count {

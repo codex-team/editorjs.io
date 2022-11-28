@@ -7,7 +7,8 @@
     'button--sponsor': type === 'sponsor',
     'button--secondary': type === 'secondary'
   }">
-    <img v-if="icon" :src="icon" class="button__icon"/>
+    <div v-if="icon" v-html="icon" class="button__icon"/>
+    <img v-if="iconPath" :src="iconPath" class="button__icon">
     <p class="button__text">{{ text }}</p>
   </a>
 </template>
@@ -23,6 +24,11 @@ defineProps<{
    * icon for button
    */
   icon?: String,
+
+  /**
+   * icon for button
+   */
+  iconPath?: String,
 
   /**
    * Button text
@@ -112,6 +118,9 @@ defineProps<{
 
   .button__icon {
     margin-right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 

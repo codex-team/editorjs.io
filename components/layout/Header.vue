@@ -2,13 +2,13 @@
   <div class="header">
     <div class="header__container">
       <EditorLogo size="small"/>
-      <Button type="support--mobile" :icon="starIcon" link="http://opencollective.com/editorjs"/>
+      <Button type="support--mobile" :icon-path="starIcon" link="http://opencollective.com/editorjs"/>
       <div class="menu">
         <a href="https://editorjs.io/getting-started" class="menu__link">Documentation</a>
         <a href="https://github.com/editor-js/awesome-editorjs" class="menu__link">Awesome Plugins</a>
         <a href="https://digest.editorjs.io" class="menu__link">Digest</a>
         <a href="https://github.com/codex-team/editor.js" class="menu__link">GitHub</a>
-        <Button :icon="starIcon" type="support" text="Support Editor.js" link="http://opencollective.com/editorjs"/>
+        <Button :icon-path="starIcon" type="support" text="Support Editor.js" link="http://opencollective.com/editorjs"/>
       </div>
     </div>
   </div>
