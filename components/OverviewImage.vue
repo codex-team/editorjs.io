@@ -14,6 +14,11 @@
   position: relative;
   height: 960px;
 
+  @media (--small-viewport) {
+    height: auto;
+    margin-bottom: 150px;
+  }
+
   &__image {
     border-radius: 20px;
     box-shadow: 0 7px 41px -10px rgba(76, 96, 146, 0.21);

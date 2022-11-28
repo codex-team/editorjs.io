@@ -19,6 +19,10 @@
   justify-content: center;
 
   &__container {
+    @media (--small-viewport) {
+      padding-right: 5px;
+      padding-left: 5px;
+    }
     max-width: var(--layout-container-width);
     width: 100%;
     display: flex;

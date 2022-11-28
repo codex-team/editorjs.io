@@ -1,6 +1,7 @@
 <template>
   <a :href="link" class="button" :class="{
     'button--support': type === 'support',
+    'button--support--mobile': type === 'support--mobile',
     'button--primary': type === 'primary',
     'button--demo': type === 'demo',
     'button--sponsor': type === 'sponsor',
@@ -16,7 +17,7 @@ defineProps<{
   /**
    * type of button
    */
-  type: 'support' | 'primary' | 'sponsor' | 'secondary' | 'demo',
+  type: 'support' | 'primary' | 'sponsor' | 'secondary' | 'demo' | 'support--mobile',
 
   /**
    * icon for button
@@ -26,7 +27,7 @@ defineProps<{
   /**
    * Button text
    */
-  text: String,
+  text?: String,
 
   /**
    * Button link
@@ -56,6 +57,7 @@ defineProps<{
   background: linear-gradient(270deg, #E858FF 0%, #9B42F3 82.81%);
   border-radius: 8px;
   padding: 4px 11px;
+  font-weight: 500;
 
   .button__icon {
     width: 12px;
@@ -64,17 +66,29 @@ defineProps<{
   }
 
   @media (--small-viewport) {
-    width: 30px;
-    height: 30px;
-    padding: 0;
-    justify-content: center;
-    .button__text {
       display: none;
-    }
+  }
 
-    .button__icon {
-      margin-right: 0;
-      align-self: center;
+  &--mobile {
+    display: none;
+    @media (--small-viewport) {
+      position: absolute;
+      right: 20px;
+      display: flex;
+      width: 30px;
+      height: 30px;
+      padding: 0;
+      justify-content: center;
+      background: linear-gradient(270deg, #E858FF 0%, #9B42F3 82.81%);
+      border-radius: 8px;
+      font-weight: 500;
+
+      .button__icon {
+        margin-right: 0;
+        width: 12px;
+        height: 12px;
+        align-self: center;
+      }
     }
   }
 }

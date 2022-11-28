@@ -2,6 +2,7 @@
   <div class="header">
     <div class="header__container">
       <EditorLogo size="small"/>
+      <Button type="support--mobile" :icon="starIcon"/>
       <div class="menu">
         <a href="https://editorjs.io/getting-started" class="menu__link">Documentation</a>
         <a href="https://github.com/editor-js/awesome-editorjs" class="menu__link">Awesome Plugins</a>
@@ -30,6 +31,9 @@
     padding: 9px 6px;
     font-weight: 500;
     white-space: nowrap;
+    @media (--small-viewport) {
+      padding: 12px 0;
+    }
   }
 }
 
@@ -51,9 +55,10 @@
 
   @media (--small-viewport) {
     height: 100px;
-    padding: 10px;
+    padding: 5px;
 
     &__container {
+      padding: 20px 0 20px 0;
       flex-direction: column;
       align-items: flex-start;
     }

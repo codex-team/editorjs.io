@@ -25,7 +25,10 @@ defineProps<{
   flex-direction: column;
 
   & > * {
+    padding-left: 5px;
+    padding-right: 5px;
     max-width: 560px;
+    width: 100%;
   }
 
   &--output {

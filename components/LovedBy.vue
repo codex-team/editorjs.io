@@ -18,6 +18,7 @@
 
 <style scoped>
 .resources {
+  justify-content: center;
   display: flex;
   gap: 30px;
   margin-top: 20px;
@@ -25,6 +26,7 @@
 
 .grades {
   display: flex;
+  justify-content: center;
   gap: 25px;
   margin-top: 45px;
 }
