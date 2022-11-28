@@ -2,13 +2,15 @@
   <div class="header">
     <div class="header__container">
       <EditorLogo size="small"/>
-      <Button type="support--mobile" :icon-path="starIcon" link="http://opencollective.com/editorjs"/>
+      <Button type="support" text="Support Editor.js" :icon-path="starIcon" link="http://opencollective.com/editorjs"
+              class="header__button_mobile"/>
       <div class="menu">
         <a href="https://editorjs.io/getting-started" class="menu__link">Documentation</a>
         <a href="https://github.com/editor-js/awesome-editorjs" class="menu__link">Awesome Plugins</a>
         <a href="https://digest.editorjs.io" class="menu__link">Digest</a>
         <a href="https://github.com/codex-team/editor.js" class="menu__link">GitHub</a>
-        <Button :icon-path="starIcon" type="support" text="Support Editor.js" link="http://opencollective.com/editorjs"/>
+        <Button :icon-path="starIcon" type="support" text="Support Editor.js" link="http://opencollective.com/editorjs"
+                class="menu__button"/>
       </div>
     </div>
   </div>
@@ -32,7 +34,13 @@
     font-weight: 500;
     white-space: nowrap;
     @media (--small-viewport) {
-      padding: 12px 0;
+      padding: 20px 0;
+    }
+  }
+
+  &__button {
+    @media (--small-viewport) {
+      display: none !important;
     }
   }
 }
@@ -43,6 +51,15 @@
   width: 100%;
   height: 60px;
   border: 1px solid rgba(255, 255, 255, 0.3);
+
+  &__button_mobile {
+    display: none;
+    position: absolute;
+    right: 20px;
+    @media (--small-viewport) {
+      display: flex;
+    }
+  }
 
   &__container {
     display: flex;

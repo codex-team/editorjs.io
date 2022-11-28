@@ -1,7 +1,6 @@
 <template>
   <a :href="link" class="button" :class="{
     'button--support': type === 'support',
-    'button--support--mobile': type === 'support--mobile',
     'button--primary': type === 'primary',
     'button--demo': type === 'demo',
     'button--sponsor': type === 'sponsor',
@@ -69,33 +68,6 @@ defineProps<{
     width: 12px;
     height: 12px;
     margin-right: 7px;
-  }
-
-  @media (--small-viewport) {
-      display: none;
-  }
-
-  &--mobile {
-    display: none;
-    @media (--small-viewport) {
-      position: absolute;
-      right: 20px;
-      display: flex;
-      width: 30px;
-      height: 30px;
-      padding: 0;
-      justify-content: center;
-      background: linear-gradient(270deg, #E858FF 0%, #9B42F3 82.81%);
-      border-radius: 8px;
-      font-weight: 500;
-
-      .button__icon {
-        margin-right: 0;
-        width: 12px;
-        height: 12px;
-        align-self: center;
-      }
-    }
   }
 }
 

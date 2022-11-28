@@ -15,7 +15,7 @@
 <style>
 .landing-header {
   background: linear-gradient(180deg, #E3F2FF 0%, rgb(250, 253, 255) 98%);
-  padding: 110px 5px 0 5px;
+  padding: 110px var(--layout-offset-x) 0 var(--layout-offset-x);
   display: flex;
   flex-direction: column;
   align-items: center;

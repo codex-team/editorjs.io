@@ -78,6 +78,7 @@ const advantages = [
     @media (--small-viewport) {
       flex-direction: column;
       align-items: center;
+      margin-top: 50px;
 
       &__container {
         flex-direction: column;
@@ -85,7 +86,7 @@ const advantages = [
       }
 
       &__item{
-        margin-top: 20px;
+        margin-top: 40px;
         text-align: center;
 
         &__wrapper{
