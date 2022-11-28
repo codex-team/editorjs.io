@@ -22,15 +22,22 @@
         {{ grade.label }}
       </div>
       <div class="sponsors__grade__list">
-        <object type="image/svg+xml" data="https://opencollective.com/editorjs/tiers/backer.svg?avatarHeight=36&amp;width=300" v-if="grade.label === 'Backers'"></object>
+        <object type="image/svg+xml"
+                data="https://opencollective.com/editorjs/tiers/backer.svg?avatarHeight=36&amp;width=300"
+                v-if="grade.label === 'Backers'"></object>
         <div class="sponsor" v-if="grade.label !== 'Backers'" v-for="sponsor in grade.items" :style="{'width': grade.size + 'px',
                                                                      'height': grade.size + 'px'}">
           <img :src="sponsor.picture">
         </div>
         <div class="sponsor" v-if="grade.label !== 'Backers'" :style="{'width': grade.size + 'px',
                                                                      'height': grade.size + 'px'}">
-          <img src="assets/gold_plus.svg" v-if="grade.label === 'Gold'">
-          <img src="assets/silver_plus.svg" v-if="grade.label === 'Silver'">
+          <a
+            href="https://opencollective.com/editorjs/contribute/gold-sponsor-12748/checkout?interval=month&amount=1000">
+            <img src="assets/gold_plus.svg" v-if="grade.label === 'Gold'" alt="gold">
+          </a>
+          <a href="https://opencollective.com/editorjs/contribute/sponsor-8679/checkout?interval=month&amount=100">
+            <img src="assets/silver_plus.svg" v-if="grade.label === 'Silver'" alt="silver">
+          </a>
         </div>
       </div>
     </div>
@@ -120,9 +127,11 @@ const sponsors = [
 
   &__grade {
     margin-top: 28px;
+
     &:first-child {
       margin-top: 0;
     }
+
     &__title {
       font-weight: 700;
       font-size: 20px;
