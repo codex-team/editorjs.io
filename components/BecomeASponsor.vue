@@ -5,9 +5,9 @@
       Become a sponsor
     </div>
     <div class="become-sponsor__buttons">
-      <Button type="sponsor" text="$2 / mo"/>
-      <Button type="sponsor" text="$10 / mo"/>
-      <Button type="sponsor" text="One-time"/>
+      <Button link="https://opencollective.com/editorjs/contribute/backer-8632/checkout?interval=month&amount=2&name=&legalName=&email=" type="sponsor" text="$2 / mo"/>
+      <Button link="https://opencollective.com/editorjs/contribute/backer-8632/checkout?interval=month&amount=10&name=&legalName=&email=" type="sponsor" text="$10 / mo"/>
+      <Button link="https://opencollective.com/editorjs/donate" type="sponsor" text="One-time"/>
     </div>
     <a
       href=""
