@@ -36,7 +36,7 @@ defineProps<{
     background-color: #E5F3FF;
     padding-bottom: 0;
     @media (--small-viewport) {
-      padding-top: 20px;
+      padding-top: 80px;
     }
   }
 }

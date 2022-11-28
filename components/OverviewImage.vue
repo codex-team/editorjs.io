@@ -1,11 +1,11 @@
 <template>
   <div class="overview">
     <div class="container">
-      <img class="overview__image" src="assets/editor.png" alt="Editor.js example"/>
+      <img class="overview__image" src="assets/editor.jpg" alt="Editor.js example"/>
       <Button class="overview__cta" type="demo" text="Open Demo" :icon="IconMarker"/>
+      <img class="mobile-image" src="assets/editor.jpg" alt="Editor.js example"/>
     </div>
   </div>
-  <img class="mobile-image" src="assets/editor.png" alt="Editor.js example"/>
 </template>
 
 <style lang="postcss">
@@ -16,12 +16,15 @@
   height: 960px;
 
   @media (--small-viewport) {
-    display: none;
+    height: 638px;
   }
 
   &__image {
     border-radius: 20px;
     box-shadow: 0 7px 41px -10px rgba(76, 96, 146, 0.21);
+    @media (--small-viewport) {
+      display: none;
+    }
   }
 
   &__cta {
@@ -29,16 +32,22 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+
+    @media (--small-viewport) {
+      display: none !important;
+    }
   }
 }
 
 .mobile-image {
   display: none;
+  max-width: 420px;
+  width: 100%;
   border-radius: 20px;
   box-shadow: 0 7px 41px -10px rgba(76, 96, 146, 0.21);
 
   @media (--small-viewport) {
-    display: flex;
+    display: block;
   }
 }
 
@@ -51,6 +60,12 @@
   left: 50%;
   transform: translateX(-50%);
   top: -70px;
+
+  @media (--small-viewport) {
+    max-width: 420px;
+    top: 10px;
+    height: 668px;
+  }
 }
 </style>
 <script>
