@@ -16,7 +16,11 @@
   height: 960px;
 
   @media (--small-viewport) {
-    height: 638px;
+    padding: 10px 0 10px 0;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   &__image {
@@ -62,9 +66,10 @@
   top: -70px;
 
   @media (--small-viewport) {
+    position: static;
     max-width: 420px;
-    top: 10px;
-    height: 668px;
+    transform: none;
+    height: auto;
   }
 }
 </style>
