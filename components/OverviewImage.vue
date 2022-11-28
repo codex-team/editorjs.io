@@ -5,6 +5,7 @@
       <Button class="overview__cta" type="demo" text="Open Demo" :icon="markerIcon"/>
     </div>
   </div>
+  <img class="mobile-image" src="assets/editor.png" alt="Editor.js example"/>
 </template>
 
 <style lang="postcss">
@@ -15,8 +16,7 @@
   height: 960px;
 
   @media (--small-viewport) {
-    height: auto;
-    margin-bottom: 150px;
+    display: none;
   }
 
   &__image {
@@ -29,6 +29,16 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+  }
+}
+
+.mobile-image {
+  display: none;
+  border-radius: 20px;
+  box-shadow: 0 7px 41px -10px rgba(76, 96, 146, 0.21);
+
+  @media (--small-viewport) {
+    display: flex;
   }
 }
 
