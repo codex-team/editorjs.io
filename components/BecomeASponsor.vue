@@ -10,7 +10,7 @@
       <Button link="https://opencollective.com/editorjs/donate" type="sponsor" text="One-time"/>
     </div>
     <a
-      href=""
+      href="https://codex.so/donate"
       class="become-sponsor__more"
     >
       More options
