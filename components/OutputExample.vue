@@ -39,6 +39,7 @@
 
 <style lang="postcss">
   .output {
+    pointer-events: none;
     overflow: hidden;
     text-overflow: ellipsis;
     margin-top: 72px;
