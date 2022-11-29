@@ -45,6 +45,7 @@ defineProps<{
 }
 
 .editor-logo--general {
+  cursor: default;
   flex-direction: column;
   align-items: center;
   justify-content: center;
