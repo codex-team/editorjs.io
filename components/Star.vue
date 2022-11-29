@@ -12,7 +12,7 @@
       <img src="assets/arrow.svg" class="star__arrows-line__arrow" alt="arrow">
       <img src="assets/arrow.svg" class="star__arrows-line__arrow" alt="arrow">
     </div>
-    <a href="https://github.com/codex-team/editor.js" class="star__button">
+    <a href="https://github.com/codex-team/editor.js" class="star__button" target="_blank">
       <div v-html="IconStar" class="star__button__icon"/>
       <div class="star__button__text">
         Star

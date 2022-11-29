@@ -3,7 +3,7 @@
     <div class="footer__container">
       <div class="footer__license">
         Copyright © 2022 <a href="//codex.so">CodeX</a><br>
-        Released under <a href="https://github.com/codex-team/editor.js/blob/next/LICENSE"><span class="footer__license__apache">the Apache 2 License</span></a>
+        Released under <a href="https://github.com/codex-team/editor.js/blob/next/LICENSE" target="_blank"><span class="footer__license__apache">the Apache 2 License</span></a>
       </div>
       <Button link="mailto:team@codex.so" text="Contact us" type="secondary" class="footer__contact"/>
     </div>

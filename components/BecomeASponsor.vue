@@ -1,6 +1,6 @@
 <template>
   <div class="become-sponsor">
-    <img src="assets/gift.svg" class="become-sponsor__icon">
+    <img src="assets/gift.svg" class="become-sponsor__icon" alt="gift">
     <div class="become-sponsor__title">
       Become a sponsor
     </div>
@@ -12,6 +12,7 @@
     <a
       href="https://codex.so/donate"
       class="become-sponsor__more"
+      target="_blank"
     >
       More options
     </a>
@@ -25,11 +26,11 @@
         <object type="image/svg+xml"
                 data="https://opencollective.com/editorjs/tiers/backer.svg?avatarHeight=36&amp;width=300"
                 v-if="grade.label === 'Backers'"></object>
-        <a :href="sponsor.link" class="sponsor" v-if="grade.label !== 'Backers'" v-for="sponsor in grade.items" :style="{'width': grade.size + 'px',
+        <a target="_blank" :href="sponsor.link" class="sponsor" v-if="grade.label !== 'Backers'" v-for="sponsor in grade.items" :style="{'width': grade.size + 'px',
                                                                      'height': grade.size + 'px'}">
           <img :src="sponsor.picture">
         </a>
-        <a :href="grade.link" class="sponsor" v-if="grade.label !== 'Backers'" :style="{'width': grade.size + 'px',
+        <a target="_blank" :href="grade.link" class="sponsor" v-if="grade.label !== 'Backers'" :style="{'width': grade.size + 'px',
                                                                      'height': grade.size + 'px'}">
             <img src="assets/gold_plus.svg" v-if="grade.label === 'Gold'" alt="gold">
             <img src="assets/silver_plus.svg" v-if="grade.label === 'Silver'" alt="silver">

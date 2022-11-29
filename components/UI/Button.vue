@@ -1,5 +1,5 @@
 <template>
-  <a :href="link" class="button" :class="{
+  <a target="_blank" :href="link" class="button" :class="{
     'button--support': type === 'support',
     'button--primary': type === 'primary',
     'button--demo': type === 'demo',

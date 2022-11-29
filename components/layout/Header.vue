@@ -5,10 +5,10 @@
       <Button type="support" text="Support Editor.js" :icon-path="starIcon" link="http://opencollective.com/editorjs"
               class="header__button_mobile"/>
       <div class="menu">
-        <a href="https://editorjs.io/getting-started" class="menu__link">Documentation</a>
-        <a href="https://github.com/editor-js/awesome-editorjs" class="menu__link">Awesome Plugins</a>
-        <a href="https://digest.editorjs.io" class="menu__link">Digest</a>
-        <a href="https://github.com/codex-team/editor.js" class="menu__link">GitHub</a>
+        <a target="_blank" href="https://editorjs.io/getting-started" class="menu__link">Documentation</a>
+        <a target="_blank" href="https://github.com/editor-js/awesome-editorjs" class="menu__link">Awesome Plugins</a>
+        <a target="_blank" href="https://digest.editorjs.io" class="menu__link">Digest</a>
+        <a target="_blank" href="https://github.com/codex-team/editor.js" class="menu__link">GitHub</a>
         <Button :icon-path="starIcon" type="support" text="Support Editor.js" link="http://opencollective.com/editorjs"
                 class="menu__button"/>
       </div>
