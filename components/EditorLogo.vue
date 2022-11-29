@@ -1,11 +1,11 @@
 <template>
-  <a href="/" class="editor-logo" :class="{
+  <div class="editor-logo" :class="{
     'editor-logo--small': size === 'small',
     'editor-logo--general': size === 'general',
   }">
-    <img class="editor-logo__icon" src="assets/logo.svg"/>
+    <img class="editor-logo__icon" src="assets/logo.svg" alt="logo"/>
     <p class="editor-logo__title"> Editor.js </p>
-  </a>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -20,10 +20,8 @@ defineProps<{
 <style lang="postcss" scoped>
 
 .editor-logo {
-  text-decoration: none;
   display: flex;
   align-items: center;
-  cursor: pointer;
 
   &__title {
     font-size: 14px;

@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <div class="header__container">
-      <EditorLogo size="small"/>
+      <a href="/" class="header__logo"><EditorLogo size="small"/></a>
       <Button type="support" text="Support Editor.js" :icon-path="starIcon" link="http://opencollective.com/editorjs"
               class="header__button_mobile"/>
       <div class="menu">
@@ -51,6 +51,11 @@
   width: 100%;
   height: 60px;
   border: 1px solid rgba(255, 255, 255, 0.3);
+
+  &__logo {
+    text-decoration: none;
+    cursor: pointer;
+  }
 
   &__button_mobile {
     display: none;
