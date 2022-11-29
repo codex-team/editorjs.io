@@ -25,20 +25,15 @@
         <object type="image/svg+xml"
                 data="https://opencollective.com/editorjs/tiers/backer.svg?avatarHeight=36&amp;width=300"
                 v-if="grade.label === 'Backers'"></object>
-        <div class="sponsor" v-if="grade.label !== 'Backers'" v-for="sponsor in grade.items" :style="{'width': grade.size + 'px',
+        <a :href="sponsor.link" class="sponsor" v-if="grade.label !== 'Backers'" v-for="sponsor in grade.items" :style="{'width': grade.size + 'px',
                                                                      'height': grade.size + 'px'}">
           <img :src="sponsor.picture">
-        </div>
-        <div class="sponsor" v-if="grade.label !== 'Backers'" :style="{'width': grade.size + 'px',
+        </a>
+        <a :href="grade.link" class="sponsor" v-if="grade.label !== 'Backers'" :style="{'width': grade.size + 'px',
                                                                      'height': grade.size + 'px'}">
-          <a
-            href="https://opencollective.com/editorjs/contribute/gold-sponsor-12748/checkout?interval=month&amount=1000">
             <img src="assets/gold_plus.svg" v-if="grade.label === 'Gold'" alt="gold">
-          </a>
-          <a href="https://opencollective.com/editorjs/contribute/sponsor-8679/checkout?interval=month&amount=100">
             <img src="assets/silver_plus.svg" v-if="grade.label === 'Silver'" alt="silver">
-          </a>
-        </div>
+        </a>
       </div>
     </div>
   </div>
@@ -59,6 +54,7 @@ const sponsors = [
       },
     ],
     size: 100,
+    link: "https://opencollective.com/editorjs/contribute/gold-sponsor-12748/checkout?interval=month&amount=1000",
   },
   {
     label: 'Silver',
@@ -70,6 +66,7 @@ const sponsors = [
       },
     ],
     size: 50,
+    link: "https://opencollective.com/editorjs/contribute/sponsor-8679/checkout?interval=month&amount=100",
   },
   {
     label: 'Backers',
