@@ -6,7 +6,8 @@ export default defineNuxtConfig({
     head: {
       link: [
         {rel: 'icon', type: 'image/png', href: 'favicon.png'}
-      ]
+      ],
+      title: 'Editor.js'
     }
   },
   typescript: {
