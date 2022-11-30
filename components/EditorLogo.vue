@@ -51,7 +51,7 @@ defineProps<{
   .editor-logo__icon {
     width: 86px;
     height: 86px;
-    -webkit-filter: drop-shadow(0 10px 5px rgba(0, 148, 255, 0.4));
+    filter: drop-shadow(0 10px 5px rgba(0, 148, 255, 0.4));
   }
 
   .editor-logo__title {
