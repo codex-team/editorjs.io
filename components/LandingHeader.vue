@@ -48,9 +48,6 @@
   }
 }
 </style>
-<script>
+<script setup>
 import Button from "./UI/Button";
-export default {
-  components: {Button}
-}
 </script>

@@ -73,16 +73,7 @@
   }
 }
 </style>
-<script>
+<script setup>
 import Button from "./UI/Button";
 import { IconMarker } from "@codexteam/icons"
-
-export default {
-  data() {
-    return {
-      IconMarker
-    }
-  },
-  components: {Button}
-}
 </script>

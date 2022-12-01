@@ -93,17 +93,8 @@
   }
 }
 </style>
-<script>
+<script setup>
 import EditorLogo from "../EditorLogo";
 import Button from "../UI/Button";
 import starIcon from "~/assets/star.svg";
-
-export default {
-  data() {
-    return {
-      starIcon,
-    };
-  },
-  components: {Button, EditorLogo}
-}
 </script>
