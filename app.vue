@@ -60,11 +60,7 @@ body {
   }
 }
 </style>
-<script>
-import EditorLogo from "./components/EditorLogo";
+<script setup>
 import Section from "./components/Section";
 import Star from "./components/Star";
-export default {
-  components: {Star, Section, EditorLogo}
-}
 </script>
