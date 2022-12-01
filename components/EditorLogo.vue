@@ -3,7 +3,9 @@
     'editor-logo--small': size === 'small',
     'editor-logo--general': size === 'general',
   }">
-    <img class="editor-logo__icon" src="assets/logo.svg" alt="logo"/>
+    <div class="editor-logo__icon">
+      <img src="assets/logo.svg" alt="logo"/>
+    </div>
     <p class="editor-logo__title"> Editor.js </p>
   </div>
 </template>
@@ -29,6 +31,10 @@ defineProps<{
     color: var(--color-text-primary);
     padding: 0;
   }
+
+  &__icon {
+    border-radius: 50%;
+  }
 }
 
 .editor-logo--small {
@@ -51,7 +57,7 @@ defineProps<{
   .editor-logo__icon {
     width: 86px;
     height: 86px;
-    filter: drop-shadow(0 10px 5px rgba(0, 148, 255, 0.4));
+    box-shadow: 0px 15px 24px -13px rgba(0, 148, 255, 0.97);
   }
 
   .editor-logo__title {
