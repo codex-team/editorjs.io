@@ -20,8 +20,8 @@
 
   &__container {
     @media (--small-viewport) {
-      padding-right: 5px;
-      padding-left: 5px;
+      padding-right: var(--layout-offset-x);
+      padding-left: var(--layout-offset-x);
     }
     max-width: var(--layout-container-width);
     width: 100%;

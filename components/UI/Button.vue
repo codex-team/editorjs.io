@@ -1,11 +1,5 @@
 <template>
-  <a target="_blank" :href="link" class="button" :class="{
-    'button--support': type === 'support',
-    'button--primary': type === 'primary',
-    'button--demo': type === 'demo',
-    'button--sponsor': type === 'sponsor',
-    'button--secondary': type === 'secondary'
-  }">
+  <a target="_blank" :href="link" :class="['button', `button--${type}`]">
     <div v-if="icon" v-html="icon" class="button__icon"/>
     <img v-if="iconPath" :src="iconPath" class="button__icon">
     <p class="button__text">{{ text }}</p>
