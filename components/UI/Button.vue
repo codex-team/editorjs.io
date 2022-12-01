@@ -11,7 +11,7 @@ defineProps<{
   /**
    * type of button
    */
-  type: 'support' | 'primary' | 'sponsor' | 'secondary' | 'demo' | 'support--mobile',
+  type: 'primary' | 'sponsor' | 'secondary' | 'demo' | 'support--mobile',
 
   /**
    * icon for button
@@ -49,19 +49,6 @@ defineProps<{
   &__text {
     align-self: center;
     text-align: center;
-  }
-}
-
-.button--support {
-  background: linear-gradient(270deg, #E858FF 0%, #9B42F3 82.81%);
-  border-radius: 8px;
-  padding: 4px 11px;
-  font-weight: 500;
-
-  .button__icon {
-    width: 12px;
-    height: 12px;
-    margin-right: 7px;
   }
 }
 

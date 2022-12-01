@@ -2,15 +2,15 @@
   <div class="header">
     <div class="header__container">
       <a href="/" class="header__logo"><EditorLogo size="small"/></a>
-      <Button type="support" text="Support Editor.js" :icon-path="starIcon" link="http://opencollective.com/editorjs"
-              class="header__button_mobile"/>
       <div class="menu">
         <a target="_blank" href="https://editorjs.io/getting-started" class="menu__link">Documentation</a>
         <a target="_blank" href="https://github.com/editor-js/awesome-editorjs" class="menu__link">Awesome Plugins</a>
         <a target="_blank" href="https://digest.editorjs.io" class="menu__link">Digest</a>
         <a target="_blank" href="https://github.com/codex-team/editor.js" class="menu__link">GitHub</a>
-        <Button :icon-path="starIcon" type="support" text="Support Editor.js" link="http://opencollective.com/editorjs"
-                class="menu__button"/>
+        <a target="_blank" href="http://opencollective.com/editorjs" class="menu__button">
+          <img :src="starIcon" class="menu__button__icon">
+          <p class="menu__button__text">Support Editor.js</p>
+        </a>
       </div>
     </div>
   </div>
@@ -45,8 +45,29 @@
   }
 
   &__button {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    border: 0;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    user-select: none;
+    background: linear-gradient(270deg, #E858FF 0%, #9B42F3 82.81%);
+    border-radius: 8px;
+    padding: 4px 11px;
+    font-weight: 500;
+
+    &__icon {
+      width: 12px;
+      height: 12px;
+      margin-right: 7px;
+    }
+
     @media (--small-viewport) {
-      display: none !important;
+      position: absolute;
+      right: var(--layout-offset-x);
+      top: 23px
     }
   }
 }
@@ -61,15 +82,6 @@
   &__logo {
     text-decoration: none;
     cursor: pointer;
-  }
-
-  &__button_mobile {
-    display: none;
-    position: absolute;
-    right: var(--layout-offset-x);
-    @media (--small-viewport) {
-      display: flex;
-    }
   }
 
   &__container {
@@ -95,6 +107,5 @@
 </style>
 <script setup>
 import EditorLogo from "../EditorLogo";
-import Button from "../UI/Button";
 import starIcon from "~/assets/star.svg";
 </script>
