@@ -11,7 +11,7 @@ defineProps<{
   /**
    * type of button
    */
-  type: 'primary' | 'sponsor' | 'secondary' | 'demo' | 'support--mobile',
+  type: 'primary' | 'secondary' | 'demo',
 
   /**
    * icon for button

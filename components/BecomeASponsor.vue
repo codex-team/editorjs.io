@@ -5,9 +5,9 @@
       Become a sponsor
     </div>
     <div class="become-sponsor__buttons">
-      <Button link="https://opencollective.com/editorjs/contribute/backer-8632/checkout?interval=month&amount=2&name=&legalName=&email=" type="sponsor" text="$2 / mo"/>
-      <Button link="https://opencollective.com/editorjs/contribute/backer-8632/checkout?interval=month&amount=10&name=&legalName=&email=" type="sponsor" text="$10 / mo"/>
-      <Button link="https://opencollective.com/editorjs/donate" type="sponsor" text="One-time"/>
+      <Sponsor link="https://opencollective.com/editorjs/contribute/backer-8632/checkout?interval=month&amount=2&name=&legalName=&email=" text="$2 / mo"/>
+      <Sponsor link="https://opencollective.com/editorjs/contribute/backer-8632/checkout?interval=month&amount=10&name=&legalName=&email=" text="$10 / mo"/>
+      <Sponsor link="https://opencollective.com/editorjs/donate" text="One-time"/>
     </div>
     <a
       href="https://codex.so/donate"
@@ -43,6 +43,7 @@
 <script setup>
 import Button from "./UI/Button";
 import logo from '~/assets/bucerius.jpeg';
+import Sponsor from "~/components/UI/Sponsor.vue";
 
 const sponsors = [
   {
