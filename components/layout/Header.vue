@@ -27,6 +27,12 @@
   justify-content: space-between;
   font-size: 14px;
 
+  @media (--small-viewport) {
+    max-width: 980px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
   &__link {
     color: var(--color-text-primary);
     text-decoration: none;
@@ -60,7 +66,7 @@
   &__button_mobile {
     display: none;
     position: absolute;
-    right: 20px;
+    right: var(--layout-offset-x);
     @media (--small-viewport) {
       display: flex;
     }
