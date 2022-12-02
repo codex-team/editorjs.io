@@ -2,7 +2,7 @@
   <div class="overview">
     <div class="container">
       <img class="overview__image" src="assets/editor.jpg" alt="Editor.js example"/>
-      <Button class="overview__cta" type="demo" text="Open Demo" :icon="IconMarker"/>
+      <Button class="overview__cta" type="primary" text="Open Demo" :icon="IconMarker"/>
       <img class="mobile-image" src="assets/editor.jpg" alt="Editor.js example"/>
     </div>
   </div>

@@ -11,7 +11,7 @@ defineProps<{
   /**
    * type of button
    */
-  type: 'primary' | 'secondary' | 'demo',
+  type: 'primary' | 'secondary',
 
   /**
    * icon for button
@@ -56,15 +56,6 @@ defineProps<{
   background-color: var(--color-button-primary);
   box-shadow: 0 8px 25px rgba(28, 173, 255, 0.46);
   border-radius: 10px;
-  padding: 11px 26px;
-  font-weight: 700;
-  font-size: 16px;
-}
-
-.button--demo {
-  background-color: var(--color-button-primary);
-  box-shadow: 0 8px 25px rgba(28, 173, 255, 0.46);
-  border-radius: 10px;
   font-size: 14px;
   font-weight: 700;
   padding: 9px 14px;
@@ -75,16 +66,6 @@ defineProps<{
     align-items: center;
     justify-content: center;
   }
-}
-
-.button--sponsor {
-  padding: 7px 10px;
-  font-weight: 700;
-  font-size: 14px;
-  color: white;
-  border-radius: 10px;
-  background: linear-gradient(194.57deg, #6BB8FF 6.66%, #3B7CDF 88.43%);
-  box-shadow: 0 2px 4px rgba(37, 123, 225, 0.32);
 }
 
 .button--secondary {
