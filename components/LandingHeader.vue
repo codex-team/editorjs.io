@@ -2,17 +2,17 @@
   <div class="landing-header">
     <EditorLogo size="general" :class="'landing-header__editor-logo'"/>
     <div class="landing-header__title">
-      Free block-style editor with a universal JSON output
+      Free block-style editor with a universal JSON output
     </div>
     <div class="landing-header__description">
-      Editor.js provides maximum power for developers and products staying focused on the end-user experience
+      Editor.js provides maximum power for developers and products staying focused on the end-user experience
     </div>
-    <Button type="primary" text="Get Started" link="https://editorjs.io/getting-started"/>
+    <UiButton type="primary" text="Get Started" link="https://editorjs.io/getting-started"/>
     <UnfairAdvantages :class="'landing-header__ua'"/>
   </div>
 </template>
 
-<style>
+<style lang="postcss">
 .landing-header {
   background: linear-gradient(180deg, #E3F2FF 0%, rgb(250, 253, 255) 98%);
   padding: 110px var(--layout-offset-x) 0 var(--layout-offset-x);
@@ -36,10 +36,10 @@
     line-height: 50px;
     margin-top: 51px;
     text-align: center;
-    font-size: 47px;
-    max-width: 651px;
+    font-size: 46px;
+    max-width: 670px;
     width: 100%;
-    font-weight: 800;
+    font-weight: 900;
   }
 
   &__ua {
@@ -48,6 +48,3 @@
   }
 }
 </style>
-<script setup>
-import Button from "./UI/Button";
-</script>
