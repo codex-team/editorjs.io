@@ -7,13 +7,13 @@
     <div class="codex__text">
       Editor.js made by <a href="//codex.so?from=editorjs-join" class="codex__text__link" target="_blank">CodeX</a> — the non-profit team of passionate talents around the world interested in making high-quality open-source products. We are open to young people who want to constantly improve their skills and grow professionally with experiments in cutting-edge technologies.
     </div>
-    <Button link="//codex.so/join?from=editorjs-join-button" text="Join CodeX" type="secondary" class="codex__link"/>
+    <UiButton link="//codex.so/join?from=editorjs-join-button" text="Join CodeX" type="secondary" class="codex__link"/>
   </div>
 
 </template>
 
 
-<style scoped>
+<style scoped lang="postcss">
 .codex {
   display: flex;
   align-items: center;
@@ -41,6 +41,3 @@
   }
 }
 </style>
-<script setup>
-import Button from "./UI/Button";
-</script>
