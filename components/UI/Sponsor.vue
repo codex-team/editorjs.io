@@ -1,6 +1,6 @@
 <template>
   <a target="_blank" class="sponsor_button" :href="link">
-    <p class="sponsor_button__text">One-time</p>
+    <p class="sponsor_button__text">{{ text }}</p>
   </a>
 </template>
 
