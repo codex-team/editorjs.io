@@ -1,2 +1,3 @@
-# editorjs.io
-Source code of the Editor.js homepage
+# Editor.js homepage
+
+This repository contains the source code for the [editorjs.io](https://editorjs.io)
