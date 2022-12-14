@@ -3566,9 +3566,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"codex.docs@npm:2.2.0-rc.4":
-  version: 2.2.0-rc.4
-  resolution: "codex.docs@npm:2.2.0-rc.4"
+"codex.docs@npm:2.2.0-rc.7":
+  version: 2.2.0-rc.7
+  resolution: "codex.docs@npm:2.2.0-rc.7"
   dependencies:
     "@aws-sdk/client-s3": ^3.181.0
     "@codex-team/config-loader": 0.1.0-rc1
@@ -3602,7 +3602,7 @@ __metadata:
     zod: ^3.19.1
   bin:
     codex.docs: dist/backend/app.js
-  checksum: c7bc9b059a077d3a352918fde49021edd89408c56976c0d4ec043cd96ec207c66f7c5f608b1269c3de095ef1f0b980803dadac0f53036681f2c9a3d90d9d8a44
+  checksum: 7d1a831246a622b45edfa2e3a64d852906629e4463efc2d8d9a49cddfd7cf616f7c74dc181f9557dd20758ba1cee766c1432184be24ada470a3913fb3409bdba
   languageName: node
   linkType: hard
 
@@ -8492,7 +8492,7 @@ __metadata:
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
     "@codexteam/icons": ^0.0.5
-    codex.docs: 2.2.0-rc.4
+    codex.docs: 2.2.0-rc.7
     concurrently: ^7.1.0
     modern-css-reset: ^1.4.0
     nuxt: 3.0.0-rc.6
