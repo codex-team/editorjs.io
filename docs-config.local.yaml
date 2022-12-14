@@ -1,0 +1,7 @@
+staticBuild:
+  leaveOutputDirFiles: true
+  outputDir: dist
+  indexPage:
+    enabled: false
+    uri: base-concepts
+

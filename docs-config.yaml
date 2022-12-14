@@ -1,0 +1,43 @@
+port: 3000
+host: "localhost"
+uploads:
+  driver: "local"
+  local:
+    path: "./uploads"
+password: secretpassword
+frontend:
+  title: Editor.js
+  startPage: ""
+  description: A block-styled editor with clean JSON output
+  menu:
+    - title: Guides
+      uri: "/base-concepts"
+    - title: API
+      uri: "/api"
+    - title: Plugins
+      uri: https://github.com/editor-js
+    - title: GitHub
+      uri: https://github.com/codex-team/editor.js
+    - title: Support Project
+      uri: https://opencollective.com/editorjs
+  landingFrameSrc: https://codex.so/editor?frame=1
+  misprintsChatId: ""
+  yandexMetrikaId: ""
+  carbon:
+    serve: ""
+    placement: ""
+
+auth:
+  secret: supersecret
+
+staticBuild:
+  leaveOutputDirFiles: true
+  outputDir: dist
+  indexPage:
+    enabled: false
+    uri: base-concepts
+
+database:
+  driver: local # you can change database driver here. 'mongodb' or 'local'
+  local:
+    path: ./db

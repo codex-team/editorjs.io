@@ -1,9 +1,11 @@
 {
   "private": true,
   "scripts": {
+    "build-docs": "codex.docs build-static",
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
+    "start-docs": "codex.docs",
     "preview": "nuxt preview"
   },
   "devDependencies": {
@@ -15,6 +17,8 @@
   },
   "dependencies": {
     "@codexteam/icons": "^0.0.5",
+    "codex.docs": "2.2.0-rc.4",
+    "concurrently": "^7.1.0",
     "modern-css-reset": "^1.4.0"
   }
 }
