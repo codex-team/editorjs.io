@@ -3,11 +3,11 @@
     <div class="header__container">
       <a href="/" class="header__logo"><EditorLogo size="small"/></a>
       <div class="menu">
-        <a target="_blank" href="https://editorjs.io/getting-started" class="menu__link">Documentation</a>
-        <a target="_blank" href="https://github.com/editor-js/awesome-editorjs" class="menu__link">Awesome Plugins</a>
-        <a target="_blank" href="https://digest.editorjs.io" class="menu__link">Digest</a>
-        <a target="_blank" href="https://github.com/codex-team/editor.js" class="menu__link">GitHub</a>
-        <a target="_blank" href="http://opencollective.com/editorjs" class="menu__button">
+        <a target="_blank" href="https://editorjs.io/getting-started" class="menu__link" v-on:click="onClick('Documentation')">Documentation</a>
+        <a target="_blank" href="https://github.com/editor-js/awesome-editorjs" class="menu__link" v-on:click="onClick('Awesome Plugins')">Awesome Plugins</a>
+        <a target="_blank" href="https://digest.editorjs.io" class="menu__link" v-on:click="onClick('Digest')">Digest</a>
+        <a target="_blank" href="https://github.com/codex-team/editor.js" class="menu__link" v-on:click="onClick('GitHub')">GitHub</a>
+        <a target="_blank" href="http://opencollective.com/editorjs" class="menu__button" v-on:click="onClick('Support')">
           <img :src="starIcon" class="menu__button__icon">
           <p class="menu__button__text">Support Editor.js</p>
         </a>
@@ -105,7 +105,19 @@
   }
 }
 </style>
-<script setup>
+<script setup lang="ts">
 import EditorLogo from "../EditorLogo";
 import starIcon from "~/assets/star.svg";
+import {track} from "@amplitude/analytics-browser";
+
+const onClick = (buttonText) => {
+  track(buttonText)
+}
+
+defineProps<{
+  /**
+   * Callback for click events in this component
+   */
+  onClick: (buttonText: string) => void,
+}>()
 </script>

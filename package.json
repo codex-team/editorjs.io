@@ -14,6 +14,7 @@
     "vue-tsc": "^0.39.4"
   },
   "dependencies": {
+    "@amplitude/analytics-browser": "^1.6.6",
     "@codexteam/icons": "^0.0.5",
     "modern-css-reset": "^1.4.0"
   }

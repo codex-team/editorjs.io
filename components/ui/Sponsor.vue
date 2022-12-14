@@ -1,10 +1,15 @@
 <template>
-  <a target="_blank" class="sponsor_button" :href="link">
+  <a target="_blank" class="sponsor_button" :href="link" v-on:click="onClick">
     <p class="sponsor_button__text">{{ text }}</p>
   </a>
 </template>
 
 <script setup lang="ts">
+import {track} from "@amplitude/analytics-browser";
+
+const onClick = () => {
+  track('Sponsor')
+}
 defineProps<{
   /**
    * Button text

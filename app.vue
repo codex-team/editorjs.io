@@ -1,5 +1,5 @@
 <template>
-  <LayoutHeader />
+  <LayoutHeader on-click="on" />
   <LandingHeader />
   <OverviewImage />
   <Section :type="'output'">
@@ -60,7 +60,14 @@ body {
   }
 }
 </style>
-<script setup>
+<script setup lang="ts">
 import Section from "./components/Section";
 import Star from "./components/Star";
+import {init, track} from '@amplitude/analytics-browser';
+
+init("API_KEY");
+
+const onClick = (buttonText: string) => {
+  track(buttonText);
+};
 </script>
