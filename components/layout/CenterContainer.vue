@@ -6,7 +6,9 @@
 
 <style>
 .center-container {
-  max-width: var(--layout-content-max-width);
+  max-width: var(--layout-container-max-width);
   margin: 0 auto;
+  width: 100%;
+  padding: 0 var(--layout-padding-horizontal);
 }
 </style>

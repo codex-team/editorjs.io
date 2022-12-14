@@ -1,6 +1,6 @@
-import {defineNuxtConfig} from 'nuxt'
-
-// https://v3.nuxtjs.org/api/configuration/nuxt-config
+/**
+ * https://v3.nuxtjs.org/api/configuration/nuxt-config
+ */
 export default defineNuxtConfig({
   app: {
     head: {
@@ -13,9 +13,6 @@ export default defineNuxtConfig({
   typescript: {
     typeCheck: true
   },
-  build: {
-    transpile: ['@codexteam/icons']
-  },
   postcss: {
     plugins: {
       'postcss-preset-env': {},
@@ -25,5 +22,9 @@ export default defineNuxtConfig({
   css: [
     'modern-css-reset',
     '~/assets/styles/vars.pcss'
+  ],
+  modules: [
+    'nuxt-icons',
+    '@codexteam/nuxt-icons'
   ],
 })

@@ -1,111 +1,132 @@
 <template>
   <div class="header">
-    <div class="header__container">
-      <a href="/" class="header__logo"><EditorLogo size="small"/></a>
-      <div class="menu">
-        <a target="_blank" href="https://editorjs.io/getting-started" class="menu__link">Documentation</a>
-        <a target="_blank" href="https://github.com/editor-js/awesome-editorjs" class="menu__link">Awesome Plugins</a>
-        <a target="_blank" href="https://digest.editorjs.io" class="menu__link">Digest</a>
-        <a target="_blank" href="https://github.com/codex-team/editor.js" class="menu__link">GitHub</a>
-        <a target="_blank" href="http://opencollective.com/editorjs" class="menu__button">
-          <img :src="starIcon" class="menu__button__icon">
-          <p class="menu__button__text">Support Editor.js</p>
-        </a>
-      </div>
-    </div>
+    <LayoutCenterContainer
+      class="header__container"
+    >
+      <a href="/" class="header__link header__link--logo">
+        <nuxt-icon name="logo" :filled="true" />
+        Editor.js
+      </a>
+
+      <a target="_blank" href="https://editorjs.io/getting-started" class="header__link">
+        Documentation
+      </a>
+      <a target="_blank" href="https://github.com/editor-js/awesome-editorjs" class="header__link">
+        Awesome Plugins
+      </a>
+      <a target="_blank" href="https://digest.editorjs.io" class="header__link">
+        Digest
+      </a>
+      <a target="_blank" href="https://github.com/codex-team/editor.js" class="header__link">
+        GitHub
+      </a>
+      <a target="_blank" href="http://opencollective.com/editorjs" class="header__link header__link--support">
+        <codex-icon name="IconHeart" />
+        Support Editor.js
+      </a>
+    </LayoutCenterContainer>
   </div>
 </template>
 
-<style scoped>
-
-.menu {
-  max-width: 560px;
-  width: 100%;
-  align-items: center;
-  display: flex;
-  gap: 10px;
-  justify-content: space-between;
-  font-size: 14px;
-
-  @media (--small-viewport) {
-    max-width: 980px;
-    padding-left: 5px;
-    padding-right: 5px;
-  }
-
-  &__link {
-    color: var(--color-text-primary);
-    text-decoration: none;
-    padding: 9px 6px;
-    font-weight: 500;
-    white-space: nowrap;
-    @media (--small-viewport) {
-      padding: 20px 0;
-    }
-  }
-
-  &__button {
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    border: 0;
-    color: white;
-    cursor: pointer;
-    font-size: 14px;
-    user-select: none;
-    background: linear-gradient(270deg, #E858FF 0%, #9B42F3 82.81%);
-    border-radius: 8px;
-    padding: 4px 11px;
-    font-weight: 500;
-
-    &__icon {
-      width: 12px;
-      height: 12px;
-      margin-right: 7px;
-    }
-
-    @media (--small-viewport) {
-      position: absolute;
-      right: var(--layout-offset-x);
-      top: 23px
-    }
-  }
-}
-
+<style scoped lang="postcss">
 .header {
+  position: sticky;
+  top: 0;
   display: flex;
   justify-content: center;
-  width: 100%;
-  height: 60px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-
-  &__logo {
-    text-decoration: none;
-    cursor: pointer;
-  }
+  height: var(--layout-header-height);
+  font-size: 14px;
+  letter-spacing: -0.15px;
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(13px);
 
   &__container {
     display: flex;
-    max-width: var(--layout-container-width);
-    width: 100%;
-    padding: 0 20px 0 20px;
     justify-content: space-between;
     align-items: center;
   }
 
-  @media (--small-viewport) {
-    height: 100px;
-    padding: 5px;
+  &__link {
+    display: inline-flex;
+    text-decoration: none;
+    color: inherit;
+    padding: 6px 9px;
+    border-radius: 8px;
+    margin-left: 10px;
+    line-height: 20px;
+    font-weight: 500;
 
-    &__container {
-      padding: 20px 0 20px 0;
-      flex-direction: column;
-      align-items: flex-start;
+    ::v-deep(svg) {
+      width: 20px;
+      height: 20px;
+      margin-right: 4px;
+    }
+
+    &:hover {
+      background: var(--color-background-hover);
+    }
+
+    &--logo {
+      margin-left: 0;
+      margin-right: auto;
+      font-weight: 700;
+
+      ::v-deep(.nuxt-icon) {
+        display: inline-flex;
+        margin-right: 8px;
+
+        svg {
+          width: 24px;
+          height: 24px;
+          margin: -2px 0;
+        }
+      }
+    }
+
+    &--support {
+      position: relative;
+      background: linear-gradient(270deg, #DF22CC 0%, #FE2070 100%);
+      background-clip: text;
+      color: #EE3683;
+      box-shadow: 0 1px 2px rgba(235, 102, 166, 0.49);
+
+      &:hover {
+        background: transparent;
+        box-shadow: 0 2px 3px rgba(235, 102, 166, 0.19);
+        color: #fff;
+        background: #fff;
+        background-clip: text;
+      }
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+      }
+
+      &::before {
+        background: linear-gradient(270deg, #E544FF 0%, #FF1F70 100%);
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+        border-radius: 8px;
+      }
+
+      &::after {
+        background: #FFF5F8;
+        bottom: 1px;
+        left: 1px;
+        right: 1px;
+        top: 1px;
+        border-radius: 7px;
+      }
+
+      &:hover::after {
+        background: #FF2567;
+      }
     }
   }
 }
 </style>
-<script setup>
-import EditorLogo from "../EditorLogo";
-import starIcon from "~/assets/star.svg";
-</script>
