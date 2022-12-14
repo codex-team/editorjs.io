@@ -1,5 +1,10 @@
 <template>
-  <div class="header">
+  <div
+    class="header"
+    :class="{
+      'header--menu-opened': menuOpened
+    }"
+  >
     <LayoutCenterContainer
       class="header__container"
     >
@@ -8,25 +13,39 @@
         Editor.js
       </a>
 
-      <a target="_blank" href="https://editorjs.io/getting-started" class="header__link">
-        Documentation
-      </a>
-      <a target="_blank" href="https://github.com/editor-js/awesome-editorjs" class="header__link">
-        Awesome Plugins
-      </a>
-      <a target="_blank" href="https://digest.editorjs.io" class="header__link">
-        Digest
-      </a>
-      <a target="_blank" href="https://github.com/codex-team/editor.js" class="header__link">
-        GitHub
-      </a>
-      <a target="_blank" href="http://opencollective.com/editorjs" class="header__link header__link--support">
-        <codex-icon name="IconHeart" />
-        Support Editor.js
-      </a>
+      <div
+        class="header__burger"
+        @click="menuOpened = !menuOpened"
+      >
+        <codex-icon :name="menuOpened === false ? 'IconAlignJustify' : 'IconCross'" />
+      </div>
+
+      <div class="header__menu">
+        <a target="_blank" href="https://editorjs.io/getting-started" class="header__link">
+          Documentation
+        </a>
+        <a target="_blank" href="https://github.com/editor-js/awesome-editorjs" class="header__link">
+          Awesome Plugins
+        </a>
+        <a target="_blank" href="https://digest.editorjs.io" class="header__link">
+          Digest
+        </a>
+        <a target="_blank" href="https://github.com/codex-team/editor.js" class="header__link">
+          GitHub
+        </a>
+        <a target="_blank" href="http://opencollective.com/editorjs" class="header__link header__link--support">
+          <codex-icon name="IconHeart" />
+          Support Editor.js
+        </a>
+      </div>
     </LayoutCenterContainer>
   </div>
 </template>
+
+<script setup lang="ts">
+const menuOpened = ref(false);
+
+</script>
 
 <style scoped lang="postcss">
 .header {
@@ -34,16 +53,56 @@
   top: 0;
   display: flex;
   justify-content: center;
-  height: var(--layout-header-height);
   font-size: 14px;
   letter-spacing: -0.15px;
   background-color: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(13px);
 
+  @media --desktop {
+    height: var(--layout-header-height);
+  }
+
   &__container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media (--small-viewport) {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+
+    @media (--small-viewport) {
+      flex-basis: 100%;
+      flex-direction: column;
+      align-items: stretch;
+      padding-bottom: 7px;
+
+      display: none;
+    }
+  }
+
+  &--menu-opened &__menu {
+    @media (--small-viewport) {
+      display: flex;
+    }
+  }
+
+  &__burger {
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media --desktop {
+      display: none;
+    }
   }
 
   &__link {
@@ -55,6 +114,12 @@
     margin-left: 10px;
     line-height: 20px;
     font-weight: 500;
+    white-space: nowrap;
+
+    @media (--small-viewport) {
+      margin-left: 0;
+      margin-top: 10px;
+    }
 
     ::v-deep(svg) {
       width: 20px;
@@ -67,9 +132,13 @@
     }
 
     &--logo {
-      margin-left: 0;
+      margin-left: -9px;
       margin-right: auto;
       font-weight: 700;
+
+      @media (--small-viewport) {
+        margin-top: 0;
+      }
 
       ::v-deep(.nuxt-icon) {
         display: inline-flex;

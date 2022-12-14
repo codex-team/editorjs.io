@@ -1,9 +1,16 @@
+@custom-media --small-viewport (max-width: 710px);
+@custom-media --desktop (min-width: 711px);
+
 :root {
   --layout-container-max-width: 1180px;
   --layout-padding-horizontal: 20px;
   --layout-header-height: 60px;
 
   --color-background-hover: #F0F5F9;
+
+  @media (--small-viewport) {
+    --layout-padding-horizontal: 15px;
+  }
 
 
 
@@ -45,5 +52,3 @@
 
   --layout-offset-x: 10px;
 }
-
-@custom-media --small-viewport (max-width: 980px);
