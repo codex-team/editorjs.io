@@ -1,25 +1,29 @@
 <template>
   <div class="landing-header">
+    <LayoutCenterContainer>
     <div class="landing-header__logo">
-      <SvgLogo alt="Editor.js shining logo" width="86" height="86" />
-      <div class="landing-header__logo-title">
-        Editor.js
+        <SvgLogo alt="Editor.js shining logo" width="86" height="86" />
+        <div class="landing-header__logo-title">
+          Editor.js
+        </div>
       </div>
-    </div>
 
-    <div class="landing-header__title">
-      Free block-style editor with a universal JSON output
-    </div>
-    <div class="landing-header__description">
-      Editor.js provides maximum power for developers and products staying focused on the end-user experience
-    </div>
-    <UiButton
-      type="primary"
-      big
-      text="Get Started"
-      link="https://editorjs.io/getting-started"
-    />
-    <UnfairAdvantages :class="'landing-header__ua'"/>
+      <div class="landing-header__title">
+        Free block-style editor with a universal JSON output
+      </div>
+      <div class="landing-header__description">
+        Editor.js provides maximum power for developers and products staying focused on the end-user experience
+      </div>
+      <UiButton
+        type="primary"
+        big
+        text="Get Started"
+        link="/getting-started"
+      />
+      <UnfairAdvantages
+        class="landing-header__ua"
+      />
+    </LayoutCenterContainer>
   </div>
 </template>
 
@@ -30,15 +34,36 @@ import SvgLogo from '~/assets/logo.svg';
 
 <style lang="postcss">
 .landing-header {
-  padding: 110px var(--layout-offset-x) 0 var(--layout-offset-x);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  --block-padding-vertical: 110px;
+
+  --logo-size: 86px;
+  --logo-text-size: 40px;
+  --logo-text-margin: 22px;
+
+  --logo-title-size: 47px;
+  --logo-title-line-hight: 50px;
+
+  --sections-margin: 56px;
+
+
+  @media (--small-viewport) {
+    --block-padding-vertical: 50px;
+
+    --logo-size: 60px;
+    --logo-text-size: 22px;
+    --logo-text-margin: 10px;
+
+    --logo-title-size: 22px;
+    --logo-title-line-hight: 26px;
+
+    --sections-margin: 20px;
+  }
+
+
+  padding: var(--block-padding-vertical) var(--layout-offset-x) calc(var(--block-padding-vertical) + 10px);
   text-align: center;
 
   &__logo {
-    --logo-size: 86px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -58,8 +83,8 @@ import SvgLogo from '~/assets/logo.svg';
     }
 
     &-title {
-      margin-top: 20px;
-      font-size: 40px;
+      margin-top: var(--logo-text-margin);
+      font-size: var(--logo-text-size);
       font-weight: 700;
       letter-spacing: 0.1px;
       line-height: 48px;
@@ -67,16 +92,16 @@ import SvgLogo from '~/assets/logo.svg';
   }
 
   &__title {
-    line-height: 50px;
-    margin-top: 56px;
-    font-size: 47px;
+    line-height: var(--logo-title-line-hight);
+    margin: var(--sections-margin) auto 0;
+    font-size: var(--logo-title-size);
     max-width: 680px;
     letter-spacing: 0.38px;
     font-weight: 900;
   }
 
   &__description {
-    margin: 56px auto;
+    margin: var(--sections-margin) auto;
     font-size: 16px;
     line-height: 22px;
     max-width: 460px;
@@ -87,7 +112,6 @@ import SvgLogo from '~/assets/logo.svg';
 
   &__ua {
     margin-top: 110px;
-    margin-bottom: 130px;
   }
 }
 </style>

@@ -106,6 +106,8 @@ const menuOpened = ref(false);
   }
 
   &__burger {
+    user-select: none;
+
     @media --desktop {
       display: none;
     }
@@ -141,9 +143,12 @@ const menuOpened = ref(false);
       margin-right: 4px;
     }
 
-    &:hover {
-      background: var(--color-background-hover);
+    @media (hover: hover) {
+      &:hover {
+        background: var(--color-background-hover);
+      }
     }
+
 
     &--logo {
       margin-left: -9px;
@@ -169,12 +174,14 @@ const menuOpened = ref(false);
       color: #EE3683;
       box-shadow: 0 1px 2px rgba(235, 102, 166, 0.49);
 
-      &:hover {
-        background: transparent;
-        box-shadow: 0 2px 3px rgba(235, 102, 166, 0.19);
-        color: #fff;
-        background: #fff;
-        background-clip: text;
+      @media (hover: hover) {
+        &:hover {
+          background: transparent;
+          box-shadow: 0 2px 3px rgba(235, 102, 166, 0.19);
+          color: #fff;
+          background: #fff;
+          background-clip: text;
+        }
       }
 
       &::before,
@@ -202,9 +209,11 @@ const menuOpened = ref(false);
         border-radius: 7px;
       }
 
-      &:hover::after,
-      &:hover::before {
-        background: #FF2567;
+      @media (hover: hover) {
+        &:hover::after,
+        &:hover::before {
+          background: #FF2567;
+        }
       }
     }
   }
