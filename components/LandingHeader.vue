@@ -111,7 +111,7 @@ import SvgLogo from '~/assets/logo.svg';
   }
 
   &__ua {
-    margin-top: 110px;
+    margin-top: var(--block-padding-vertical);
   }
 }
 </style>
