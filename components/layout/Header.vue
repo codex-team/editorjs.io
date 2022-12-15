@@ -155,13 +155,9 @@ const menuOpened = ref(false);
 
       ::v-deep(svg) {
         display: inline-flex;
-        margin-right: 8px;
-
-        svg {
-          width: 24px;
-          height: 24px;
-          margin: -2px 0;
-        }
+        width: 24px;
+        height: 24px;
+        margin: -2px 8px -2px 0;
       }
     }
 

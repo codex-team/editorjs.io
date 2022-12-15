@@ -48,6 +48,9 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: linear-gradient(180deg, #F1F8FF 0%, #fff 100%);
+  background-size: 100vw 100vh;
+  background-repeat: no-repeat;
 }
 
 .api-image {
