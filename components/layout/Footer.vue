@@ -23,7 +23,7 @@
       padding-right: var(--layout-offset-x);
       padding-left: var(--layout-offset-x);
     }
-    max-width: var(--layout-container-width);
+    max-width: var(--layout-container-max-width);
     width: 100%;
     display: flex;
     justify-content: space-between;
