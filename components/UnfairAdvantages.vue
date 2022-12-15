@@ -36,12 +36,11 @@ const advantages = [
 ]
 </script>
 
-<style scoped>
+<style scoped lang="postcss">
   .ua {
     display: flex;
     max-width: 1024px;
     width: 100%;
-    margin-top: 120px;
     & .ua__item__wrapper:last-child > .ua__delimiter {
       display: none;
     }

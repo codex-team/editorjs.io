@@ -115,6 +115,7 @@ const menuOpened = ref(false);
       display: flex;
       align-items: center;
       justify-content: center;
+      animation: burger-in 200ms ease;
     }
   }
 
@@ -206,6 +207,16 @@ const menuOpened = ref(false);
         background: #FF2567;
       }
     }
+  }
+}
+
+@keyframes burger-in {
+  from {
+    transform: rotate(90deg);
+  }
+
+  to {
+    transform: scale(1.2);
   }
 }
 </style>
