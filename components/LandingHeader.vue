@@ -1,8 +1,10 @@
 <template>
   <div class="landing-header">
     <LayoutCenterContainer>
-    <div class="landing-header__logo">
-        <SvgLogo alt="Editor.js shining logo" width="86" height="86" />
+      <div class="landing-header__logo">
+        <div class="landing-header__logo-pic">
+          <SvgLogo alt="Editor.js shining logo" width="86" height="86" />
+        </div>
         <div class="landing-header__logo-title">
           Editor.js
         </div>
@@ -59,7 +61,6 @@ import SvgLogo from '~/assets/logo.svg';
     --sections-margin: 20px;
   }
 
-
   padding: var(--block-padding-vertical) var(--layout-offset-x) calc(var(--block-padding-vertical) + 10px);
   text-align: center;
 
@@ -68,19 +69,57 @@ import SvgLogo from '~/assets/logo.svg';
     flex-direction: column;
     align-items: center;
 
-    svg {
-      width: var(--logo-size);
-      height: var(--logo-size);
+    &-pic {
+      position: relative;
+
+      @media (hover: hover) {
+        will-change: transform;
+        animation: attack 220ms 8000ms cubic-bezier(.97,-0.06,1,.05) forwards;
+        z-index: 2;
+      }
+
+      svg {
+        width: var(--logo-size);
+        height: var(--logo-size);
+
+        @media (hover: hover) {
+          will-change: transform;
+          animation: easter 500ms ease infinite;
+          animation-play-state: paused;
+        }
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+
+        --shadow-width: calc(var(--logo-size) * 0.8);
+
+        width: var(--shadow-width);
+        height: calc(var(--logo-size) * 0.3);
+        background-color: rgba(0, 172, 255, 0.77);
+        border-radius: 50%;
+        top: calc(var(--logo-size) * 0.8);
+        left: 50%;
+        margin-left: calc(var(--shadow-width) / -2);
+        filter: blur(8px);
+
+        @media (hover: hover) {
+          will-change: transform, blur;
+          animation: easter-shadow 500ms ease infinite;
+          animation-play-state: paused;
+        }
+      }
+
+      @media (hover: hover) {
+        &:hover svg,
+        &:hover::before {
+          animation-play-state: running;
+        }
+      }
     }
 
-    &::before {
-      content: '';
-      position: absolute;
-      width: var(--logo-size);
-      height: var(--logo-size);
-      box-shadow: 0 16px 18px -7px rgba(0, 172, 255, 0.77);
-      border-radius: 50%;
-    }
+
 
     &-title {
       margin-top: var(--logo-text-margin);
@@ -104,14 +143,60 @@ import SvgLogo from '~/assets/logo.svg';
     margin: var(--sections-margin) auto;
     font-size: 16px;
     line-height: 22px;
-    max-width: 460px;
-    letter-spacing: -0.32px;
+    max-width: 470px;
+    letter-spacing: -0.12px;
     color: var(--color-text-secondary);
     font-weight: 500;
   }
 
   &__ua {
     margin-top: var(--block-padding-vertical);
+  }
+}
+
+@keyframes easter {
+  0% {
+    transform: none;
+  }
+
+  90% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: none;
+  }
+}
+
+@keyframes easter-shadow {
+  0% {
+    transform: none;
+    filter: blur(5px);
+  }
+
+  90% {
+    transform: translateY(-4px) scaleX(0.7);
+    filter: blur(10px);
+  }
+
+  100% {
+    transform: none;
+    filter: blur(5px);
+  }
+}
+
+@keyframes attack {
+  from {
+    transform: none;
+  }
+
+  99% {
+    transform: scale(34) translateY(20px);
+
+  }
+
+  100% {
+    opacity: 0;
   }
 }
 </style>

@@ -25,7 +25,7 @@
 const advantages = [
   {
     title: 'Free and open-source',
-    text: 'Improved by the whole world. You ould join.'
+    text: 'Improves by the whole world. You can join.'
   },
   {
     title: 'Clean UI/UX',
@@ -33,7 +33,7 @@ const advantages = [
   },
   {
     title: 'Simple API driven',
-    text: 'Really simple. Create an any tool. Lots of already created.'
+    text: 'Really simple. Create any tool. Lots of already created.'
   },
   {
     title: 'Powered by CodeX',
