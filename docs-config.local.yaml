@@ -1,5 +1,5 @@
 staticBuild:
-  leaveOutputDirFiles: true
+  overwrite: false
   outputDir: dist
   indexPage:
     enabled: false
