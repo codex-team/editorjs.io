@@ -4,7 +4,7 @@
     'editor-logo--general': size === 'general',
   }">
     <div class="editor-logo__icon">
-      <img src="assets/logo.svg" alt="logo"/>
+      <img src="~/assets/logo.svg" alt="logo"/>
     </div>
     <p class="editor-logo__title"> Editor.js </p>
   </div>

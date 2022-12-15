@@ -1,6 +1,6 @@
 <template>
   <div class="become-sponsor">
-    <img src="assets/gift.svg" class="become-sponsor__icon" alt="gift">
+    <img src="~/assets/gift.svg" class="become-sponsor__icon" alt="gift">
     <div class="become-sponsor__title">
       Become a sponsor
     </div>
@@ -32,8 +32,8 @@
         </a>
         <a target="_blank" :href="grade.link" class="sponsor" v-if="grade.label !== 'Backers'" :style="{'width': grade.size + 'px',
                                                                      'height': grade.size + 'px'}">
-            <img src="assets/gold_plus.svg" v-if="grade.label === 'Gold'" alt="gold">
-            <img src="assets/silver_plus.svg" v-if="grade.label === 'Silver'" alt="silver">
+            <img src="~/assets/gold_plus.svg" v-if="grade.label === 'Gold'" alt="gold">
+            <img src="~/assets/silver_plus.svg" v-if="grade.label === 'Silver'" alt="silver">
         </a>
       </div>
     </div>

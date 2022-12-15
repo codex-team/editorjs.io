@@ -2,14 +2,14 @@
 
 <template>
   <div class="resources">
-    <a href="https://tj.ru" target="_blank"><img src="assets/tj.svg" alt="tj.ru"></a>
-    <a href="https://dtf.ru" target="_blank"><img src="assets/dtf.svg" alt="dtf.ru"></a>
-    <a href="https://vc.ru" target="_blank"><img src="assets/vc.svg" alt="vc.ru"></a>
+    <a href="https://tj.ru" target="_blank"><img src="~/assets/tj.svg" alt="tj.ru"></a>
+    <a href="https://dtf.ru" target="_blank"><img src="~/assets/dtf.svg" alt="dtf.ru"></a>
+    <a href="https://vc.ru" target="_blank"><img src="~/assets/vc.svg" alt="vc.ru"></a>
   </div>
   <div class="grades">
-    <img src="assets/medal_first.svg" alt="medal">
-    <img src="assets/cup.svg" alt="cup">
-    <img src="assets/medal_second.svg" alt="medal">
+    <img src="~/assets/medal_first.svg" alt="medal">
+    <img src="~/assets/cup.svg" alt="cup">
+    <img src="~/assets/medal_second.svg" alt="medal">
   </div>
   <div class="status">
     #1 on Product Hunt
