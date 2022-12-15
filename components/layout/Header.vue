@@ -9,7 +9,7 @@
       class="header__container"
     >
       <a href="/" class="header__link header__link--logo">
-        <nuxt-icon name="logo" :filled="true" />
+        <SvgLogo width="24" height="24"/>
         Editor.js
       </a>
 
@@ -48,6 +48,7 @@
 </template>
 
 <script setup lang="ts">
+import SvgLogo from '~/assets/logo.svg';
 /**
  * Flag stores header menu opening state on mobile devices
  */
@@ -152,7 +153,7 @@ const menuOpened = ref(false);
         margin-top: 0;
       }
 
-      ::v-deep(.nuxt-icon) {
+      ::v-deep(svg) {
         display: inline-flex;
         margin-right: 8px;
 

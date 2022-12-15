@@ -24,7 +24,10 @@ export default defineNuxtConfig({
     '~/assets/styles/vars.pcss'
   ],
   modules: [
-    'nuxt-icons',
-    '@codexteam/nuxt-icons'
+    '@codexteam/nuxt-icons',
+    'nuxt-svgo',
   ],
+  svgo: {
+    svgo: false
+  }
 })
