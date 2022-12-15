@@ -72,21 +72,9 @@ import SvgLogo from '~/assets/logo.svg';
     &-pic {
       position: relative;
 
-      @media (hover: hover) {
-        will-change: transform;
-        animation: attack 220ms 8000ms cubic-bezier(.97,-0.06,1,.05) forwards;
-        z-index: 2;
-      }
-
       svg {
         width: var(--logo-size);
         height: var(--logo-size);
-
-        @media (hover: hover) {
-          will-change: transform;
-          animation: easter 500ms ease infinite;
-          animation-play-state: paused;
-        }
       }
 
       &::before {
@@ -103,22 +91,36 @@ import SvgLogo from '~/assets/logo.svg';
         left: 50%;
         margin-left: calc(var(--shadow-width) / -2);
         filter: blur(8px);
+      }
+    }
 
-        @media (hover: hover) {
+
+    @media (hover: hover) {
+      &-pic {
+        will-change: transform;
+        animation: attack 200ms 8000ms cubic-bezier(.97, 0,1,.05) forwards;
+        animation-play-state: paused;
+        z-index: 2;
+
+        svg {
+          will-change: transform;
+          animation: easter 500ms ease infinite;
+          animation-play-state: paused;
+        }
+
+        &::before {
           will-change: transform, blur;
           animation: easter-shadow 500ms ease infinite;
           animation-play-state: paused;
         }
-      }
 
-      @media (hover: hover) {
+        &:hover,
         &:hover svg,
         &:hover::before {
           animation-play-state: running;
         }
       }
     }
-
 
 
     &-title {
@@ -134,7 +136,7 @@ import SvgLogo from '~/assets/logo.svg';
     line-height: var(--logo-title-line-hight);
     margin: var(--sections-margin) auto 0;
     font-size: var(--logo-title-size);
-    max-width: 680px;
+    max-width: 690px;
     letter-spacing: 0.38px;
     font-weight: 900;
   }
@@ -192,7 +194,6 @@ import SvgLogo from '~/assets/logo.svg';
 
   99% {
     transform: scale(34) translateY(20px);
-
   }
 
   100% {
