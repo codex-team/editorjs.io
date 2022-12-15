@@ -17,7 +17,12 @@
         class="header__burger"
         @click="menuOpened = !menuOpened"
       >
-        <codex-icon :name="menuOpened === false ? 'IconAlignJustify' : 'IconCross'" />
+        <span v-if="menuOpened">
+          <codex-icon name="IconCross" />
+        </span>
+        <span v-else>
+          <codex-icon name="IconAlignJustify" />
+        </span>
       </div>
 
       <div class="header__menu">
@@ -43,6 +48,9 @@
 </template>
 
 <script setup lang="ts">
+/**
+ * Flag stores header menu opening state on mobile devices
+ */
 const menuOpened = ref(false);
 
 </script>
@@ -57,6 +65,7 @@ const menuOpened = ref(false);
   letter-spacing: -0.15px;
   background-color: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(13px);
+  z-index: var(--z-header);
 
   @media --desktop {
     height: var(--layout-header-height);
@@ -71,6 +80,7 @@ const menuOpened = ref(false);
       padding-top: 10px;
       padding-bottom: 10px;
       flex-wrap: wrap;
+      padding-right: 12px;
     }
   }
 
@@ -95,13 +105,15 @@ const menuOpened = ref(false);
   }
 
   &__burger {
-    padding: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
     @media --desktop {
       display: none;
+    }
+
+    span {
+      padding: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 
@@ -192,7 +204,8 @@ const menuOpened = ref(false);
         border-radius: 7px;
       }
 
-      &:hover::after {
+      &:hover::after,
+      &:hover::before {
         background: #FF2567;
       }
     }
