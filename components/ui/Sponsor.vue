@@ -1,16 +1,17 @@
 <template>
-  <a target="_blank" class="sponsor_button" :href="link" v-on:click="onClick">
+  <a target="_blank" class="sponsor_button" :href="link" v-on:click="onClick('Sponsor')">
     <p class="sponsor_button__text">{{ text }}</p>
   </a>
 </template>
 
 <script setup lang="ts">
-import {track} from "@amplitude/analytics-browser";
 
-const onClick = () => {
-  track('Sponsor')
-}
 defineProps<{
+  /**
+   * Callback for click events in this component
+   */
+  onClick: (buttonText: string) => void,
+
   /**
    * Button text
    */

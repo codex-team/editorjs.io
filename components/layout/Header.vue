@@ -26,19 +26,19 @@
       </div>
 
       <div class="header__menu">
-        <a target="_blank" href="https://editorjs.io/getting-started" class="header__link" v-on:click="">
+        <a target="_blank" href="https://editorjs.io/getting-started" class="header__link" v-on:click="onClick('Documentation')">
           Documentation
         </a>
-        <a target="_blank" href="https://github.com/editor-js/awesome-editorjs" class="header__link">
+        <a target="_blank" href="https://github.com/editor-js/awesome-editorjs" class="header__link" v-on:click="onClick('Awesome Plugins')">
           Awesome Plugins
         </a>
-        <a target="_blank" href="https://digest.editorjs.io" class="header__link">
+        <a target="_blank" href="https://digest.editorjs.io" class="header__link" v-on:click="onClick('Digest')">
           Digest
         </a>
-        <a target="_blank" href="https://github.com/codex-team/editor.js" class="header__link">
+        <a target="_blank" href="https://github.com/codex-team/editor.js" class="header__link" v-on:click="onClick('GitHub')">
           GitHub
         </a>
-        <a target="_blank" href="http://opencollective.com/editorjs" class="header__link header__link--support">
+        <a target="_blank" href="http://opencollective.com/editorjs" class="header__link header__link--support" v-on:click="onClick('Support Editor.js')">
           <codex-icon name="IconHeart" />
           Support Editor.js
         </a>
@@ -54,6 +54,12 @@ import SvgLogo from '~/assets/logo.svg';
  */
 const menuOpened = ref(false);
 
+defineProps<{
+  /**
+   * Callback for click events in this component
+   */
+  onClick: (buttonText: string) => void,
+}>()
 </script>
 
 <style scoped lang="postcss">
@@ -209,11 +215,3 @@ const menuOpened = ref(false);
   }
 }
 </style>
-<script setup lang="ts">
-defineProps<{
-  /**
-   * Callback for click events in this component
-   */
-  onClick: (buttonText: string) => void,
-}>()
-</script>

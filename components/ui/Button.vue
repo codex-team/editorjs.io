@@ -1,5 +1,5 @@
 <template>
-  <a target="_blank" :href="link" :class="['button', `button--${type}`]" v-on:click="onClick(text)">
+  <a target="_blank" :href="link" :class="['button', `button--${type}`]" v-on:click="onClick ? onClick(text) : null">
     <div v-if="icon" v-html="icon" class="button__icon"/>
     <img v-if="iconPath" :src="iconPath" class="button__icon">
     <p class="button__text">{{ text }}</p>
@@ -11,7 +11,7 @@ defineProps<{
   /**
    * Callback for click events in this component
    */
-  onClick: (buttonText: string) => void,
+  onClick?: (buttonText: string) => void,
 
   /**
    * type of button
@@ -31,7 +31,7 @@ defineProps<{
   /**
    * Button text
    */
-  text?: string,
+  text: string,
 
   /**
    * Button link
