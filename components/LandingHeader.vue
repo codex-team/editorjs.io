@@ -161,8 +161,12 @@ import SvgLogo from '~/assets/logo.svg';
     transform: none;
   }
 
-  90% {
+  80% {
     transform: translateY(-20px);
+  }
+
+  90% {
+    transform: scaleY(0.94);
   }
 
   100% {
@@ -176,7 +180,7 @@ import SvgLogo from '~/assets/logo.svg';
     filter: blur(5px);
   }
 
-  90% {
+  80% {
     transform: translateY(-4px) scaleX(0.7);
     filter: blur(10px);
   }
