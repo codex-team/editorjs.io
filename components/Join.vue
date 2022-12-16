@@ -1,6 +1,6 @@
 <template>
   <div class="codex">
-    <img src="assets/codex_logo.svg" alt="codex" class="codex__logo">
+    <img src="~/assets/codex_logo.svg" alt="codex" class="codex__logo">
     <h2 class="codex__title">
       Join us
     </h2>

@@ -4,13 +4,15 @@
     'editor-logo--general': size === 'general',
   }">
     <div class="editor-logo__icon">
-      <img src="assets/logo.svg" alt="logo"/>
+      <SvgLogo alt="Editor.js shining logo" width="86" height="86" />
     </div>
     <p class="editor-logo__title"> Editor.js </p>
   </div>
 </template>
 
 <script setup lang="ts">
+import SvgLogo from '~/assets/logo.svg';
+
 defineProps<{
   /**
    * size of logo

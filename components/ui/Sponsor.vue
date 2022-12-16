@@ -14,12 +14,12 @@ defineProps<{
   /**
    * Button text
    */
-  text: String,
+  text: string,
 
   /**
    * Button link
    */
-  link: String,
+  link: string,
 }>()
 </script>
 

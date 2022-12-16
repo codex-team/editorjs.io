@@ -1,5 +1,24 @@
+@custom-media --small-viewport (max-width: 710px);
+@custom-media --desktop (min-width: 711px);
+
 :root {
-  --layout-content-max-width: 1024px;
+  --layout-container-max-width: 1180px;
+  --layout-padding-horizontal: 20px;
+  --layout-header-height: 60px;
+
+  --color-background-hover: #F0F5F9;
+
+  --z-header: 2;
+
+  @media (--small-viewport) {
+    --layout-padding-horizontal: 15px;
+  }
+
+  /**
+   * Below not refactord yet
+   */
+
+  --layout-content-max-width: 10024px;
 
   --color-text-primary: #000000;
   --color-text-secondary: #707684;
@@ -8,7 +27,7 @@
   --color-text-disabled: #BDBEC0;
 
   --color-background-primary: #FFFFFF;
-  --color-background-secondary: #E5F3FF;
+
   --color-backround-light: #F2F5F6;
   --color-background-active: #F2F5F6;
   --color-backround-image-overview: #181D22;
@@ -18,9 +37,5 @@
 
   --color-button-primary: #1CADFF;
 
-  --layout-container-width: 1180px;
-
   --layout-offset-x: 10px;
 }
-
-@custom-media --small-viewport (max-width: 980px);
