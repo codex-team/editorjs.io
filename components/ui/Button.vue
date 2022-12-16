@@ -7,14 +7,23 @@
       ['button--' + type]: true,
       'button--big': big
     }"
+    ref="button"
   >
-    <div v-if="icon" v-html="icon" class="button__icon"/>
-    <img v-if="iconPath" :src="iconPath" class="button__icon">
+    <CodexIcon
+      :name="icon"
+      v-if="icon"
+    />
+    <img
+      v-if="iconPath"
+      :src="iconPath"
+    >
     {{ text }}
   </a>
 </template>
 
 <script setup lang="ts">
+import type { CodexIconName } from '@codexteam/nuxt-icons';
+
 defineProps<{
   /**
    * type of button
@@ -32,12 +41,13 @@ defineProps<{
   small?: boolean;
 
   /**
-   * icon for button
+   * Name of the icon from CodeX Icons
    */
-  icon?: string,
+  icon?: CodexIconName,
 
   /**
    * icon for button
+   * @deprecated
    */
   iconPath?: string,
 
@@ -51,6 +61,20 @@ defineProps<{
    */
   link?: string,
 }>()
+
+// declare a ref to hold the element reference
+// the name must match template ref value
+const button = ref<Element>()
+
+defineExpose({
+  shake(){
+    button.value?.classList.add('shake')
+
+    setTimeout(() => {
+      button.value?.classList.remove('shake')
+    }, 500);
+  }
+})
 </script>
 
 <style lang="postcss" scoped>
@@ -80,12 +104,18 @@ defineProps<{
 
   &--big {
     padding: 14px 26px;
-    border-radius: 10px;
+    border-radius: 13px;
 
     font-size: 16px;
     line-height: 19px;
     letter-spacing: -0.32px;
     font-weight: 700;
+
+    ::v-deep(svg),
+    ::v-deep(img) {
+      width: 28px;
+      height: 28px;
+    }
   }
 
   &--primary {
@@ -103,8 +133,24 @@ defineProps<{
     }
   }
 
-  &__icon {
-    margin-right: 7px;
+  ::v-deep(svg),
+  ::v-deep(img) {
+    margin-right: 0.3em;
+    margin-left: -0.1em;
   }
+
+
+  &.shake {
+    animation: tilt-n-move-shaking 300ms ease;
+  }
+}
+
+
+@keyframes tilt-n-move-shaking {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(5px, 5px) rotate(5deg); }
+  50% { transform: translate(0, 0) rotate(0eg); }
+  75% { transform: translate(-5px, 5px) rotate(-5deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
 }
 </style>

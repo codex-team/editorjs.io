@@ -33,7 +33,7 @@ const advantages = [
   },
   {
     title: 'Simple API driven',
-    text: 'Really simple. Create any tool. Lots of already created.'
+    text: 'Simple but powerful. Create any tool. Lots of already created.'
   },
   {
     title: 'Powered by CodeX',
@@ -79,7 +79,7 @@ const advantages = [
       &-text {
         line-height: 19px;
         font-size: var(--text-font-size);
-        letter-spacing: -0.14px;
+        letter-spacing: 0.1px;
       }
 
       &-delimiter {

@@ -1,78 +1,106 @@
 <template>
   <div class="overview">
-    <div class="container">
-      <img class="overview__image" src="~/assets/editor.jpg" alt="Editor.js example"/>
-      <UiButton class="overview__cta" type="primary" text="Open Demo" :icon="IconMarker"/>
-      <img class="mobile-image" src="~/assets/editor.jpg" alt="Editor.js example"/>
-    </div>
+    <LayoutCenterContainer>
+      <div class="overview__canvas">
+        <img
+          class="overview__canvas-pic1"
+          src="~/assets/editor-1.jpg"
+          alt="Editor.js showcase: the Toolbox and the Inline Toolbar"
+          @click="pictureClicked"
+        />
+        <img
+          class="overview__canvas-pic2"
+          src="~/assets/editor-2.jpg"
+          alt="Editor.js: the Image Tool"
+          @click="pictureClicked"
+        />
+        <UiButton
+          class="overview__demo-button"
+          type="primary"
+          icon="IconMarker"
+          text="Play With Demo"
+          ref="demoButton"
+        />
+      </div>
+    </LayoutCenterContainer>
   </div>
 </template>
 
+<script setup lang="ts">
+import { ref } from 'vue';
+
+// declare a ref to hold the element reference
+// the name must match template ref value
+const demoButton = ref()
+
+
+function pictureClicked() {
+  (demoButton.value as {shake: Function}).shake();
+}
+</script>
+
 <style lang="postcss">
 .overview {
-  background-color: var(--color-backround-image-overview);
-  padding: 50px;
-  position: relative;
-  height: 960px;
+  --canvas-width: 840;
+  --canvas-height: 1236;
+  --canvas-width-px: calc(var(--canvas-width) * 1px);
+  --canvas-padding-top: 60px;
+  --canvas-radius: 20px;
+  --canvas-offset-top: -70px;
+  --canvas-offset-bottom: -100px;
 
   @media (--small-viewport) {
-    padding: 10px 0 10px 0;
-    height: auto;
+    --canvas-padding-top: 30px;
+    --canvas-offset-top: -16px;
+    --canvas-offset-bottom: -32px;
+  }
+
+
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-background-image-overview);
+
+  &__canvas {
+    margin: var(--canvas-offset-top) auto var(--canvas-offset-bottom);
+    background-color: #fff;
+    box-shadow: 0px -3px 29px -5px rgba(34, 39, 47, 0.14);
+    max-width: var(--canvas-width-px);
+    border-radius: var(--canvas-radius);
+    padding-top: var(--canvas-padding-top);
     display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+    flex-direction: column;
+    /* aspect-ratio: var(--canvas-width) / var(--canvas-height); */
 
-  &__image {
-    border-radius: 20px;
-    box-shadow: 0 7px 41px -10px rgba(76, 96, 146, 0.21);
-    @media (--small-viewport) {
-      display: none;
+    &-pic1 {
+      --left-margin: 36;
+      --right-margin: 120;
+
+      --left-margin-percents: calc(var(--left-margin) / var(--canvas-width) * 100%);
+      --right-margin-percents: calc(var(--right-margin) / var(--canvas-width) * 100%);
+
+      max-width: calc(100% - var(--left-margin-percents) - var(--right-margin-percents));
+      margin-left: var(--left-margin-percents);
+      margin-right: var(--right-margin-percents);
+      aspect-ratio: 684 / 709;
+    }
+
+    &-pic2 {
+      margin-top: 6px;
+      width: 100%;
+      aspect-ratio: var(--canvas-width) / 450;
+      background: radial-gradient(120.67% 147.67% at 37.86% -9.67%, #1F1F1F 0%, #343434 59.51%, #1F1F1F 100%);
+      border-radius: 0 0 var(--canvas-radius) var(--canvas-radius);
     }
   }
 
-  &__cta {
-    bottom: -20px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+  &__demo-button {
+    margin: -20px auto -18px;
 
-    @media (--small-viewport) {
-      display: none !important;
+    @media (--desktop) {
+      position: sticky;
+      bottom: 16px;
     }
   }
 }
 
-.mobile-image {
-  display: none;
-  max-width: 420px;
-  width: 100%;
-  border-radius: 20px;
-  box-shadow: 0 7px 41px -10px rgba(76, 96, 146, 0.21);
-
-  @media (--small-viewport) {
-    display: block;
-  }
-}
-
-.container {
-  max-width: 840px;
-  width: 100%;
-  border-radius: 20px;
-  height: 1236px;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: -70px;
-
-  @media (--small-viewport) {
-    position: static;
-    max-width: 420px;
-    transform: none;
-    height: auto;
-  }
-}
 </style>
-<script setup>
-import { IconMarker } from "@codexteam/icons"
-</script>

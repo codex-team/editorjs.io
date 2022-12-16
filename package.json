@@ -15,7 +15,7 @@
     "vue-tsc": "^0.39.4"
   },
   "dependencies": {
-    "@codexteam/nuxt-icons": "^0.0.1-rc.1",
+    "@codexteam/nuxt-icons": "^0.0.2",
     "modern-css-reset": "^1.4.0"
   }
 }

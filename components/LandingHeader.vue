@@ -100,7 +100,6 @@ import SvgLogo from '~/assets/logo.svg';
         will-change: transform;
         animation: attack 200ms 8000ms cubic-bezier(.97, 0,1,.05) forwards;
         animation-play-state: paused;
-        z-index: 2;
 
         svg {
           will-change: transform;
