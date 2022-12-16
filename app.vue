@@ -68,7 +68,7 @@ import Section from "./components/Section";
 import Star from "./components/Star";
 import {init, track} from '@amplitude/analytics-browser';
 
-init("API_KEY");
+init(process.env.AMPLITUDE_TOKEN);
 
 const onClick = (buttonText) => {
   track(buttonText);
