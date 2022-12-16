@@ -1,7 +1,7 @@
 <template>
-  <LayoutHeader on-click="on" />
-  <LandingHeader />
-  <OverviewImage />
+  <LayoutHeader :on-click="onClick" />
+  <LandingHeader :on-click="onClick" />
+  <OverviewImage :on-click="onClick" />
   <Section :type="'output'">
     <SectionHeader
       title="And here is the generated clean output"

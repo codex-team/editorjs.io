@@ -73,6 +73,13 @@
   }
 }
 </style>
-<script setup>
+<script setup lang="ts">
 import { IconMarker } from "@codexteam/icons"
+
+defineProps<{
+  /**
+   * Callback for click events in this component
+   */
+  onClick: (buttonText: string) => void,
+}>()
 </script>

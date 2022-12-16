@@ -48,3 +48,12 @@
   }
 }
 </style>
+
+<script setup lang="ts">
+defineProps<{
+  /**
+   * Callback for click events in this component
+   */
+  onClick: (buttonText: string) => void,
+}>()
+</script>

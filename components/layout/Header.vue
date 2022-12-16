@@ -108,11 +108,6 @@
 <script setup lang="ts">
 import EditorLogo from "../EditorLogo";
 import starIcon from "~/assets/star.svg";
-import {track} from "@amplitude/analytics-browser";
-
-const onClick = (buttonText) => {
-  track(buttonText)
-}
 
 defineProps<{
   /**
