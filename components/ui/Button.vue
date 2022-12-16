@@ -16,22 +16,22 @@ defineProps<{
   /**
    * icon for button
    */
-  icon?: String,
+  icon?: string,
 
   /**
    * icon for button
    */
-  iconPath?: String,
+  iconPath?: string,
 
   /**
    * Button text
    */
-  text?: String,
+  text?: string,
 
   /**
    * Button link
    */
-  link?: String,
+  link?: string,
 }>()
 </script>
 

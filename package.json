@@ -9,16 +9,17 @@
     "preview": "nuxt preview"
   },
   "devDependencies": {
-    "nuxt": "3.0.0-rc.6",
+    "nuxt": "^3.0.0",
+    "nuxt-svgo": "^1.1.0",
     "postcss-nested": "^5.0.6",
     "postcss-preset-env": "^7.7.2",
     "typescript": "^4.7.4",
     "vue-tsc": "^0.39.4"
   },
   "dependencies": {
-    "@codexteam/icons": "^0.0.5",
     "codex.docs": "2.2.0-rc.11",
     "concurrently": "^7.1.0",
+    "@codexteam/nuxt-icons": "^0.0.1-rc.1",
     "modern-css-reset": "^1.4.0"
   }
 }
