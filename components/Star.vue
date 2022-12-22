@@ -12,7 +12,7 @@
       <img src="~/assets/arrow.svg" class="star__arrows-line__arrow" alt="arrow">
       <img src="~/assets/arrow.svg" class="star__arrows-line__arrow" alt="arrow">
     </div>
-    <a href="https://github.com/codex-team/editor.js" class="star__button" target="_blank" v-on:click="onClick('Star')">
+    <a href="https://github.com/codex-team/editor.js" class="star__button" target="_blank" @click="$track(AnalyticEvent.StarClicked)">
       <div v-html="IconStar" class="star__button__icon"/>
       <div class="star__button__text">
         Star
@@ -26,13 +26,7 @@
 
 <script setup lang="ts">
 import { IconStar } from "@codexteam/icons";
-
-defineProps<{
-  /**
-   * Callback for click events in this component
-   */
-  onClick: (buttonText: string) => void,
-}>()
+import AnalyticEvent from "~/utils/analytics";
 </script>
 
 <style lang="postcss">

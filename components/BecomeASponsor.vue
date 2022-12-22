@@ -5,9 +5,9 @@
       Become a sponsor
     </div>
     <div class="become-sponsor__buttons">
-      <UiSponsor link="https://opencollective.com/editorjs/contribute/backer-8632/checkout?interval=month&amount=2&name=&legalName=&email=" text="$2 / mo" :on-click="onClick"/>
-      <UiSponsor link="https://opencollective.com/editorjs/contribute/backer-8632/checkout?interval=month&amount=10&name=&legalName=&email=" text="$10 / mo" :on-click="onClick"/>
-      <UiSponsor link="https://opencollective.com/editorjs/donate" text="One-time" :on-click="onClick"/>
+      <UiSponsor link="https://opencollective.com/editorjs/contribute/backer-8632/checkout?interval=month&amount=2&name=&legalName=&email=" text="$2 / mo"/>
+      <UiSponsor link="https://opencollective.com/editorjs/contribute/backer-8632/checkout?interval=month&amount=10&name=&legalName=&email=" text="$10 / mo"/>
+      <UiSponsor link="https://opencollective.com/editorjs/donate" text="One-time"/>
     </div>
     <a
       href="https://codex.so/donate"
@@ -42,13 +42,6 @@
 
 <script setup lang="ts">
 import logo from '~/assets/bucerius.jpeg';
-
-defineProps<{
-  /**
-   * Callback for click events in this component
-   */
-  onClick: (buttonText: string) => void,
-}>()
 
 const sponsors = [
   {

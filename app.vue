@@ -1,7 +1,7 @@
 <template>
-  <LayoutHeader :on-click="onClick" />
-  <LandingHeader :on-click="onClick" />
-  <OverviewImage :on-click="onClick" />
+  <LayoutHeader/>
+  <LandingHeader/>
+  <OverviewImage/>
   <Section :type="'output'">
     <SectionHeader
       title="And here is the generated clean output"
@@ -21,14 +21,14 @@
       title="Sponsors"
       text="For the evolution of Editor.js, we need your help. Become a sponsor by subscribing to a donation and supporting product development."
     />
-    <BecomeASponsor :on-click="onClick"/>
+    <BecomeASponsor/>
   </Section>
   <Section>
     <SectionHeader
       title="Global WYSIWYG ecosystem"
       text="Editor.js is not just an editor. It is the large community of developers around the world creating new tools, integrations, building new products and features. And <b>we really need your star</b> to support the community growth."
     />
-    <Star :on-click="onClick"/>
+    <Star/>
   </Section>
   <Section>
     <SectionHeader
@@ -38,7 +38,7 @@
     <LovedBy />
   </Section>
   <Section>
-    <Join :on-click="onClick"/>
+    <Join/>
   </Section>
   <LayoutFooter />
 </template>
@@ -66,11 +66,4 @@ body {
 <script setup>
 import Section from "./components/Section";
 import Star from "./components/Star";
-import {init, track} from '@amplitude/analytics-browser';
-
-init(process.env.AMPLITUDE_TOKEN);
-
-const onClick = (buttonText) => {
-  track(buttonText);
-};
 </script>

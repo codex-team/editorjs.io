@@ -2,7 +2,7 @@
   <div class="overview">
     <div class="container">
       <img class="overview__image" src="~/assets/editor.jpg" alt="Editor.js example"/>
-      <UiButton class="overview__cta" type="primary" text="Open Demo" :icon="IconMarker" :on-click="onClick"/>
+      <UiButton class="overview__cta" type="primary" text="Open Demo" :icon="IconMarker"/>
       <img class="mobile-image" src="~/assets/editor.jpg" alt="Editor.js example"/>
     </div>
   </div>
@@ -75,11 +75,4 @@
 </style>
 <script setup lang="ts">
 import { IconMarker } from "@codexteam/icons"
-
-defineProps<{
-  /**
-   * Callback for click events in this component
-   */
-  onClick: (buttonText: string) => void,
-}>()
 </script>

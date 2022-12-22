@@ -1,17 +1,13 @@
 <template>
-  <a target="_blank" class="sponsor_button" :href="link" v-on:click="onClick('Sponsor')">
+  <a target="_blank" class="sponsor_button" :href="link" @click="$track(AnalyticEvent.SponsorClicked)">
     <p class="sponsor_button__text">{{ text }}</p>
   </a>
 </template>
 
 <script setup lang="ts">
+import AnalyticEvent from "~/utils/analytics";
 
 defineProps<{
-  /**
-   * Callback for click events in this component
-   */
-  onClick: (buttonText: string) => void,
-
   /**
    * Button text
    */
