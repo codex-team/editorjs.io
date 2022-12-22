@@ -73,6 +73,6 @@
   }
 }
 </style>
-<script setup>
+<script setup lang="ts">
 import { IconMarker } from "@codexteam/icons"
 </script>
