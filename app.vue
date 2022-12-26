@@ -63,7 +63,3 @@ body {
   }
 }
 </style>
-<script setup>
-import Section from "./components/Section";
-import Star from "./components/Star";
-</script>

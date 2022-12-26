@@ -19,12 +19,12 @@ defineProps<{
   </div>
 </template>
 
-<style>
+<style lang="postcss">
 .section-header {
   &__title {
     font-size: 30px;
     line-height: 23px;
-    font-weight: 600;
+    font-weight: 700;
   }
 
   &__text {

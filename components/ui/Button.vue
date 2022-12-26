@@ -123,6 +123,7 @@ defineExpose({
     border-color: var(--color-button-primary-border);
     box-shadow: 0 8px 25px rgba(28, 173, 255, 0.46);
     color: #fff;
+    font-weight: 600;
 
     &:hover {
       background-color: var(--color-button-primary--hover);
