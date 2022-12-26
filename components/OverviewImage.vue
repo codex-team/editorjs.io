@@ -2,7 +2,7 @@
   <div class="overview">
     <div class="container">
       <img class="overview__image" src="~/assets/editor.jpg" alt="Editor.js example"/>
-      <UiButton class="overview__cta" type="primary" text="Open Demo" :icon="IconMarker"/>
+      <UiButton class="overview__cta" type="primary" text="Open Demo"/>
       <img class="mobile-image" src="~/assets/editor.jpg" alt="Editor.js example"/>
     </div>
   </div>
@@ -73,6 +73,3 @@
   }
 }
 </style>
-<script setup lang="ts">
-import { IconMarker } from "@codexteam/icons"
-</script>
