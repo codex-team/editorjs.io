@@ -6,7 +6,10 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "start-docs": "codex.docs",
-    "preview": "nuxt preview"
+    "preview": "nuxt preview",
+    "copy": "cp -r dist/* docs-dist && rm -rf docs-dist/base-concepts && rm -rf docs-dist/getting-started",
+    "build-all": "yarn generate && yarn build-docs && yarn copy",
+    "start-all": "http-server docs-dist"
   },
   "devDependencies": {
     "nuxt": "^3.0.0",
@@ -17,9 +20,12 @@
     "vue-tsc": "^0.39.4"
   },
   "dependencies": {
+    "@amplitude/analytics-browser": "^1.6.6",
+    "@codexteam/nuxt-icons": "^0.0.2",
+    "@nuxt/kit": "^3.0.0",
     "codex.docs": "2.2.0-rc.11",
-    "concurrently": "^7.1.0",
-    "@codexteam/nuxt-icons": "^0.0.1-rc.1",
+    "http-server": "^14.1.1",
     "modern-css-reset": "^1.4.0"
-  }
+  },
+  "packageManager": "yarn@3.2.4"
 }

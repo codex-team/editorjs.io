@@ -26,6 +26,7 @@ export default defineNuxtConfig({
   modules: [
     '@codexteam/nuxt-icons',
     'nuxt-svgo',
+    '~/modules/amplitude/index.ts'
   ],
   svgo: {
     svgo: false

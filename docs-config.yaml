@@ -5,6 +5,7 @@ uploads:
   local:
     path: "./uploads"
 password: secretpassword
+favicon: "favicon.png"
 frontend:
   title: Editor.js
   startPage: ""
@@ -32,7 +33,7 @@ auth:
 
 staticBuild:
   overwrite: false
-  outputDir: dist
+  outputDir: docs-dist
   indexPage:
     enabled: false
     uri: base-concepts

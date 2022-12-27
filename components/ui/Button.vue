@@ -26,7 +26,7 @@ defineProps<{
   /**
    * Button text
    */
-  text?: string,
+  text: string,
 
   /**
    * Button link

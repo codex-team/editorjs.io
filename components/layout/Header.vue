@@ -26,19 +26,19 @@
       </div>
 
       <div class="header__menu">
-        <a target="_blank" href="https://editorjs.io/getting-started" class="header__link">
+        <a target="_blank" href="/base-concepts" class="header__link" @click="$track(AnalyticEvent.DocumentationClicked)">
           Documentation
         </a>
-        <a target="_blank" href="https://github.com/editor-js/awesome-editorjs" class="header__link">
+        <a target="_blank" href="https://github.com/editor-js/awesome-editorjs" class="header__link" @click="$track(AnalyticEvent.AwesomePluginsClicked)">
           Awesome Plugins
         </a>
-        <a target="_blank" href="https://digest.editorjs.io" class="header__link">
+        <a target="_blank" href="https://digest.editorjs.io" class="header__link" @click="$track(AnalyticEvent.DigestClicked)">
           Digest
         </a>
-        <a target="_blank" href="https://github.com/codex-team/editor.js" class="header__link">
+        <a target="_blank" href="https://github.com/codex-team/editor.js" class="header__link" @click="$track(AnalyticEvent.GitHubClicked)">
           GitHub
         </a>
-        <a target="_blank" href="http://opencollective.com/editorjs" class="header__link header__link--support">
+        <a target="_blank" href="http://opencollective.com/editorjs" class="header__link header__link--support" @click="$track(AnalyticEvent.SupportEditorJSClicked)">
           <codex-icon name="IconHeart" />
           Support Editor.js
         </a>
@@ -49,11 +49,11 @@
 
 <script setup lang="ts">
 import SvgLogo from '~/assets/logo.svg';
+import AnalyticEvent from "~/utils/analytics";
 /**
  * Flag stores header menu opening state on mobile devices
  */
 const menuOpened = ref(false);
-
 </script>
 
 <style scoped lang="postcss">
