@@ -27,5 +27,5 @@
     "http-server": "^14.1.1",
     "modern-css-reset": "^1.4.0"
   },
-  "packageManager": "yarn@3.2.4"
+  "packageManager": "yarn@3.3.1"
 }
