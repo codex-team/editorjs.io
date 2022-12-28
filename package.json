@@ -23,7 +23,7 @@
     "@amplitude/analytics-browser": "^1.6.6",
     "@codexteam/nuxt-icons": "^0.0.2",
     "@nuxt/kit": "^3.0.0",
-    "codex.docs": "2.2.0-rc.15",
+    "codex.docs": "2.2.0-rc.16",
     "http-server": "^14.1.1",
     "modern-css-reset": "^1.4.0"
   },
