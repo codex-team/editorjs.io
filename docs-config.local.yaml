@@ -1,6 +1,6 @@
 staticBuild:
   overwrite: true
-  outputDir: docs-dist
+  outputDir: .output/public
   indexPage:
     enabled: false
     uri: base-concepts

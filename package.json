@@ -7,10 +7,9 @@
     "generate": "nuxt generate",
     "start-docs": "codex.docs",
     "preview": "nuxt preview",
-    "copy": "cp -r dist/* docs-dist && rm -rf docs-dist/base-concepts && rm -rf docs-dist/getting-started",
     "build-all": "yarn generate && yarn build-docs && yarn copy",
     "start-all": "http-server docs-dist",
-    "build-full": "yarn generate && yarn build-docs && yarn copy"
+    "build-full": "yarn generate && yarn build-docs"
   },
   "devDependencies": {
     "nuxt": "^3.0.0",
