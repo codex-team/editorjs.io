@@ -15,7 +15,9 @@
     "vue-tsc": "^0.39.4"
   },
   "dependencies": {
+    "@amplitude/analytics-browser": "^1.6.6",
     "@codexteam/nuxt-icons": "^0.0.2",
+    "@nuxt/kit": "^3.0.0",
     "modern-css-reset": "^1.4.0"
   }
 }

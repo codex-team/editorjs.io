@@ -1,7 +1,7 @@
 <template>
-  <LayoutHeader />
-  <LandingHeader />
-  <OverviewImage />
+  <LayoutHeader/>
+  <LandingHeader/>
+  <OverviewImage/>
   <Section :type="'output'">
     <SectionHeader
       title="And here is the generated clean output"
@@ -21,7 +21,7 @@
       title="Sponsors"
       text="For the evolution of Editor.js, we need your help. Become a sponsor by subscribing to a donation and supporting product development."
     />
-    <BecomeASponsor />
+    <BecomeASponsor/>
   </Section>
   <Section>
     <SectionHeader
@@ -38,7 +38,7 @@
     <LovedBy />
   </Section>
   <Section>
-    <Join />
+    <Join/>
   </Section>
   <LayoutFooter />
 </template>

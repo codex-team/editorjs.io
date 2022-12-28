@@ -20,7 +20,8 @@
         type="primary"
         big
         text="Get Started"
-        link="/getting-started"
+        link="https://editorjs.io/getting-started"
+        @click="$track(AnalyticEvent.GetStartedClicked)"
       />
       <UnfairAdvantages
         class="landing-header__ua"
@@ -31,7 +32,7 @@
 
 <script setup lang="ts">
 import SvgLogo from '~/assets/logo.svg';
-
+import AnalyticEvent from "~/utils/analytics";
 </script>
 
 <style lang="postcss">

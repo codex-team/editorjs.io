@@ -4,3 +4,4 @@ node_modules
 .idea
 .output
 dist
+.env

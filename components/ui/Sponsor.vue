@@ -1,10 +1,12 @@
 <template>
-  <a target="_blank" class="sponsor_button" :href="link">
+  <a target="_blank" class="sponsor_button" :href="link" @click="$track(AnalyticEvent.SponsorClicked)">
     <p class="sponsor_button__text">{{ text }}</p>
   </a>
 </template>
 
 <script setup lang="ts">
+import AnalyticEvent from "~/utils/analytics";
+
 defineProps<{
   /**
    * Button text

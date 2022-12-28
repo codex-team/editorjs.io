@@ -20,6 +20,7 @@
           icon="IconMarker"
           text="Play With Demo"
           ref="demoButton"
+          @click="$track(AnalyticEvent.PlayWithDemoClicked)"
         />
       </div>
     </LayoutCenterContainer>
@@ -27,6 +28,7 @@
 </template>
 
 <script setup lang="ts">
+import AnalyticEvent from "~/utils/analytics";
 import { ref } from 'vue';
 
 // declare a ref to hold the element reference

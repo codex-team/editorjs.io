@@ -40,7 +40,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import logo from '~/assets/bucerius.jpeg';
 
 const sponsors = [
@@ -50,7 +50,7 @@ const sponsors = [
       {
         picture: logo,
         title: 'Bucerius',
-        link: '//'
+        link: '/'
       },
     ],
     size: 100,
@@ -62,7 +62,7 @@ const sponsors = [
       {
         picture: logo,
         title: 'Bucerius',
-        link: '//'
+        link: '/'
       },
     ],
     size: 50,
@@ -74,7 +74,7 @@ const sponsors = [
       {
         picture: 'someurl',
         title: 'Bucerius',
-        link: '//'
+        link: '/'
       },
     ],
     size: 34,
