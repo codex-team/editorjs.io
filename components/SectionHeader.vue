@@ -21,10 +21,15 @@ defineProps<{
 
 <style lang="postcss">
 .section-header {
+  max-width: var(--layout-section-content-width);
+  margin: 0 auto;
+  padding: 100px 0;
+
   &__title {
     font-size: 30px;
     line-height: 23px;
     font-weight: 700;
+    letter-spacing: 0.1px;
   }
 
   &__text {

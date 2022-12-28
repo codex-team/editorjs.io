@@ -1,47 +1,17 @@
 <template>
-  <section class="section" :class="{
-    'section--output': type === 'output',
-  }">
-    <slot/>
+  <section class="section">
+    <LayoutCenterContainer>
+      <slot/>
+    </LayoutCenterContainer>
   </section>
 </template>
 
-<script setup lang="ts">
-defineProps<{
-  /**
-   * type of section
-   */
-  type?: 'output',
-
-}>()
-</script>
-
-<style>
+<style lang="postcss">
 .section {
   padding: 100px 0;
   text-align: center;
   display: flex;
   align-items: center;
   flex-direction: column;
-
-  & > * {
-    padding-left: 5px;
-    padding-right: 5px;
-    max-width: 560px;
-    width: 100%;
-  }
-
-  @media (--small-viewport) {
-    padding-top: 20px
-  }
-
-  &--output {
-    padding-top: 280px;
-    background-color: #E5F3FF;
-    padding-bottom: 0;
-    @media (--small-viewport) {
-      padding-top: 80px;
-    }
-  }
 }
 </style>
