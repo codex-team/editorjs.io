@@ -5,7 +5,7 @@ uploads:
   local:
     path: "./uploads"
 password: secretpassword
-favicon: "favicon.png"
+favicon: "public/favicon.png"
 frontend:
   title: Editor.js
   startPage: ""
@@ -30,7 +30,6 @@ frontend:
 
 auth:
   secret: supersecret
-
 staticBuild:
   overwrite: false
   outputDir: .output/public
