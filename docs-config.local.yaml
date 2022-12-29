@@ -1,7 +1,0 @@
-staticBuild:
-  overwrite: true
-  outputDir: .output/public
-  indexPage:
-    enabled: false
-    uri: base-concepts
-
