@@ -14,9 +14,10 @@ This repository contains the source code for the [editorjs.io](https://editorjs.
 
 `yarn start-docs`
 
-## Configure docs
+## Update docs data
 
-To configure docs you need to set you `db` and `uploads` directories and fill out `docs-config.yaml`
+To update docs data you need to run docs, then you should log in and update documents.
+Then you need to save and commit your changes.
 
 ## Run editorjs.io with docs
 
