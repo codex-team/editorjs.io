@@ -7,7 +7,6 @@
     "generate": "nuxt generate",
     "start-docs": "codex.docs",
     "preview": "nuxt preview",
-    "build-all": "yarn generate && yarn build-docs && yarn copy",
     "start-all": "http-server dist",
     "build-full": "yarn generate && yarn build-docs"
   },
