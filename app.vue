@@ -6,9 +6,9 @@
   <Section>
     <SectionHeader
       title="API is the feature"
-      text="Each Block is provided via a plugin. It's easy to create your own. Dozens of created. Same with Inline Formatting and Block Tunes."
+      text="Each Block is provided via a plugin. It's easy to create your own. Dozens of created. Same with Inline Formatting and Block Tunes."
     />
-    <img src="~/assets/api.jpg" alt="API" class="api-image">
+    <ApiImage />
   </Section>
   <Section>
     <SectionHeader

@@ -28,6 +28,8 @@ defineProps<{
   --text-line-height: 26px;
   --text-margin: 20px;
 
+  --vertical-padding: 100px;
+
   @media (--small-viewport) {
     --title-size: 24px;
     --title-line-height: 20px;
@@ -35,11 +37,13 @@ defineProps<{
     --text-size: 15px;
     --text-line-height: 22px;
     --text-margin: 16px;
+
+    --vertical-padding: 40px;
   }
 
   max-width: var(--layout-section-content-width);
   margin: 0 auto;
-  padding: 100px 0;
+  padding: var(--vertical-padding) 0;
 
   &__title {
     font-size: var(--title-size);

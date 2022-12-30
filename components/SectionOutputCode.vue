@@ -257,8 +257,9 @@ const expandButtonText = computed(() => {
     align-items: center;
     cursor: pointer;
     position: absolute;
+    bottom: -10px;
     left: 50%;
-    transform: translateX(-50%) translateY(-65%);
+    transform: translateX(-50%);
     white-space: nowrap;
     z-index: calc(var(--gradient-z-index) + 1);
 
@@ -272,6 +273,10 @@ const expandButtonText = computed(() => {
   }
 
   &--expanded &__expand-button {
+    position: sticky;
+    bottom: 50px;
+    margin-left: 50%;
+
     svg {
       transform: rotate(180deg);
     }
