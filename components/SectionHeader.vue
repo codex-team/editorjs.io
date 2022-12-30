@@ -21,21 +21,37 @@ defineProps<{
 
 <style lang="postcss">
 .section-header {
+  --title-size: 30px;
+  --title-line-height: 23px;
+
+  --text-size: 17px;
+  --text-line-height: 26px;
+  --text-margin: 20px;
+
+  @media (--small-viewport) {
+    --title-size: 24px;
+    --title-line-height: 20px;
+
+    --text-size: 15px;
+    --text-line-height: 22px;
+    --text-margin: 16px;
+  }
+
   max-width: var(--layout-section-content-width);
   margin: 0 auto;
   padding: 100px 0;
 
   &__title {
-    font-size: 30px;
-    line-height: 23px;
+    font-size: var(--title-size);
+    line-height: var(--title-line-height);
     font-weight: 700;
     letter-spacing: 0.1px;
   }
 
   &__text {
-    margin-top: 20px;
-    font-size: 17px;
-    line-height: 26px;
+    margin-top: var(--text-margin);
+    font-size: var(--text-size);
+    line-height: var(--text-line-height);
   }
 }
 </style>

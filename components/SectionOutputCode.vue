@@ -2,13 +2,30 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="true">
 
-  <div class="output-code">
-    <Json
-      :value="json"
-      class="output-code__inner"
-    />
-    <div class="output-code__bottom-gradient"></div>
-    <div class="output-code__right-gradient"></div>
+  <div
+    class="output-code"
+    :class="{
+      'output-code--expanded': isCodeExpanded
+    }"
+  >
+    <div
+      class="output-code__wrapper"
+    >
+      <Json
+        :value="json"
+        class="output-code__inner"
+      />
+      <div class="output-code__bottom-gradient"></div>
+      <div class="output-code__right-gradient"></div>
+    </div>
+    <div
+      class="output-code__expand-button"
+      @click="toggleCode"
+      ref="expandButton"
+    >
+      <codex-icon name="IconChevronDown" />
+      {{ expandButtonText }}
+    </div>
   </div>
 </template>
 
@@ -135,23 +152,67 @@ const json = {
   ]
 }
 
+const isCodeExpanded = ref(false);
+const expandButton = ref<HTMLElement | null>(null);
+
+/**
+ * Allow using non-standard scrollIntoViewIfNeeded on HTMLElement
+ */
+interface HTMLElement {
+  scrollIntoViewIfNeeded?: any;
+}
+
+/**
+ * Expands/Collapses the code
+ */
+function toggleCode() {
+  isCodeExpanded.value = !isCodeExpanded.value;
+
+  if (isCodeExpanded.value === false) {
+    window.requestAnimationFrame(() => {
+      expandButton.value?.scrollIntoViewIfNeeded();
+    })
+  }
+}
+
+const expandButtonText = computed(() => {
+  if (isCodeExpanded.value === false) {
+    return 'Show the whole example';
+  }
+
+  return 'Hide the whole example'
+})
+
 </script>
 
 <style lang="postcss">
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&display=swap');
 
 .output-code {
-  --code-height: 500px;
+  --code-height: 600px;
 
-  height: var(--code-height);
+  max-width: 100%;
   position: relative;
 
-  &__inner {
+  @media (--small-viewport) {
+    --code-height: 500px;
+  }
+
+  --gradient-z-index: calc(var(--z-header) - 2);
+
+  &--expanded {
+    --code-height: auto;
+  }
+
+  &__wrapper {
     height: var(--code-height);
     display: block;
-    z-index: 1;
-    overflow: scroll;
-    scroll-behavior: smooth;
+    overflow: hidden;
+  }
+
+  &__inner {
+    display: block;
+    overflow-y: hidden;
   }
 
   &__bottom-gradient {
@@ -161,7 +222,7 @@ const json = {
     left: 0;
     right: 0;
     background: linear-gradient(180deg, rgba(246, 251, 255, 0) 0%, var(--color-background-output) 100%);
-    z-index: 2;
+    z-index: var(--gradient-z-index);
   }
 
   &__right-gradient {
@@ -173,7 +234,47 @@ const json = {
     left: calc(calc(var(--layout-container-max-width)) / 2 - var(--layout-padding-horizontal) + calc(var(--layout-section-content-width) / 2) - var(--width));
     width: var(--width);
     background: linear-gradient(90deg, rgba(246, 251, 255, 0) 0%, var(--color-background-output) 100%);
-    z-index: 2;
+    z-index: var(--gradient-z-index);
+
+    @media (--small-viewport) {
+      left: auto;
+      right: 0;
+    }
+  }
+
+  &__expand-button {
+    background-color: var(--color-background-output);
+    color: #3C4C51;
+
+    font-size: 14px;
+    line-height: 1em;
+    font-weight: 500;
+    padding: 7px 9px;
+    border-radius: 10px;
+    border: 1px solid #DCEBF3;
+    box-shadow: 0px 8px 25px rgba(190, 219, 235, 0.46);
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateY(-65%);
+    white-space: nowrap;
+    z-index: calc(var(--gradient-z-index) + 1);
+
+    &:hover {
+      background-color: #F2F9FE;
+    }
+
+    svg {
+      margin-right: 7px;
+    }
+  }
+
+  &--expanded &__expand-button {
+    svg {
+      transform: rotate(180deg);
+    }
   }
 
 }

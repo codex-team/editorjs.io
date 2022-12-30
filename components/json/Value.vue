@@ -54,13 +54,13 @@ const isHighLighted = computed(() => {
 <style lang="postcss">
 .json-value {
   &--number {
-    color: #2c85c6;
+    color: #757994;
   }
   &--string {
-    color: #486b85;
+    color: #5b6fa3;
   }
   &--boolean {
-    color: #c120d7;
+    color: #b562bd;
   }
 
   &--highlighted {

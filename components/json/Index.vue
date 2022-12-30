@@ -40,18 +40,26 @@ defineProps<{
 <style lang="postcss">
 .json {
   --color-text-code: #080F18;
+  --text-size: 15px;
+  --text-line-height: 26px;
+
+  @media (--small-viewport) {
+    --text-size: 13px;
+    --text-line-height: 22px;
+  }
+
 
   max-width: var(--layout-section-content-width);
   margin: 0 auto;
   text-align: left;
 
   font-family: 'JetBrains Mono', monospace;
-  font-size: 15px;
-  line-height: 26px;
+  font-size: var(--text-size);
+  line-height: var(--text-line-height);
   color: var(--color-text-code);
 
   &--data .json-object__key {
-    color: rgb(88, 103, 112);
+    color: rgb(83, 89, 94)
   }
 }
 </style>
