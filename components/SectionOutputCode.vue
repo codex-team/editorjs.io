@@ -275,7 +275,10 @@ const expandButtonText = computed(() => {
   &--expanded &__expand-button {
     position: sticky;
     bottom: 50px;
-    margin-left: 50%;
+
+    @media (--small-viewport) {
+      margin-left: 50%;
+    }
 
     svg {
       transform: rotate(180deg);

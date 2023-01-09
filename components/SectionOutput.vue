@@ -16,7 +16,15 @@
     background-color: var(--color-background-output);
     margin: var(--canvas-offset-bottom) 0;
 
+    --vertical-padding: 100px;
+
+    @media (--small-viewport) {
+      --vertical-padding: 40px;
+    }
+
     &__header {
+      padding: var(--vertical-padding) 0;
+
       @media (--small-viewport) {
         margin-top: 30px;
       }

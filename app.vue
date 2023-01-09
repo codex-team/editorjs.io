@@ -46,14 +46,4 @@ body {
   background-size: 100vw 100vh;
   background-repeat: no-repeat;
 }
-
-.api-image {
-  max-width: 715px;
-  width: 100%;
-  margin-top: 40px;
-
-  @media (--small-viewport) {
-    max-width: 400px;
-  }
-}
 </style>
