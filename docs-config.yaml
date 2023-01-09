@@ -9,7 +9,7 @@ favicon: "public/favicon.png"
 frontend:
   title: Editor.js
   startPage: ""
-  description: A block-styled editor with clean JSON output
+  description: Free block-style editor with a universal JSON output
   menu:
     - title: Guides
       uri: "/base-concepts"
