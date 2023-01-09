@@ -1,10 +1,14 @@
 {
   "private": true,
   "scripts": {
+    "build-docs": "codex.docs build-static",
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
-    "preview": "nuxt preview"
+    "start-docs": "codex.docs",
+    "preview": "nuxt preview",
+    "start-all": "http-server dist",
+    "build-full": "yarn generate && yarn build-docs"
   },
   "devDependencies": {
     "nuxt": "^3.0.0",
@@ -18,6 +22,9 @@
     "@amplitude/analytics-browser": "^1.6.6",
     "@codexteam/nuxt-icons": "^0.0.2",
     "@nuxt/kit": "^3.0.0",
+    "codex.docs": "2.2.0-rc.16",
+    "http-server": "^14.1.1",
     "modern-css-reset": "^1.4.0"
-  }
+  },
+  "packageManager": "yarn@3.3.1"
 }

@@ -26,7 +26,7 @@
       </div>
 
       <div class="header__menu">
-        <a target="_blank" href="https://editorjs.io/getting-started" class="header__link" @click="$track(AnalyticEvent.DocumentationClicked)">
+        <a target="_blank" href="/base-concepts" class="header__link" @click="$track(AnalyticEvent.DocumentationClicked)">
           Documentation
         </a>
         <a target="_blank" href="https://github.com/editor-js/awesome-editorjs" class="header__link" @click="$track(AnalyticEvent.AwesomePluginsClicked)">
