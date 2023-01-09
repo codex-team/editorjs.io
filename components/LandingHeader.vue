@@ -7,7 +7,7 @@
     <div class="landing-header__description">
       Editor.js provides maximum power for developers and products staying focused on the end-user experience
     </div>
-    <UiButton type="primary" text="Get Started" link="getting-started" @click="$track(AnalyticEvent.GetStartedClicked)"/>
+    <UiButton type="primary" text="Get Started" link="/getting-started" @click="$track(AnalyticEvent.GetStartedClicked)"/>
     <UnfairAdvantages :class="'landing-header__ua'"/>
   </div>
 </template>
