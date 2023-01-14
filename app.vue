@@ -13,7 +13,7 @@
   <Section>
     <SectionHeader
       title="Sponsors"
-      text="For the evolution of Editor.js, we need your help. Become a sponsor by subscribing to a donation and supporting product development."
+      text="For the evolution of Editor.js, we need your help. Become a sponsor by subscribing to a donation and supporting product development."
     />
     <BecomeASponsor/>
   </Section>
