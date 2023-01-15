@@ -1,43 +1,54 @@
 <template>
   <div class="star">
-    <div class="star__arrows-line">
-      <img src="~/assets/arrow.svg" class="star__arrows-line__arrow" alt="arrow">
-      <img src="~/assets/arrow.svg" class="star__arrows-line__arrow" alt="arrow">
+    <div class="star__arrows star__arrows--vertical">
+      <IconArrow aria-hidden="true"/>
+      <IconArrow aria-hidden="true"/>
     </div>
-    <div class="star__arrows-line star__arrows-line--left">
-      <img src="~/assets/arrow.svg" class="star__arrows-line__arrow" alt="arrow">
-      <img src="~/assets/arrow.svg" class="star__arrows-line__arrow" alt="arrow">
+    <div class="star__arrows star__arrows--left">
+      <IconArrow aria-hidden="true"/>
+      <IconArrow aria-hidden="true"/>
     </div>
-    <div class="star__arrows-line star__arrows-line--right">
-      <img src="~/assets/arrow.svg" class="star__arrows-line__arrow" alt="arrow">
-      <img src="~/assets/arrow.svg" class="star__arrows-line__arrow" alt="arrow">
+    <div class="star__arrows star__arrows--right">
+      <IconArrow aria-hidden="true"/>
+      <IconArrow aria-hidden="true"/>
     </div>
-    <a href="https://github.com/codex-team/editor.js" class="star__button" target="_blank" @click="$track(AnalyticEvent.StarClicked)">
-      <codex-icon name="IconStar" class="star__button__icon"/>
-      <div class="star__button__text">
+    <a
+      class="star__button"
+      href="https://github.com/codex-team/editor.js"
+      target="_blank"
+      @click="$track(AnalyticEvent.StarClicked)"
+    >
+      <codex-icon
+        name="IconStar"
+      />
+      <div class="star__button-text">
         Star
       </div>
-      <div class="star__button__count">
-        19.5k
+      <div class="star__button-count">
+        21.3k
       </div>
     </a>
   </div>
 </template>
 
 <script setup lang="ts">
+import IconArrow from '~/assets/arrow.svg';
 import AnalyticEvent from "~/utils/analytics";
 </script>
 
 <style lang="postcss">
 .star {
-  margin-top: 30px;
-  width: 200px;
-  height: 250px;
+  margin: 130px auto 0;
   position: relative;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   user-select: none;
+
+  @media --small-viewport {
+    margin-bottom: 50px;
+  }
+
 
   &__button {
     text-decoration: none;
@@ -48,22 +59,27 @@ import AnalyticEvent from "~/utils/analytics";
     display: flex;
     align-items: center;
     background: linear-gradient(239.67deg, #FCFCFC 18.14%, #F9F9F9 77.61%);
-    border: 1px solid #E1E1E1;
-    border-radius: 11px;
-    width: 160px;
-    height: 53px;
+    border: 1px solid #ededed;
+    border-radius: 12px;
     font-weight: 700;
     font-size: 18px;
+    line-height: 23px;
 
-    &__icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 24px;
-      height: 24px;
+    &:hover {
+      background: #fff;
     }
 
-    &__count {
+    svg {
+      width: 28px;
+      height: 28px;
+      margin-right: 2px;
+    }
+
+    &-text {
+      margin-right: 9px;
+    }
+
+    &-count {
       background-color: rgba(0, 0, 0, 4%);
       border-radius: 32px;
       padding: 6px 11px;
@@ -71,46 +87,83 @@ import AnalyticEvent from "~/utils/analytics";
     }
   }
 
-  &__arrows-line {
-    margin: 0;
+  &__arrows {
     position: absolute;
-    height: 90%;
+    width: 254px;
+    height: 10px;
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
-    animation: moveArrows 0.8s linear infinite alternate;
+    align-items: center;
 
-    &__arrow {
-      height: 20px;
+    svg {
+      width: 13px;
+      height: 21px;
+
+      transform: rotate(-90deg);
+
+      &:last-of-type {
+        transform: rotate(90deg);
+      }
     }
 
-    &__arrow:last-child {
-      transform: rotate(180deg);
+    &--vertical {
+      width: 160px;
+      transform: rotate(90deg);
+      animation: moveArrowsVertical 450ms ease-in-out infinite alternate;
     }
 
     &--left {
-      transform: rotate(70deg);
-      writing-mode: horizontal-tb;
-      height: 130%;
+      transform: rotate(18deg);
     }
 
     &--right {
-      transform: rotate(-70deg);
-      writing-mode: horizontal-tb;
-      height: 130%;
+      transform: rotate(-18deg);
+    }
+
+    &--left,
+    &--right {
+      animation: moveArrowsHorizontal 450ms ease-in-out infinite alternate;
+    }
+  }
+
+  &:hover &__arrows {
+    &--vertical {
+      animation: moveArrowsVerticalHover 390ms ease-in forwards;
+    }
+
+    &--left,
+    &--right {
+      animation: moveArrowsHorizontalHover 390ms ease-in forwards;
     }
   }
 }
 
-@keyframes moveArrows {
-  from {
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-
+@keyframes moveArrowsHorizontal {
   to {
-    padding-top: 25%;
-    padding-bottom: 25%;
+    width: 276px;
   }
 }
+
+@keyframes moveArrowsVertical {
+  to {
+    width: 180px;
+  }
+}
+
+
+@keyframes moveArrowsHorizontalHover {
+  to {
+    width: 330px;
+    opacity: 0;
+  }
+}
+
+
+@keyframes moveArrowsVerticalHover {
+  to {
+    width: 290px;
+    opacity: 0;
+  }
+}
+
 </style>

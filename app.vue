@@ -15,12 +15,13 @@
       title="Sponsors"
       text="Editor.js is free and open source. If you rely on it, you may be interested in supporting its maintenance and evolution."
     />
-    <Sponsors/>
+    <SponsorsList />
+    <SponsorsBecome />
   </Section>
   <Section>
     <SectionHeader
       title="Global WYSIWYG ecosystem"
-      text="Editor.js is not just an editor. It is the large community of developers around the world creating new tools, integrations, building new products and features. And <b>we really need your star</b> to support the community growth."
+      text="Editor.js is not just an editor. It is a large community of developers around the world creating new tools, integrations, building new products and features. And <b>we really need your star</b> to support the community's growth."
     />
     <Star/>
   </Section>
