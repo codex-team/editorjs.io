@@ -27,7 +27,6 @@
   </Section>
   <Section>
     <SectionHeader
-      title="Loved by"
       text="Thousands of people already write with us."
     />
     <LovedBy />

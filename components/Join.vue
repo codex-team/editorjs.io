@@ -1,6 +1,6 @@
 <template>
   <div class="codex">
-    <img src="~/assets/codex_logo.svg" alt="codex" class="codex__logo">
+    <IconCodex alt="CodeX logo" />
     <h2 class="codex__title">
       Join us
     </h2>
@@ -13,6 +13,7 @@
 </template>
 
 <script setup lang="ts">
+import IconCodex from '~/assets/codex_logo.svg';
 import AnalyticEvent from "~/utils/analytics";
 </script>
 

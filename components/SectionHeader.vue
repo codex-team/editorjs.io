@@ -3,7 +3,7 @@ defineProps<{
   /**
    * The main label of the section
    */
-  title: String,
+  title?: String,
 
   /**
    * Description. Could contain HTML
@@ -14,7 +14,7 @@ defineProps<{
 
 <template>
   <div class="section-header">
-    <h2 class="section-header__title"> {{ title }}</h2>
+    <h2 class="section-header__title" v-if="title"> {{ title }}</h2>
     <div class="section-header__text" v-html="text"/>
   </div>
 </template>
