@@ -31,7 +31,7 @@
     />
     <LovedBy />
   </Section>
-  <Section>
+  <Section :no-paddings="true">
     <Join/>
   </Section>
   <LayoutFooter />

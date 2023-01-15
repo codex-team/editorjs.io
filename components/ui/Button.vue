@@ -92,8 +92,6 @@ defineExpose({
   padding: 6px 11px;
   border-radius: 9px;
 
-  border: 1px solid var(--color-text-primary);
-  color: var(--color-text-primary);
   white-space: nowrap;
 
   &--small {
@@ -132,6 +130,17 @@ defineExpose({
       transform: translateY(2px);
       transition: transform 200ms ease, box-shadow 200ms ease, background-color 200ms ease;
       box-shadow: 0 5px 20px -3px var(--color-button-primary-shadow--hover);
+    }
+  }
+
+  &--secondary {
+    border: 1px solid var(--color-text-primary);
+    color: var(--color-text-primary);
+
+    &:hover {
+      background: var(--color-text-primary);
+      border-color: var(--color-text-primary);
+      color: #fff;
     }
   }
 

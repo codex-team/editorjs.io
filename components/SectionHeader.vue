@@ -9,12 +9,20 @@ defineProps<{
    * Description. Could contain HTML
    */
   text: String
+
+  /**
+   * Pass true to make text smaller
+   */
+  small?: Boolean,
 }>()
 </script>
 
 <template>
-  <div class="section-header">
-    <h2 class="section-header__title" v-if="title"> {{ title }}</h2>
+  <div
+    class="section-header"
+    :class="{'section-header--small': small}"
+  >
+    <h2 class="section-header__title" v-if="title">{{ title }}</h2>
     <div class="section-header__text" v-html="text"/>
   </div>
 </template>
@@ -51,6 +59,18 @@ defineProps<{
     margin-top: var(--text-margin);
     font-size: var(--text-size);
     line-height: var(--text-line-height);
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid var(--color-text-primary)
+
+    }
+  }
+
+  &--small &__text {
+    font-size: 15px;
+    line-height: 22px;
   }
 }
 </style>
