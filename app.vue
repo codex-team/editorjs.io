@@ -13,9 +13,9 @@
   <Section>
     <SectionHeader
       title="Sponsors"
-      text="For the evolution of Editor.js, we need your help. Become a sponsor by subscribing to a donation and supporting product development."
+      text="Editor.js is free and open source. If you rely on it, you may be interested in supporting its maintenance and evolution."
     />
-    <BecomeASponsor/>
+    <Sponsors/>
   </Section>
   <Section>
     <SectionHeader

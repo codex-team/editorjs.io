@@ -94,6 +94,7 @@ defineExpose({
 
   border: 1px solid var(--color-text-primary);
   color: var(--color-text-primary);
+  white-space: nowrap;
 
   &--small {
     padding: 5px 10px;
@@ -121,7 +122,7 @@ defineExpose({
   &--primary {
     background-color: var(--color-button-primary);
     border-color: var(--color-button-primary-border);
-    box-shadow: 0 8px 25px rgba(28, 173, 255, 0.46);
+    box-shadow: 0 8px 25px var(--color-button-primary-shadow);
     color: #fff;
     font-weight: 600;
 
@@ -130,7 +131,7 @@ defineExpose({
       border-color: var(--color-button-primary-border--hover);
       transform: translateY(2px);
       transition: transform 200ms ease, box-shadow 200ms ease, background-color 200ms ease;
-      box-shadow: 0 5px 20px -3px rgba(28, 173, 255, 0.66);
+      box-shadow: 0 5px 20px -3px var(--color-button-primary-shadow--hover);
     }
   }
 
