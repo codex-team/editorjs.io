@@ -2,25 +2,29 @@
   <div class="overview">
     <LayoutCenterContainer>
       <div class="overview__canvas">
-        <img
-          class="overview__canvas-pic1"
-          src="~/assets/editor-1.jpg"
-          alt="Editor.js showcase: the Toolbox and the Inline Toolbar"
-          @click="pictureClicked"
-        />
-        <img
-          class="overview__canvas-pic2"
-          src="~/assets/editor-2.jpg"
-          alt="Editor.js: the Image Tool"
-          @click="pictureClicked"
-        />
+        <template v-if="demoEnabled === false">
+          <img
+            class="overview__canvas-pic1"
+            src="~/assets/editor-1.jpg"
+            alt="Editor.js showcase: the Toolbox and the Inline Toolbar"
+            @click="pictureClicked"
+          />
+          <img
+            class="overview__canvas-pic2"
+            src="~/assets/editor-2.jpg"
+            alt="Editor.js: the Image Tool"
+            @click="pictureClicked"
+          />
+        </template>
+        <LazyEditorDemo v-else />
         <UiButton
+          v-if="demoEnabled === false"
           class="overview__demo-button"
           type="primary"
           icon="IconMarker"
           text="Play With Demo"
           ref="demoButton"
-          @click="$track(AnalyticEvent.PlayWithDemoClicked)"
+          @click="playDemoClicked"
         />
       </div>
     </LayoutCenterContainer>
@@ -38,6 +42,19 @@ const demoButton = ref()
 
 function pictureClicked() {
   (demoButton.value as {shake: Function}).shake();
+}
+
+const demoEnabled = ref(false);
+
+// console.log(this);
+
+function playDemoClicked(){
+  demoEnabled.value = true;
+
+
+
+
+  // this._vm.$track(AnalyticEvent.PlayWithDemoClicked)
 }
 </script>
 
@@ -71,6 +88,7 @@ function pictureClicked() {
     padding-top: var(--canvas-padding-top);
     display: flex;
     flex-direction: column;
+    min-height: 400px;
     /* aspect-ratio: var(--canvas-width) / var(--canvas-height); */
 
     &-pic1 {

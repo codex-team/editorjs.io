@@ -1,7 +1,7 @@
 <template>
   <LayoutHeader/>
   <LandingHeader/>
-  <OverviewImage/>
+  <EditorOverview/>
   <SectionOutput />
   <Section>
     <SectionHeader
