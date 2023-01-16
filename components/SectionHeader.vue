@@ -36,6 +36,9 @@ defineProps<{
   --text-line-height: 26px;
   --text-margin: 20px;
 
+  --text-size-small: 15px;
+  --text-line-height-small: 22px;
+
   @media (--small-viewport) {
     --title-size: 24px;
     --title-line-height: 20px;
@@ -43,6 +46,9 @@ defineProps<{
     --text-size: 15px;
     --text-line-height: 22px;
     --text-margin: 16px;
+
+    --text-size-small: 13px;
+    --text-line-height-small: 18px;
   }
 
   max-width: var(--layout-section-content-width);
@@ -69,8 +75,8 @@ defineProps<{
   }
 
   &--small &__text {
-    font-size: 15px;
-    line-height: 22px;
+    font-size: var(--text-size-small);
+    line-height: var(--text-line-height-small);
   }
 }
 </style>
