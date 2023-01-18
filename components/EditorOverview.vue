@@ -47,7 +47,15 @@ function pictureClicked() {
   (demoButton.value as {shake: Function}).shake();
 }
 
+/**
+ * Flag responsible for Demo activation
+ */
 const demoEnabled = ref(false);
+
+/**
+ * Access the Analytics module
+ */
+const { $track } = useNuxtApp();
 
 /**
  * Handler for the 'Play With Demo' button
@@ -59,7 +67,10 @@ function playDemoClicked(){
     demoCanvas.value?.scrollIntoViewIfNeeded();
   })
 
-  // this._vm.$track(AnalyticEvent.PlayWithDemoClicked)
+  /**
+   * Send analytics event
+   */
+  $track(AnalyticEvent.PlayWithDemoClicked)
 }
 </script>
 
