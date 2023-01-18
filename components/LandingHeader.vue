@@ -62,7 +62,7 @@ import AnalyticEvent from "~/utils/analytics";
     --sections-margin: 20px;
   }
 
-  padding: var(--block-padding-vertical) var(--layout-offset-x) calc(var(--block-padding-vertical) + 10px);
+  padding: var(--block-padding-vertical) 0 calc(var(--block-padding-vertical) + 10px);
   text-align: center;
 
   &__logo {
