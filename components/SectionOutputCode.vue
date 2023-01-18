@@ -156,13 +156,6 @@ const isCodeExpanded = ref(false);
 const expandButton = ref<HTMLElement | null>(null);
 
 /**
- * Allow using non-standard scrollIntoViewIfNeeded on HTMLElement
- */
-interface HTMLElement {
-  scrollIntoViewIfNeeded?: any;
-}
-
-/**
  * Expands/Collapses the code
  */
 function toggleCode() {

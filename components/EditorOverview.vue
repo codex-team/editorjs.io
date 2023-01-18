@@ -50,13 +50,6 @@ function pictureClicked() {
 const demoEnabled = ref(false);
 
 /**
- * Allow using non-standard scrollIntoViewIfNeeded on HTMLElement
- */
-interface HTMLElement {
-  scrollIntoViewIfNeeded?: any;
-}
-
-/**
  * Handler for the 'Play With Demo' button
  */
 function playDemoClicked(){

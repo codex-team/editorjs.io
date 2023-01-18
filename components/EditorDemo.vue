@@ -18,6 +18,7 @@ import Quote from '@editorjs/quote';
 import Raw from '@editorjs/raw';
 import Table from '@editorjs/table';
 import Warning from '@editorjs/warning';
+import { resolve } from 'path';
 
 new EditorJs({
   autofocus: true,
@@ -26,18 +27,51 @@ new EditorJs({
       class: Header,
       inlineToolbar: ['link', 'marker'],
     },
-    // image: {
-    //   class: ImageTool,
-    //   inlineToolbar: true,
-    //   config: {
-    //     types: 'image/jpeg, image/jpg, image/png, image/gif, video/mp4, video/quicktime',
-    //     field: 'media',
-    //     endpoints: {
-    //       byFile: '/editor/transport',
-    //       byUrl: '/editor/transport',
-    //     }
-    //   },
-    // },
+    image: {
+      class: ImageTool,
+      inlineToolbar: true,
+      config: {
+        types: 'image/jpeg, image/jpg, image/png, image/gif, video/mp4, video/quicktime',
+        field: 'media',
+        /**
+         * Custom uploader to emulate image uploading without backend
+         * @see https://github.com/editor-js/image#providing-custom-uploading-methods
+         */
+        uploader: {
+          uploadByFile(file: File) {
+            return new Promise((resolve) => {
+              const reader = new FileReader();
+
+              reader.onload = () => {
+                resolve({
+                  success: 1,
+                  file: {
+                    url: reader.result,
+                  }
+                })
+              };
+              reader.onerror = () => {
+                resolve({
+                  success: 0,
+                })
+              };
+
+              reader.readAsDataURL(file);
+            });
+          },
+          uploadByUrl(url: string){
+            return new Promise((resolve) => {
+              resolve({
+                success: 1,
+                file: {
+                  url
+                }
+              })
+            })
+          }
+        }
+      },
+    },
     list: {
       class: NestedList,
       inlineToolbar: true
