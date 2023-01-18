@@ -11,14 +11,12 @@ import Embed from '@editorjs/embed';
 import Header from '@editorjs/header';
 import ImageTool from '@editorjs/image';
 import InlineCode from '@editorjs/inline-code';
-import Link from '@editorjs/link';
 import Marker from '@editorjs/marker';
 import NestedList from '@editorjs/nested-list';
 import Quote from '@editorjs/quote';
 import Raw from '@editorjs/raw';
 import Table from '@editorjs/table';
 import Warning from '@editorjs/warning';
-import { resolve } from 'path';
 
 new EditorJs({
   autofocus: true,
@@ -76,12 +74,6 @@ new EditorJs({
       class: NestedList,
       inlineToolbar: true
     },
-    // linkEmbed: {
-    //   class: Link,
-    //   config: {
-    //     endpoint: '/editor/fetchUrl',
-    //   }
-    // },
     code: {
       class: Code,
       shortcut: 'CMD+SHIFT+D'
