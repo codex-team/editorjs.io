@@ -1,7 +1,10 @@
 <template>
   <div class="overview">
     <LayoutCenterContainer>
-      <div class="overview__canvas">
+      <div
+        class="overview__canvas"
+        ref="demoCanvas"
+      >
         <template v-if="demoEnabled === false">
           <img
             class="overview__canvas-pic1"
@@ -38,7 +41,7 @@ import { ref } from 'vue';
 // declare a ref to hold the element reference
 // the name must match template ref value
 const demoButton = ref()
-
+const demoCanvas = ref<HTMLElement | null>(null);
 
 function pictureClicked() {
   (demoButton.value as {shake: Function}).shake();
@@ -46,13 +49,22 @@ function pictureClicked() {
 
 const demoEnabled = ref(false);
 
-// console.log(this);
+/**
+ * Allow using non-standard scrollIntoViewIfNeeded on HTMLElement
+ */
+interface HTMLElement {
+  scrollIntoViewIfNeeded?: any;
+}
 
+/**
+ * Handler for the 'Play With Demo' button
+ */
 function playDemoClicked(){
   demoEnabled.value = true;
 
-
-
+  window.requestAnimationFrame(() => {
+    demoCanvas.value?.scrollIntoViewIfNeeded();
+  })
 
   // this._vm.$track(AnalyticEvent.PlayWithDemoClicked)
 }
