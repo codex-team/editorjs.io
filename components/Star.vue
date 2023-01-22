@@ -20,6 +20,7 @@
     >
       <codex-icon
         name="IconStar"
+        :size="28"
       />
       <div class="star__button-text">
         Star
@@ -69,9 +70,7 @@ import AnalyticEvent from "~/utils/analytics";
       background: #fff;
     }
 
-    svg {
-      width: 28px;
-      height: 28px;
+    .cdx-icon {
       margin-right: 2px;
     }
 

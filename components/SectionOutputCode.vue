@@ -260,7 +260,7 @@ const expandButtonText = computed(() => {
       background-color: #F2F9FE;
     }
 
-    svg {
+    .cdx-icon {
       margin-right: 7px;
     }
   }
@@ -273,7 +273,7 @@ const expandButtonText = computed(() => {
       margin-left: 50%;
     }
 
-    svg {
+    .cdx-icon {
       transform: rotate(180deg);
     }
   }

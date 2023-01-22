@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@amplitude/analytics-browser": "^1.6.6",
-    "@codexteam/nuxt-icons": "^0.0.2",
+    "@codexteam/nuxt-icons": "^0.0.3",
     "@editorjs/checklist": "^1.4.0",
     "@editorjs/code": "^2.8.0",
     "@editorjs/delimiter": "^1.3.0",

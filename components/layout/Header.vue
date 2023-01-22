@@ -17,10 +17,16 @@
         class="header__burger"
         @click="menuOpened = !menuOpened"
       >
-        <span v-if="menuOpened">
+        <span
+          v-if="menuOpened"
+          class="header__burger-icon"
+        >
           <codex-icon name="IconCross" />
         </span>
-        <span v-else>
+        <span
+          v-else
+          class="header__burger-icon"
+        >
           <codex-icon name="IconAlignJustify" />
         </span>
       </div>
@@ -39,7 +45,7 @@
           GitHub
         </a>
         <a target="_blank" href="http://opencollective.com/editorjs" class="header__link header__link--support" @click="$track(AnalyticEvent.SupportEditorJSClicked)">
-          <codex-icon name="IconHeart" />
+          <codex-icon name="IconHeart" :size="20" class="aaa" />
           Support Editor.js
         </a>
       </div>
@@ -112,7 +118,7 @@ const menuOpened = ref(false);
       display: none;
     }
 
-    span {
+    &-icon {
       padding: 4px;
       display: flex;
       align-items: center;
@@ -137,9 +143,7 @@ const menuOpened = ref(false);
       margin-top: 10px;
     }
 
-    ::v-deep(svg) {
-      width: 20px;
-      height: 20px;
+    ::v-deep(.cdx-icon) {
       margin-right: 4px;
     }
 
