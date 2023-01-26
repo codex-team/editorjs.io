@@ -368,9 +368,9 @@
   version "0.0.9-rc.0"
   resolved "https://registry.yarnpkg.com/@codexteam/icons/-/icons-0.0.9-rc.0.tgz#dfc9fd9cccdf8c3504dbbb9835bc36ce77d4a5f8"
 
-"@codexteam/nuxt-icons@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@codexteam/nuxt-icons/-/nuxt-icons-0.0.3.tgz#797fa257c73cded7bc555b0a11552fb5cddce925"
+"@codexteam/nuxt-icons@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@codexteam/nuxt-icons/-/nuxt-icons-0.0.4.tgz#70e45fe999b72b2921dd103149ef68340751cb99"
   dependencies:
     "@codexteam/icons" "^0.0.9-rc.0"
     "@nuxt/kit" "^3.0.0"
