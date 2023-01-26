@@ -1,5 +1,9 @@
 <template>
-  <div id="editorjs"></div>
+  <div
+    id="editorjs"
+    class="editor-holder"
+  >
+  </div>
 </template>
 
 <script lang="ts" setup>
@@ -20,6 +24,7 @@ import Warning from '@editorjs/warning';
 
 new EditorJs({
   autofocus: true,
+  // placeholder: 'Type text or paste a link',
   tools: {
     header: {
       class: Header,
@@ -103,3 +108,11 @@ new EditorJs({
 });
 
 </script>
+
+<style lang="postcss">
+.editor-holder {
+  @media (--small-viewport) {
+    padding: 0 20px;
+  }
+}
+</style>
