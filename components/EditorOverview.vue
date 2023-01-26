@@ -65,6 +65,18 @@ function playDemoClicked(){
 
   window.requestAnimationFrame(() => {
     demoCanvas.value?.scrollIntoViewIfNeeded();
+
+    const isMobile = window.matchMedia('(max-width: 710px)').matches;
+
+    if (isMobile) {
+      setTimeout(() => {
+        const block: HTMLElement | null = document.querySelector('.ce-block');
+
+        if (block !== null){
+          block.click();
+        }
+      }, 1000);
+    }
   })
 
   /**
