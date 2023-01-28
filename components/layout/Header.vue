@@ -17,10 +17,16 @@
         class="header__burger"
         @click="menuOpened = !menuOpened"
       >
-        <span v-if="menuOpened">
+        <span
+          v-if="menuOpened"
+          class="header__burger-icon"
+        >
           <codex-icon name="IconCross" />
         </span>
-        <span v-else>
+        <span
+          v-else
+          class="header__burger-icon"
+        >
           <codex-icon name="IconAlignJustify" />
         </span>
       </div>
@@ -39,7 +45,7 @@
           GitHub
         </a>
         <a target="_blank" href="http://opencollective.com/editorjs" class="header__link header__link--support" @click="$track(AnalyticEvent.SupportEditorJSClicked)">
-          <codex-icon name="IconHeart" />
+          <codex-icon name="IconHeart" :size="20" class="aaa" />
           Support Editor.js
         </a>
       </div>
@@ -106,15 +112,18 @@ const menuOpened = ref(false);
   }
 
   &__burger {
+    user-select: none;
+
     @media --desktop {
       display: none;
     }
 
-    span {
+    &-icon {
       padding: 4px;
       display: flex;
       align-items: center;
       justify-content: center;
+      animation: burger-in 200ms ease;
     }
   }
 
@@ -134,15 +143,16 @@ const menuOpened = ref(false);
       margin-top: 10px;
     }
 
-    ::v-deep(svg) {
-      width: 20px;
-      height: 20px;
+    ::v-deep(.cdx-icon) {
       margin-right: 4px;
     }
 
-    &:hover {
-      background: var(--color-background-hover);
+    @media (hover: hover) {
+      &:hover {
+        background: var(--color-background-hover);
+      }
     }
+
 
     &--logo {
       margin-left: -9px;
@@ -168,12 +178,14 @@ const menuOpened = ref(false);
       color: #EE3683;
       box-shadow: 0 1px 2px rgba(235, 102, 166, 0.49);
 
-      &:hover {
-        background: transparent;
-        box-shadow: 0 2px 3px rgba(235, 102, 166, 0.19);
-        color: #fff;
-        background: #fff;
-        background-clip: text;
+      @media (hover: hover) {
+        &:hover {
+          background: transparent;
+          box-shadow: 0 2px 3px rgba(235, 102, 166, 0.19);
+          color: #fff;
+          background: #fff;
+          background-clip: text;
+        }
       }
 
       &::before,
@@ -201,11 +213,23 @@ const menuOpened = ref(false);
         border-radius: 7px;
       }
 
-      &:hover::after,
-      &:hover::before {
-        background: #FF2567;
+      @media (hover: hover) {
+        &:hover::after,
+        &:hover::before {
+          background: #FF2567;
+        }
       }
     }
+  }
+}
+
+@keyframes burger-in {
+  from {
+    transform: rotate(90deg);
+  }
+
+  to {
+    transform: scale(1.2);
   }
 }
 </style>

@@ -1,47 +1,40 @@
 <template>
-  <section class="section" :class="{
-    'section--output': type === 'output',
-  }">
-    <slot/>
+  <section
+    class="section"
+    :class="{'section--no-paddings': noPaddings}"
+  >
+    <LayoutCenterContainer>
+      <slot/>
+    </LayoutCenterContainer>
   </section>
 </template>
 
 <script setup lang="ts">
 defineProps<{
   /**
-   * type of section
+   * The 'true' will remove default vertical paddings of the section
    */
-  type?: 'output',
-
+  noPaddings?: Boolean,
 }>()
 </script>
 
-<style>
+
+<style lang="postcss">
 .section {
-  padding: 100px 0;
+  --vertical-padding: 100px;
+
+  @media (--small-viewport) {
+    --vertical-padding: 30px;
+  }
+
+  &--no-paddings {
+    --vertical-padding: 0;
+  }
+
+  padding: var(--vertical-padding) 0;
   text-align: center;
   display: flex;
   align-items: center;
   flex-direction: column;
-
-  & > * {
-    padding-left: 5px;
-    padding-right: 5px;
-    max-width: 560px;
-    width: 100%;
-  }
-
-  @media (--small-viewport) {
-    padding-top: 20px
-  }
-
-  &--output {
-    padding-top: 280px;
-    background-color: #E5F3FF;
-    padding-bottom: 0;
-    @media (--small-viewport) {
-      padding-top: 80px;
-    }
-  }
 }
 </style>

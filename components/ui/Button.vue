@@ -1,12 +1,29 @@
 <template>
-  <a target="_blank" :href="link" :class="['button', `button--${type}`]">
-    <div v-if="icon" v-html="icon" class="button__icon"/>
-    <img v-if="iconPath" :src="iconPath" class="button__icon">
-    <p class="button__text">{{ text }}</p>
+  <a
+    target="_blank"
+    :href="link"
+    :class="{
+      button: true,
+      ['button--' + type]: true,
+      'button--big': big
+    }"
+    ref="button"
+  >
+    <CodexIcon
+      :name="icon"
+      v-if="icon"
+    />
+    <img
+      v-if="iconPath"
+      :src="iconPath"
+    >
+    {{ text }}
   </a>
 </template>
 
 <script setup lang="ts">
+import type { CodexIconName } from '@codexteam/nuxt-icons';
+
 defineProps<{
   /**
    * type of button
@@ -14,12 +31,23 @@ defineProps<{
   type: 'primary' | 'secondary',
 
   /**
-   * icon for button
+   * Make button big
    */
-  icon?: string,
+  big?: boolean;
+
+  /**
+   * Make button small
+   */
+  small?: boolean;
+
+  /**
+   * Name of the icon from CodeX Icons
+   */
+  icon?: CodexIconName,
 
   /**
    * icon for button
+   * @deprecated
    */
   iconPath?: string,
 
@@ -33,50 +61,107 @@ defineProps<{
    */
   link?: string,
 }>()
+
+// declare a ref to hold the element reference
+// the name must match template ref value
+const button = ref<Element>()
+
+defineExpose({
+  shake(){
+    button.value?.classList.add('shake')
+
+    setTimeout(() => {
+      button.value?.classList.remove('shake')
+    }, 500);
+  }
+})
 </script>
 
 <style lang="postcss" scoped>
 .button {
   text-decoration: none;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  border: 0;
-  color: white;
+
   cursor: pointer;
-  font-size: 14px;
   user-select: none;
 
-  &__text {
-    align-self: center;
-    text-align: center;
-  }
-}
-
-.button--primary {
-  background-color: var(--color-button-primary);
-  box-shadow: 0 8px 25px rgba(28, 173, 255, 0.46);
-  border-radius: 10px;
-  font-size: 14px;
-  font-weight: 700;
-  padding: 9px 14px;
-
-  .button__icon {
-    margin-right: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-}
-
-.button--secondary {
-  border: 1px solid var(--color-text-primary);
-  border-radius: 9px;
+  font-size: 15px;
+  line-height: 23px;
+  font-weight: 500;
   padding: 6px 11px;
+  border-radius: 9px;
 
-  .button__text {
-    color: var(--color-text-primary);
-    font-weight: 500;
-    font-size: 15px;
+  white-space: nowrap;
+
+  &--small {
+    padding: 5px 10px;
+    border-radius: 8px;
+
+    font-size: 13px;
   }
+
+  &--big {
+    padding: 14px 26px;
+    border-radius: 13px;
+
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: -0.32px;
+    font-weight: 700;
+
+    ::v-deep(svg),
+    ::v-deep(img) {
+      width: 28px;
+      height: 28px;
+    }
+  }
+
+  &--primary {
+    background-color: var(--color-button-primary);
+    border-color: var(--color-button-primary-border);
+    box-shadow: 0 8px 25px var(--color-button-primary-shadow);
+    color: #fff;
+    font-weight: 600;
+
+    &:hover {
+      background-color: var(--color-button-primary--hover);
+      border-color: var(--color-button-primary-border--hover);
+      transform: translateY(2px);
+      transition: transform 200ms ease, box-shadow 200ms ease, background-color 200ms ease;
+      box-shadow: 0 5px 20px -3px var(--color-button-primary-shadow--hover);
+    }
+  }
+
+  &--secondary {
+    border: 1px solid var(--color-text-primary);
+    color: var(--color-text-primary);
+
+    &:hover {
+      background: var(--color-text-primary);
+      border-color: var(--color-text-primary);
+      color: #fff;
+    }
+  }
+
+  ::v-deep(svg),
+  ::v-deep(img) {
+    margin-right: 0.3em;
+    margin-left: -0.1em;
+  }
+
+
+  &.shake {
+    animation: tilt-n-move-shaking 300ms ease;
+  }
+}
+
+
+@keyframes tilt-n-move-shaking {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(5px, 5px) rotate(5deg); }
+  50% { transform: translate(0, 0) rotate(0eg); }
+  75% { transform: translate(-5px, 5px) rotate(-5deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
 }
 </style>
