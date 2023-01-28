@@ -24,7 +24,7 @@ import Warning from '@editorjs/warning';
 
 new EditorJs({
   autofocus: true,
-  // placeholder: 'Type text or paste a link',
+  placeholder: 'Type text or paste a link',
   tools: {
     header: {
       class: Header,
@@ -114,5 +114,10 @@ new EditorJs({
   @media (--small-viewport) {
     padding: 0 20px;
   }
+}
+
+.codex-editor--toolbox-opened .ce-block:first-child .ce-paragraph[data-placeholder]:empty::before,
+.codex-editor--empty .ce-block:first-child .ce-paragraph[data-placeholder]:empty:focus::before {
+  opacity: .8;
 }
 </style>

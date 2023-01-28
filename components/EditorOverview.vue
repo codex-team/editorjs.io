@@ -5,6 +5,10 @@
         class="overview__canvas"
         ref="demoCanvas"
       >
+        <div
+          class="fake-input"
+          contenteditable="true"
+        ></div>
         <template v-if="demoEnabled === false">
           <img
             class="overview__canvas-pic1"
@@ -63,21 +67,26 @@ const { $track } = useNuxtApp();
 function playDemoClicked(){
   demoEnabled.value = true;
 
-  window.requestAnimationFrame(() => {
-    demoCanvas.value?.scrollIntoViewIfNeeded();
+  demoCanvas.value?.scrollIntoViewIfNeeded();
 
-    const isMobile = window.matchMedia('(max-width: 710px)').matches;
+  const isMobile = window.matchMedia('(max-width: 710px)').matches;
 
-    if (isMobile) {
-      setTimeout(() => {
-        const block: HTMLElement | null = document.querySelector('.ce-block');
+  if (isMobile) {
+    /**
+     * Mobile browsers does not allow to programmatically set a caret to the
+     * contenteditable element which is not presents on a page in a moment of button click
+     *
+     * So we use fake invisible input to focus it first, then change focus to our editor
+     */
+    (document.querySelector('.fake-input') as HTMLElement).focus();
 
-        if (block !== null){
-          block.click();
-        }
-      }, 1000);
+    const block: HTMLElement | null = document.querySelector('.ce-paragraph');
+
+    if (block !== null){
+
+      block.focus()
     }
-  })
+  }
 
   /**
    * Send analytics event
@@ -151,4 +160,21 @@ function playDemoClicked(){
   }
 }
 
+/**
+ * Mobile browsers does not allow to programmatically set a caret to the
+ * contenteditable element which is not presents on a page in a moment of button click
+ *
+ * So we use fake invisible input to focus it first, then change focus to our editor
+ */
+.fake-input {
+  display: none;
+
+  @media (--small-viewport) {
+    display: block;
+    position: absolute;
+    font-size: 17px;
+    opacity: 0.01;
+    background-color: transparent;
+  }
+}
 </style>
