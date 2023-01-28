@@ -1,6 +1,6 @@
 <template>
   <div class="codex">
-    <IconCodex alt="CodeX logo" />
+    <img src="~/assets/codex_logo.svg" alt="CodeX logo" />
     <SectionHeader
       title="Join us"
       :text="text"
@@ -18,7 +18,6 @@
 </template>
 
 <script setup lang="ts">
-import IconCodex from '~/assets/codex_logo.svg';
 import AnalyticEvent from "~/utils/analytics";
 
 const text = `Editor.js is made by <a href="https://codex.so?from=editorjs-join" target="_blank">CodeX</a> — a non-profit team of passionate talents around the world interested in making high-quality open-source products. We're open to people who want to constantly improve their skills and grow professionally with experiments in cutting-edge technologies.`;
@@ -33,7 +32,7 @@ const text = `Editor.js is made by <a href="https://codex.so?from=editorjs-join"
   justify-content: center;
   flex-direction: column;
 
-  svg {
+  img {
     margin-bottom: 20px;
   }
 
