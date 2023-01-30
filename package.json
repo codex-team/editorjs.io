@@ -1,15 +1,18 @@
 {
   "private": true,
   "scripts": {
+    "build-docs": "codex.docs build-static",
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
+    "start-docs": "codex.docs",
+    "start-all": "http-server dist",
+    "build-full": "yarn generate && yarn build-docs",
     "preview": "nuxt preview",
     "editor-update": "./editor-update.sh"
   },
   "devDependencies": {
     "nuxt": "^3.0.0",
-    "nuxt-svgo": "^1.1.0",
     "postcss-apply": "^0.12.0",
     "postcss-nested": "^5.0.6",
     "postcss-preset-env": "^7.7.2",
@@ -35,6 +38,9 @@
     "@editorjs/table": "^2.2.0",
     "@editorjs/warning": "^1.3.0",
     "@nuxt/kit": "^3.0.0",
+    "codex.docs": "2.2.0-rc.16",
+    "http-server": "^14.1.1",
     "modern-css-reset": "^1.4.0"
-  }
+  },
+  "packageManager": "yarn@3.3.1"
 }

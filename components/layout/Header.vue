@@ -9,7 +9,7 @@
       class="header__container"
     >
       <a href="/" class="header__link header__link--logo">
-        <SvgLogo width="24" height="24"/>
+        <img src="~/assets/logo.svg" alt="Editor.js logo">
         Editor.js
       </a>
 
@@ -32,7 +32,7 @@
       </div>
 
       <div class="header__menu">
-        <a target="_blank" href="https://editorjs.io/getting-started" class="header__link" @click="$track(AnalyticEvent.DocumentationClicked)">
+        <a target="_blank" href="/base-concepts" class="header__link" @click="$track(AnalyticEvent.DocumentationClicked)">
           Documentation
         </a>
         <a target="_blank" href="https://github.com/editor-js/awesome-editorjs" class="header__link" @click="$track(AnalyticEvent.AwesomePluginsClicked)">
@@ -54,7 +54,7 @@
 </template>
 
 <script setup lang="ts">
-import SvgLogo from '~/assets/logo.svg';
+// import SvgLogo from '~/assets/logo.svg';
 import AnalyticEvent from "~/utils/analytics";
 /**
  * Flag stores header menu opening state on mobile devices
@@ -163,7 +163,7 @@ const menuOpened = ref(false);
         margin-top: 0;
       }
 
-      ::v-deep(svg) {
+      ::v-deep(img) {
         display: inline-flex;
         width: 24px;
         height: 24px;

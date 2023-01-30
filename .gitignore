@@ -1,7 +1,15 @@
 node_modules
 .nuxt
 .DS_Store
+docs-dist
 .idea
 .output
 dist
 .env
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions

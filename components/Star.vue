@@ -1,16 +1,16 @@
 <template>
   <div class="star">
     <div class="star__arrows star__arrows--vertical">
-      <IconArrow aria-hidden="true"/>
-      <IconArrow aria-hidden="true"/>
+      <img src="~/assets/arrow.svg" aria-hidden="true"/>
+      <img src="~/assets/arrow.svg" aria-hidden="true"/>
     </div>
     <div class="star__arrows star__arrows--left">
-      <IconArrow aria-hidden="true"/>
-      <IconArrow aria-hidden="true"/>
+      <img src="~/assets/arrow.svg" aria-hidden="true"/>
+      <img src="~/assets/arrow.svg" aria-hidden="true"/>
     </div>
     <div class="star__arrows star__arrows--right">
-      <IconArrow aria-hidden="true"/>
-      <IconArrow aria-hidden="true"/>
+      <img src="~/assets/arrow.svg" aria-hidden="true"/>
+      <img src="~/assets/arrow.svg" aria-hidden="true"/>
     </div>
     <a
       class="star__button"
@@ -33,7 +33,6 @@
 </template>
 
 <script setup lang="ts">
-import IconArrow from '~/assets/arrow.svg';
 import AnalyticEvent from "~/utils/analytics";
 </script>
 
@@ -94,7 +93,7 @@ import AnalyticEvent from "~/utils/analytics";
     justify-content: space-between;
     align-items: center;
 
-    svg {
+    img {
       width: 13px;
       height: 21px;
 

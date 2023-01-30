@@ -1,0 +1,41 @@
+port: 3000
+host: "localhost"
+uploads:
+  driver: "local"
+  local:
+    path: "./uploads"
+favicon: "public/favicon.png"
+frontend:
+  title: Editor.js
+  startPage: ""
+  description: Free block-style editor with a universal JSON output
+  menu:
+    - title: Documentation
+      uri: "/base-concepts"
+    - title: Awesome Plugins
+      uri: https://github.com/editor-js/awesome-editorjs
+    - title: Digest
+      uri: https://digest.editorjs.io/
+    - title: GitHub
+      uri: https://github.com/codex-team/editor.js
+    - title: Support Editor.js
+      uri: https://opencollective.com/editorjs
+  misprintsChatId: ""
+  yandexMetrikaId: ""
+  carbon:
+    serve: ""
+    placement: ""
+auth:
+  secret: supersecret
+  password: secretpassword
+staticBuild:
+  overwrite: false
+  outputDir: .output/public
+  indexPage:
+    enabled: false
+    uri: base-concepts
+
+database:
+  driver: local # you can change database driver here. 'mongodb' or 'local'
+  local:
+    path: ./db

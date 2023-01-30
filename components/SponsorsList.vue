@@ -25,7 +25,7 @@
           target="_blank"
           >
           <img
-            :src="sponsor.picture"
+            src="~/assets/bucerius.jpeg"
             :width="grade.size"
           >
         </a>
@@ -35,14 +35,11 @@
 </template>
 
 <script setup lang="ts">
-import logo from '~/assets/bucerius.jpeg';
-
 const sponsors = [
   {
     label: 'Gold',
     items: [
       {
-        picture: logo,
         title: 'Bucerius Law School',
         link: 'https://www.law-school.de'
       },

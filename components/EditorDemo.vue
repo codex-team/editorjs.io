@@ -118,6 +118,6 @@ new EditorJs({
 
 .codex-editor--toolbox-opened .ce-block:first-child .ce-paragraph[data-placeholder]:empty::before,
 .codex-editor--empty .ce-block:first-child .ce-paragraph[data-placeholder]:empty:focus::before {
-  opacity: .8;
+  opacity: .8 !important;
 }
 </style>

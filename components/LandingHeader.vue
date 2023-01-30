@@ -3,7 +3,7 @@
     <LayoutCenterContainer>
       <div class="landing-header__logo">
         <div class="landing-header__logo-pic">
-          <SvgLogo alt="Editor.js shining logo" width="86" height="86" />
+          <img src="~/assets/logo.svg" alt="Editor.js shining logo" width="86" height="86" />
         </div>
         <div class="landing-header__logo-title">
           Editor.js
@@ -20,7 +20,7 @@
         type="primary"
         big
         text="Get Started"
-        link="https://editorjs.io/getting-started"
+        link="/getting-started"
         @click="$track(AnalyticEvent.GetStartedClicked)"
       />
       <UnfairAdvantages
@@ -31,7 +31,6 @@
 </template>
 
 <script setup lang="ts">
-import SvgLogo from '~/assets/logo.svg';
 import AnalyticEvent from "~/utils/analytics";
 </script>
 
@@ -73,7 +72,7 @@ import AnalyticEvent from "~/utils/analytics";
     &-pic {
       position: relative;
 
-      svg {
+      img {
         width: var(--logo-size);
         height: var(--logo-size);
       }
@@ -102,7 +101,7 @@ import AnalyticEvent from "~/utils/analytics";
         animation: attack 200ms 8000ms cubic-bezier(.97, 0,1,.05) forwards;
         animation-play-state: paused;
 
-        svg {
+        img {
           will-change: transform;
           animation: easter 500ms ease infinite;
           animation-play-state: paused;
@@ -115,7 +114,7 @@ import AnalyticEvent from "~/utils/analytics";
         }
 
         &:hover,
-        &:hover svg,
+        &:hover img,
         &:hover::before {
           animation-play-state: running;
         }

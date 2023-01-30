@@ -1,28 +1,15 @@
 <template>
   <div class="grades">
-    <IconMedalFirst alt="Product Of The Day medal" />
-    <IconCup alt="Product Of The Week Medal " />
-    <IconMedalSecond alt="Product Of The Month medal" />
+    <img src="~/assets/medal_first.svg" alt="Product Of The Day medal" />
+    <img src="~/assets/cup.svg" alt="Product Of The Week Medal " />
+    <img src="~/assets/medal_second.svg" alt="Product Of The Month medal" />
   </div>
   <div class="status">
     #1 on Product Hunt
   </div>
 </template>
 
-<script lang="ts" setup>
-import IconMedalFirst from '~/assets/medal_first.svg';
-import IconCup from '~/assets/cup.svg';
-import IconMedalSecond from '~/assets/medal_second.svg';
-</script>
-
 <style scoped>
-.resources {
-  justify-content: center;
-  display: flex;
-  gap: 30px;
-  margin-top: 20px;
-}
-
 .grades {
   display: flex;
   justify-content: center;
