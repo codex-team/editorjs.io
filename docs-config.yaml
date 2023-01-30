@@ -4,7 +4,6 @@ uploads:
   driver: "local"
   local:
     path: "./uploads"
-password: secretpassword
 favicon: "public/favicon.png"
 frontend:
   title: Editor.js
@@ -26,9 +25,9 @@ frontend:
   carbon:
     serve: ""
     placement: ""
-
 auth:
   secret: supersecret
+  password: secretpassword
 staticBuild:
   overwrite: false
   outputDir: .output/public

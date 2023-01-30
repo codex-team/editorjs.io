@@ -1,6 +1,7 @@
 <template>
   <div class="become-sponsor">
-    <SvgGift
+    <img
+      src="~/assets/gift.svg"
       class="become-sponsor__icon"
       aria-hidden="true"
     />
@@ -36,10 +37,6 @@
     </a>
   </div>
 </template>
-
-<script setup lang="ts">
-import SvgGift from '~/assets/gift.svg';
-</script>
 
 <style lang="postcss">
 @import url('~/assets/styles/mixins.pcss');
