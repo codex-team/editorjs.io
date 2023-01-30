@@ -7,7 +7,8 @@ enum AnalyticEvent {
   SupportEditorJSClicked = 'Support Editor.js - Clicked',
   SponsorClicked = 'Sponsor - Clicked',
   StarClicked = 'Star - Clicked',
-  JoinClicked = 'Join us - Clicked'
+  JoinClicked = 'Join us - Clicked',
+  PlayWithDemoClicked = 'Play Wih Demo - Clicked'
 }
 
 export default AnalyticEvent;

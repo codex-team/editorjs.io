@@ -1,15 +1,21 @@
 <template>
   <div class="ua">
-    <div class="ua__item__wrapper" v-for="advantage in advantages">
-      <div class="ua__item">
+    <div
+      v-for="(advantage, index) in advantages"
+      class="ua__item"
+    >
+      <div class="ui__item-body">
         <div class="ua__item-title">
-          {{ advantage.title }}
+        {{ advantage.title }}
         </div>
         <div class="ua__item-text">
           {{ advantage.text }}
         </div>
       </div>
-      <hr class="ua__delimiter">
+      <div
+        v-if="index < advantages.length - 1"
+        class="ua__item-delimiter"
+      ></div>
     </div>
   </div>
 </template>
@@ -19,83 +25,75 @@
 const advantages = [
   {
     title: 'Free and open-source',
-    text: 'Improved by the whole world. You could join.'
+    text: 'Improves by the whole world. You can join.'
   },
   {
     title: 'Clean UI/UX',
-    text: 'Modern look. Customizable. Out of the box.'
+    text: 'Modern look. Customizable. Out of the box.'
   },
   {
     title: 'Simple API driven',
-    text: 'Really simple. Create an any tool. Lots of already created.'
+    text: 'Simple but powerful. Create any tool. Lots of already created.'
   },
   {
     title: 'Powered by CodeX',
-    text: 'The team of senior developers loving Open Source'
+    text: 'The team of senior developers loving Open Source'
   },
 ]
 </script>
 
-<style scoped>
+<style scoped lang="postcss">
   .ua {
-    display: flex;
-    max-width: 1024px;
-    width: 100%;
-    margin-top: 120px;
-    & .ua__item__wrapper:last-child > .ua__delimiter {
-      display: none;
-    }
+    --gap: 22px;
+    --title-margin: 12px;
+    --title-font-size: 20px;
+    --title-letter-spacing: 0.38px;
+    --text-font-size: 15px;
 
-    &__delimiter {
-      align-self: center;
-      height: 15px;
-      border: 0.5px solid var(--color-text-secondary);
-      margin: 0 24px 0 24px;
+    display: grid;
+    grid-template-columns: repeat(4, 0.24fr);
+    gap: var(--gap);
+    justify-content: space-around;
+
+    @media (--small-viewport) {
+      grid-template-columns: auto;
+
+      --title-margin: 0;
+      --title-font-size: 16px;
+      --title-letter-spacing: 0.1px;
+      --text-font-size: 14px;
     }
 
     &__item {
-      align-self: center;
-      width: auto;
-      max-width: 240px;
-      height: 68px;
-
-      &__wrapper {
-        display: flex;
-      }
+      display: flex;
+      text-align: left;
 
       &-title {
-        white-space: nowrap;
+        font-size: var(--title-font-size);
         font-weight: 700;
-        font-size: 20px;
-        margin-bottom: 5px;
+        letter-spacing: var(--title-letter-spacing);
+        line-height: 26px;
+        margin-bottom: var(--title-margin);
       }
 
       &-text {
         line-height: 19px;
-        font-size: 15px;
-      }
-    }
-    @media (--small-viewport) {
-      flex-direction: column;
-      align-items: center;
-      margin-top: 50px;
-
-      &__container {
-        flex-direction: column;
-        align-items: flex-start;
+        font-size: var(--text-font-size);
+        letter-spacing: 0.1px;
       }
 
-      &__item{
-        margin-top: 40px;
-        text-align: center;
+      &-delimiter {
+        height: 15px;
+        width: 3px;
+        background-color: var(--color-text-secondary);
+        margin: auto 0 auto var(--gap);
+        border-radius: 3px;
+        flex-shrink: 0;
+        opacity: .15;
 
-        &__wrapper{
-          flex-direction: column;
+        @media (--small-viewport) {
+          display: none;
         }
-      }
-
-      &__delimiter {
-        display: none;
       }
     }
   }

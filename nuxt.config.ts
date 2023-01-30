@@ -16,7 +16,8 @@ export default defineNuxtConfig({
   postcss: {
     plugins: {
       'postcss-preset-env': {},
-      'postcss-nested': {}
+      'postcss-nested': {},
+      'postcss-apply': {}
     }
   },
   css: [
