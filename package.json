@@ -40,7 +40,8 @@
     "@nuxt/kit": "^3.0.0",
     "codex.docs": "2.2.0-rc.16",
     "http-server": "^14.1.1",
-    "modern-css-reset": "^1.4.0"
+    "modern-css-reset": "^1.4.0",
+    "yandex-metrika-module-nuxt3": "^1.5.3"
   },
   "packageManager": "yarn@3.3.1"
 }

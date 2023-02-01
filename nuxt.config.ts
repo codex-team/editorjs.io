@@ -26,6 +26,12 @@ export default defineNuxtConfig({
   ],
   modules: [
     '@codexteam/nuxt-icons',
-    '~/modules/amplitude/index.ts'
-  ]
+    '~/modules/amplitude/index.ts',
+    'yandex-metrika-module-nuxt3'
+  ],
+  runtimeConfig: {
+    yandexMetrika: {
+      id: process.env.YANDEX_METRIKA_ID,
+    }
+  }
 })
