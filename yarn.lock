@@ -9367,6 +9367,7 @@ __metadata:
     postcss-preset-env: ^7.7.2
     typescript: ^4.7.4
     vue-tsc: ^0.39.4
+    yandex-metrika-module-nuxt3: ^1.5.3
   languageName: unknown
   linkType: soft
 
@@ -10852,6 +10853,17 @@ __metadata:
   version: 1.10.2
   resolution: "yaml@npm:1.10.2"
   checksum: ce4ada136e8a78a0b08dc10b4b900936912d15de59905b2bf415b4d33c63df1d555d23acb2a41b23cf9fb5da41c256441afca3d6509de7247daa062fd2c5ea5f
+  languageName: node
+  linkType: hard
+
+"yandex-metrika-module-nuxt3@npm:^1.5.3":
+  version: 1.5.3
+  resolution: "yandex-metrika-module-nuxt3@npm:1.5.3"
+  dependencies:
+    "@nuxt/kit": ^3.0.0
+    defu: ^6.1.1
+    pathe: ^1.0.0
+  checksum: 32e59bb26d6e3cbc973abf18a6f6f421b504b08774cf03a174ca41b1ba3317c54da68ba4c4576ccaff60a74e291dd74de5d0aa93f69ecedba7a53142872fd266
   languageName: node
   linkType: hard
 
