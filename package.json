@@ -12,7 +12,7 @@
     "editor-update": "./editor-update.sh"
   },
   "devDependencies": {
-    "nuxt": "^3.0.0",
+    "nuxt": "^3.2.0",
     "postcss-apply": "^0.12.0",
     "postcss-nested": "^5.0.6",
     "postcss-preset-env": "^7.7.2",

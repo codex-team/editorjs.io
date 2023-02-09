@@ -37,6 +37,19 @@
   <LayoutFooter />
 </template>
 
+<script lang="ts" setup>
+const config = useRuntimeConfig();
+
+useServerSeoMeta({
+  title: 'Editor.js',
+  ogTitle: 'Editor.js',
+  description: 'Free block-style editor with a universal JSON output',
+  ogDescription: 'Free block-style editor with a universal JSON output',
+  ogImage: config.BASE_URL + '/og-image.png',
+  twitterCard: 'summary_large_image',
+})
+</script>
+
 <style>
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
