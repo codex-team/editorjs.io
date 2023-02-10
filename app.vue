@@ -45,7 +45,7 @@ useServerSeoMeta({
   ogTitle: 'Editor.js',
   description: 'Free block-style editor with a universal JSON output',
   ogDescription: 'Free block-style editor with a universal JSON output',
-  ogImage: config.BASE_URL + '/og-image.png',
+  ogImage: config.baseUrl + '/og-image.png',
   twitterCard: 'summary_large_image',
 })
 </script>
