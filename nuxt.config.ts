@@ -30,8 +30,9 @@ export default defineNuxtConfig({
     'yandex-metrika-module-nuxt3'
   ],
   runtimeConfig: {
+    baseUrl: process.env.BASE_URL,
     yandexMetrika: {
       id: process.env.YANDEX_METRIKA_ID,
     }
-  }
+  },
 })
