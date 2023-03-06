@@ -35,9 +35,13 @@
     <Join/>
   </Section>
   <LayoutFooter />
+  <client-only>
+    <Surveys/>
+  </client-only>
 </template>
 
 <script lang="ts" setup>
+
 const config = useRuntimeConfig();
 
 useServerSeoMeta({
@@ -48,6 +52,7 @@ useServerSeoMeta({
   ogImage: config.baseUrl + '/og-image.png',
   twitterCard: 'summary_large_image',
 })
+
 </script>
 
 <style>

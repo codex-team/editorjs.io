@@ -1745,6 +1745,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@codexteam/surveys@npm:^0.0.4":
+  version: 0.0.4
+  resolution: "@codexteam/surveys@npm:0.0.4"
+  checksum: ce00ad3f5650160526b8abacad38afc69a02f307071c33bc4a6542c294abe8d8a4aab263cf07778936c2683a445508d3f68cd26bbc0a6d83fa8228bfd8d665e1
+  languageName: node
+  linkType: hard
+
 "@csstools/postcss-cascade-layers@npm:^1.1.1":
   version: 1.1.1
   resolution: "@csstools/postcss-cascade-layers@npm:1.1.1"
@@ -9036,6 +9043,7 @@ __metadata:
   dependencies:
     "@amplitude/analytics-browser": ^1.6.6
     "@codexteam/nuxt-icons": ^0.0.4
+    "@codexteam/surveys": ^0.0.4
     "@editorjs/checklist": ^1.4.0
     "@editorjs/code": ^2.8.0
     "@editorjs/delimiter": ^1.3.0
