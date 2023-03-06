@@ -35,9 +35,7 @@
     <Join/>
   </Section>
   <LayoutFooter />
-  <client-only>
-    <Surveys/>
-  </client-only>
+  <Surveys/>
 </template>
 
 <script lang="ts" setup>
