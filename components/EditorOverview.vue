@@ -56,6 +56,12 @@ function pictureClicked() {
  */
 const demoEnabled = ref(false);
 
+
+/**
+ * Dom mutation listener used to scroll to the demo
+ */
+const listener = ref<any>();
+
 /**
  * Access the Analytics module
  */
@@ -67,7 +73,22 @@ const { $track } = useNuxtApp();
 function playDemoClicked(){
   demoEnabled.value = true;
 
-  demoCanvas.value?.scrollIntoViewIfNeeded();
+
+/**
+ * Listen to DOM Mutations and wait for editorjs element to be inserted 
+ * then scroll to it. We have to wait for the editorjs element to be inserted
+ * otherwise the scroll will not work
+ */
+  listener.value=()=>{
+    if(document.getElementById('editorjs')){
+      smoothScrollToCenter(demoCanvas.value)
+      window.removeEventListener('DOMNodeInserted',listener.value)
+    }
+  }
+  
+  window.addEventListener('DOMNodeInserted',listener.value)
+
+
 
   const isMobile = window.matchMedia('(max-width: 710px)').matches;
 
@@ -92,6 +113,26 @@ function playDemoClicked(){
    * Send analytics event
    */
   $track(AnalyticEvent.PlayWithDemoClicked)
+}
+
+/**
+ * Scrolls to targetEle
+ */
+function smoothScrollToCenter(targetEle:HTMLElement|null) {
+    
+    if (!targetEle) {
+        return;
+    }
+    
+    const targetPosition = targetEle.getBoundingClientRect().top + window.scrollY;
+    const screenHeight = window.innerHeight;
+    const targetDivHeight=targetEle.getBoundingClientRect().height
+    const targetOffset = targetPosition - (screenHeight / 2)+(targetDivHeight/2);
+    
+    window.scrollTo({
+        top: targetOffset,
+        behavior: 'smooth'
+    });
 }
 </script>
 
