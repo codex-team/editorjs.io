@@ -56,12 +56,6 @@ function pictureClicked() {
  */
 const demoEnabled = ref(false);
 
-
-/**
- * Dom mutation listener used to scroll to the demo
- */
-const listener = ref<any>();
-
 /**
  * Access the Analytics module
  */
@@ -79,14 +73,14 @@ function playDemoClicked(){
  * then scroll to it. We have to wait for the editorjs element to be inserted
  * otherwise the scroll will not work
  */
-  listener.value=()=>{
+  const onDomChange=()=>{
     if(document.getElementById('editorjs')){
       smoothScrollToCenter(demoCanvas.value)
-      window.removeEventListener('DOMNodeInserted',listener.value)
+      window.removeEventListener('DOMNodeInserted',onDomChange)
     }
   }
   
-  window.addEventListener('DOMNodeInserted',listener.value)
+  window.addEventListener('DOMNodeInserted',onDomChange)
 
 
 
