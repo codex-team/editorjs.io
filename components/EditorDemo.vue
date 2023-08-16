@@ -55,7 +55,6 @@ onMounted(()=>{
     const screenHeight = window.innerHeight;
     const targetDivHeight=targetEle.getBoundingClientRect().height
     const targetOffset = targetPosition - (screenHeight / 2)+(targetDivHeight/2);
-    console.log(targetDivHeight);
     
     window.scrollTo({
         top: targetOffset,
