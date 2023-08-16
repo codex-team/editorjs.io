@@ -1,7 +1,7 @@
 <template>
   <div
     id="editorjs"
-    class="editor-holder yyy"
+    class="editor-holder"
     ref="editorjs"
   >
   </div>
@@ -145,7 +145,7 @@ new EditorJs({
     },
     warning: Warning,
     checklist: Checklist,
-    }
+  }
 });
 
 </script>
