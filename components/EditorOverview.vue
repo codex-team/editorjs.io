@@ -23,7 +23,7 @@
             @click="pictureClicked"
           />
         </template>
-        <LazyEditorDemo v-else />
+        <LazyEditorDemo v-else scroll-to-center/>
         <UiButton
           v-if="demoEnabled === false"
           class="overview__demo-button"
@@ -68,20 +68,6 @@ function playDemoClicked(){
   demoEnabled.value = true;
 
 
-/**
- * Listen to DOM Mutations and wait for editorjs element to be inserted 
- * then scroll to it. We have to wait for the editorjs element to be inserted
- * otherwise the scroll will not work
- */
-  const onDomChange=()=>{
-    if(document.getElementById('editorjs')){
-      smoothScrollToCenter(demoCanvas.value)
-      window.removeEventListener('DOMNodeInserted',onDomChange)
-    }
-  }
-  
-  window.addEventListener('DOMNodeInserted',onDomChange)
-
 
 
   const isMobile = window.matchMedia('(max-width: 710px)').matches;
@@ -109,25 +95,7 @@ function playDemoClicked(){
   $track(AnalyticEvent.PlayWithDemoClicked)
 }
 
-/**
- * Scrolls to targetEle
- */
-function smoothScrollToCenter(targetEle:HTMLElement|null) {
-    
-    if (!targetEle) {
-        return;
-    }
-    
-    const targetPosition = targetEle.getBoundingClientRect().top + window.scrollY;
-    const screenHeight = window.innerHeight;
-    const targetDivHeight=targetEle.getBoundingClientRect().height
-    const targetOffset = targetPosition - (screenHeight / 2)+(targetDivHeight/2);
-    
-    window.scrollTo({
-        top: targetOffset,
-        behavior: 'smooth'
-    });
-}
+
 </script>
 
 <style lang="postcss">
@@ -160,7 +128,7 @@ function smoothScrollToCenter(targetEle:HTMLElement|null) {
     padding-top: var(--canvas-padding-top);
     display: flex;
     flex-direction: column;
-    min-height: 400px;
+    
     /* aspect-ratio: var(--canvas-width) / var(--canvas-height); */
 
     &-pic1 {

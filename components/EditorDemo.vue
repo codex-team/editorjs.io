@@ -1,7 +1,8 @@
 <template>
   <div
     id="editorjs"
-    class="editor-holder"
+    class="editor-holder yyy"
+    ref="editorjs"
   >
   </div>
 </template>
@@ -21,6 +22,46 @@ import Quote from '@editorjs/quote';
 import Raw from '@editorjs/raw';
 import Table from '@editorjs/table';
 import Warning from '@editorjs/warning';
+import { onMounted, ref } from 'vue'
+
+
+const {scrollToCenter}=defineProps<{
+
+  /**
+   * Pass true to make text smaller
+   */
+  scrollToCenter?: Boolean,
+}>()
+
+const editorjs = ref<HTMLElement | null>(null);
+
+onMounted(()=>{
+  if(scrollToCenter){
+    smoothScrollToCenter(editorjs.value)
+  }
+
+})
+
+/**
+ * Scrolls to targetEle
+ */
+ function smoothScrollToCenter(targetEle:HTMLElement|null) {
+    
+    if (!targetEle) {
+        return;
+    }
+    
+    const targetPosition = targetEle.getBoundingClientRect().top + window.scrollY;
+    const screenHeight = window.innerHeight;
+    const targetDivHeight=targetEle.getBoundingClientRect().height
+    const targetOffset = targetPosition - (screenHeight / 2)+(targetDivHeight/2);
+    console.log(targetDivHeight);
+    
+    window.scrollTo({
+        top: targetOffset,
+        behavior: 'smooth'
+    });
+}
 
 new EditorJs({
   autofocus: true,
@@ -104,13 +145,14 @@ new EditorJs({
     },
     warning: Warning,
     checklist: Checklist,
-  }
+    }
 });
 
 </script>
 
 <style lang="postcss">
 .editor-holder {
+  min-height: 400px;
   @media (--small-viewport) {
     padding: 0 20px;
   }
