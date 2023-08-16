@@ -3,6 +3,7 @@
     <LayoutCenterContainer>
       <div
         class="overview__canvas"
+        ref="demoCanvas"
       >
         <div
           class="fake-input"
@@ -22,7 +23,7 @@
             @click="pictureClicked"
           />
         </template>
-        <LazyEditorDemo v-else :scroll-to-center="true"/>
+        <LazyEditorDemo v-else />
         <UiButton
           v-if="demoEnabled === false"
           class="overview__demo-button"
@@ -44,6 +45,7 @@ import { ref } from 'vue';
 // declare a ref to hold the element reference
 // the name must match template ref value
 const demoButton = ref()
+const demoCanvas = ref<HTMLElement | null>(null);
 
 function pictureClicked() {
   (demoButton.value as {shake: Function}).shake();
@@ -64,6 +66,8 @@ const { $track } = useNuxtApp();
  */
 function playDemoClicked(){
   demoEnabled.value = true;
+
+  smoothScrollToCenter(demoCanvas.value)
 
   const isMobile = window.matchMedia('(max-width: 710px)').matches;
 
@@ -88,6 +92,22 @@ function playDemoClicked(){
    * Send analytics event
    */
   $track(AnalyticEvent.PlayWithDemoClicked)
+}
+
+function smoothScrollToCenter(targetEle:HTMLElement|null) {
+    
+    if (!targetEle) {
+        return;
+    }
+    
+    const targetPosition = targetEle.getBoundingClientRect().top + window.scrollY;
+    const screenHeight = window.innerHeight;
+    const targetOffset = targetPosition - (screenHeight / 3);
+    
+    window.scrollTo({
+        top: targetOffset,
+        behavior: 'smooth'
+    });
 }
 </script>
 
@@ -121,6 +141,7 @@ function playDemoClicked(){
     padding-top: var(--canvas-padding-top);
     display: flex;
     flex-direction: column;
+    min-height: 400px;
     /* aspect-ratio: var(--canvas-width) / var(--canvas-height); */
 
     &-pic1 {
