@@ -28,7 +28,7 @@ import { onMounted, ref } from 'vue'
 const {scrollToCenter}=defineProps<{
 
   /**
-   * Pass true to make text smaller
+   * Pass true to scroll the demo into view
    */
   scrollToCenter?: Boolean,
 }>()

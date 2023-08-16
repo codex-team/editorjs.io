@@ -3,7 +3,6 @@
     <LayoutCenterContainer>
       <div
         class="overview__canvas"
-        ref="demoCanvas"
       >
         <div
           class="fake-input"
@@ -23,7 +22,7 @@
             @click="pictureClicked"
           />
         </template>
-        <LazyEditorDemo v-else scroll-to-center/>
+        <LazyEditorDemo v-else :scroll-to-center="true"/>
         <UiButton
           v-if="demoEnabled === false"
           class="overview__demo-button"
@@ -45,7 +44,6 @@ import { ref } from 'vue';
 // declare a ref to hold the element reference
 // the name must match template ref value
 const demoButton = ref()
-const demoCanvas = ref<HTMLElement | null>(null);
 
 function pictureClicked() {
   (demoButton.value as {shake: Function}).shake();
@@ -66,9 +64,6 @@ const { $track } = useNuxtApp();
  */
 function playDemoClicked(){
   demoEnabled.value = true;
-
-
-
 
   const isMobile = window.matchMedia('(max-width: 710px)').matches;
 
@@ -94,8 +89,6 @@ function playDemoClicked(){
    */
   $track(AnalyticEvent.PlayWithDemoClicked)
 }
-
-
 </script>
 
 <style lang="postcss">
