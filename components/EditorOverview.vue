@@ -121,7 +121,6 @@ function playDemoClicked(){
     padding-top: var(--canvas-padding-top);
     display: flex;
     flex-direction: column;
-    
     /* aspect-ratio: var(--canvas-width) / var(--canvas-height); */
 
     &-pic1 {
