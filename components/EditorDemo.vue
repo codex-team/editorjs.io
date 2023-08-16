@@ -53,8 +53,7 @@ onMounted(()=>{
     
     const targetPosition = targetEle.getBoundingClientRect().top + window.scrollY;
     const screenHeight = window.innerHeight;
-    const targetDivHeight=targetEle.getBoundingClientRect().height
-    const targetOffset = targetPosition - (screenHeight / 3);
+    const targetOffset = targetPosition - (screenHeight / 3); //will scroll to 33% from top of the screen
     
     window.scrollTo({
         top: targetOffset,
