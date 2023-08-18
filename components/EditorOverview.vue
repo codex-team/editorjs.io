@@ -67,7 +67,7 @@ const { $track } = useNuxtApp();
 function playDemoClicked(){
   demoEnabled.value = true;
 
-  smoothScrollToCenter(demoCanvas.value)
+  smoothScrollToView(demoCanvas.value)
 
   const isMobile = window.matchMedia('(max-width: 710px)').matches;
 
@@ -77,15 +77,20 @@ function playDemoClicked(){
      * contenteditable element which is not presents on a page in a moment of button click
      *
      * So we use fake invisible input to focus it first, then change focus to our editor
+     * 
+     * setTimeout is used because the virtual keyboard interrupts scroll
      */
-    (document.querySelector('.fake-input') as HTMLElement).focus();
+    
+    setTimeout(()=>{
+        (document.querySelector('.fake-input') as HTMLElement).focus();
 
-    const block: HTMLElement | null = document.querySelector('.ce-paragraph');
+      const block: HTMLElement | null = document.querySelector('.ce-paragraph');
 
-    if (block !== null){
+      if (block !== null){
 
-      block.focus()
-    }
+        block.focus()
+      }
+    },1000)
   }
 
   /**
@@ -94,7 +99,8 @@ function playDemoClicked(){
   $track(AnalyticEvent.PlayWithDemoClicked)
 }
 
-function smoothScrollToCenter(targetEle:HTMLElement|null) {
+
+function smoothScrollToView(targetEle:HTMLElement|null) {
     
     if (!targetEle) {
         return;
@@ -102,7 +108,7 @@ function smoothScrollToCenter(targetEle:HTMLElement|null) {
     
     const targetPosition = targetEle.getBoundingClientRect().top + window.scrollY;
     const screenHeight = window.innerHeight;
-    const targetOffset = targetPosition - (screenHeight / 3);
+    const targetOffset = targetPosition - (screenHeight / 3); 
     
     window.scrollTo({
         top: targetOffset,
