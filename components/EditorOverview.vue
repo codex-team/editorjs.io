@@ -100,6 +100,9 @@ function playDemoClicked(){
 }
 
 
+/**
+   * Scroll the target element to 33% from top of the screen
+   */
 function smoothScrollToView(targetEle:HTMLElement|null) {
     
     if (!targetEle) {
