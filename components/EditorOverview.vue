@@ -77,20 +77,15 @@ function playDemoClicked(){
      * contenteditable element which is not presents on a page in a moment of button click
      *
      * So we use fake invisible input to focus it first, then change focus to our editor
-     * 
-     * setTimeout is used because the virtual keyboard interrupts scroll
      */
-    
-    setTimeout(()=>{
-        (document.querySelector('.fake-input') as HTMLElement).focus();
+    (document.querySelector('.fake-input') as HTMLElement).focus();
 
-      const block: HTMLElement | null = document.querySelector('.ce-paragraph');
+    const block: HTMLElement | null = document.querySelector('.ce-paragraph');
 
-      if (block !== null){
+    if (block !== null){
 
-        block.focus()
-      }
-    },1000)
+      block.focus()
+    }
   }
 
   /**
