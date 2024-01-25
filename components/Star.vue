@@ -26,7 +26,7 @@
         Star
       </div>
       <div class="star__button-count">
-        21.3k
+        25.7k
       </div>
     </a>
   </div>
