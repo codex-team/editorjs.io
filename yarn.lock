@@ -1940,9 +1940,9 @@ __metadata:
   linkType: hard
 
 "@editorjs/editorjs@npm:^2.29.0":
-  version: 2.29.0
-  resolution: "@editorjs/editorjs@npm:2.29.0"
-  checksum: acb3a512ed95930b7b9e85a3622ab63453e0c9bc33f62a66e4002b4c29c1cbfd9d61e46b0b4c7e4dd5c78a9f6250600df174329b6463a6f77ab9aaeb7f10f906
+  version: 2.29.1
+  resolution: "@editorjs/editorjs@npm:2.29.1"
+  checksum: a4c242660aaf62b29998d80bb39eae9f91b5030d33df1fc35b3f41cbe0a0b46f6c522761a787cb0cf11b3ba187380503ab31775a1bd17f999b9bda44747631d7
   languageName: node
   linkType: hard
 
