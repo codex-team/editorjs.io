@@ -1939,10 +1939,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@editorjs/editorjs@npm:^2.29.1, @editorjs/editorjs@npm:^2.30.0":
+"@editorjs/editorjs@npm:^2.29.1":
   version: 2.30.0
   resolution: "@editorjs/editorjs@npm:2.30.0"
   checksum: 535a24bf46f8b667dd14f386dafb6e9fdde9a8543b4e86404ed02f3b175e6ce78c2be760be95b0b5aab7d2e8e9b289dd9107095879310b15f2ea986b9b0d636a
+  languageName: node
+  linkType: hard
+
+"@editorjs/editorjs@npm:^2.30.2":
+  version: 2.30.3
+  resolution: "@editorjs/editorjs@npm:2.30.3"
+  checksum: 4cad89ba56abda96a00c74a3efe5d02d6cbbd44fda82793ad7b115ed0580d721100e98c972c9dcb0f15508064d8932f11a3b8dd6aa1ed60a28dc41b90ae847be
   languageName: node
   linkType: hard
 
@@ -9015,7 +9022,7 @@ __metadata:
     "@editorjs/checklist": ^1.6.0
     "@editorjs/code": ^2.9.0
     "@editorjs/delimiter": ^1.4.0
-    "@editorjs/editorjs": ^2.30.0
+    "@editorjs/editorjs": ^2.30.2
     "@editorjs/embed": ^2.7.4
     "@editorjs/header": ^2.8.5
     "@editorjs/image": ^2.9.1
