@@ -1939,35 +1939,45 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@editorjs/editorjs@npm:^2.29.0":
-  version: 2.29.1
-  resolution: "@editorjs/editorjs@npm:2.29.1"
-  checksum: a4c242660aaf62b29998d80bb39eae9f91b5030d33df1fc35b3f41cbe0a0b46f6c522761a787cb0cf11b3ba187380503ab31775a1bd17f999b9bda44747631d7
+"@editorjs/editorjs@npm:^2.29.1":
+  version: 2.30.0
+  resolution: "@editorjs/editorjs@npm:2.30.0"
+  checksum: 535a24bf46f8b667dd14f386dafb6e9fdde9a8543b4e86404ed02f3b175e6ce78c2be760be95b0b5aab7d2e8e9b289dd9107095879310b15f2ea986b9b0d636a
   languageName: node
   linkType: hard
 
-"@editorjs/embed@npm:^2.7.0":
-  version: 2.7.0
-  resolution: "@editorjs/embed@npm:2.7.0"
-  checksum: ae20fb0cf53478a65f6872737ce30e46c05d331d1ba198eef72bb170e9443be723e0759952b50fae04c302f39d6d321258730a8a6a4a153e9fb9b2c3a245e6d1
+"@editorjs/editorjs@npm:^2.30.2":
+  version: 2.30.3
+  resolution: "@editorjs/editorjs@npm:2.30.3"
+  checksum: 4cad89ba56abda96a00c74a3efe5d02d6cbbd44fda82793ad7b115ed0580d721100e98c972c9dcb0f15508064d8932f11a3b8dd6aa1ed60a28dc41b90ae847be
   languageName: node
   linkType: hard
 
-"@editorjs/header@npm:^2.8.1":
-  version: 2.8.1
-  resolution: "@editorjs/header@npm:2.8.1"
+"@editorjs/embed@npm:^2.7.4":
+  version: 2.7.4
+  resolution: "@editorjs/embed@npm:2.7.4"
+  dependencies:
+    "@editorjs/editorjs": ^2.29.1
+  checksum: 9ded9b4ff07aae4a7e178744a64dcd92220b6ec7b203e77286cbee82337336439bff6ad4cb202f7a0dc3d20d245d16a5e16861e763727aefb6b9b5248663a546
+  languageName: node
+  linkType: hard
+
+"@editorjs/header@npm:^2.8.5":
+  version: 2.8.5
+  resolution: "@editorjs/header@npm:2.8.5"
   dependencies:
     "@codexteam/icons": ^0.0.5
-  checksum: d27cb82e63cdaa5be314c102b55b835b326a75e5a40b32c6e41728c26afcbb301dbac78c185e41e8b9a502698f2ab240fce5ff2ccae0114d2368eac1ffdea067
+    "@editorjs/editorjs": ^2.29.1
+  checksum: 7055497b1ffa33d170eeeb50f98a4b44371219a9e01904dfb763c7cabe5a667e20bc127d79c3730139f3a00b4b8c56a9356fcf21de99957658985c2fe152bc78
   languageName: node
   linkType: hard
 
-"@editorjs/image@npm:^2.9.0":
-  version: 2.9.0
-  resolution: "@editorjs/image@npm:2.9.0"
+"@editorjs/image@npm:^2.9.1":
+  version: 2.9.1
+  resolution: "@editorjs/image@npm:2.9.1"
   dependencies:
-    "@codexteam/icons": ^0.0.6
-  checksum: 8b0a0d72d0082ff071cb1ede6ca844817a555e3bbdf342233a628c24b4a5f639791269b861b9147060426e5aaa8b617bc3666e404827cad1350a615f16abe1a6
+    "@codexteam/icons": ^0.3.0
+  checksum: b3fed3eee731c40fe83e458484329d4784c9c40c68e1a2ae20f2cf81a12741661d0080638774f4862ae506bb0b41f9ce71e8298801d9adafa93ab91e4d97ebf7
   languageName: node
   linkType: hard
 
@@ -4173,9 +4183,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"codex.docs@npm:^2.2.2":
-  version: 2.2.2
-  resolution: "codex.docs@npm:2.2.2"
+"codex.docs@npm:^2.2.3":
+  version: 2.2.3
+  resolution: "codex.docs@npm:2.2.3"
   dependencies:
     "@aws-sdk/client-s3": ^3.181.0
     "@codex-team/config-loader": 0.1.0-rc1
@@ -4209,7 +4219,7 @@ __metadata:
     zod: ^3.19.1
   bin:
     codex.docs: dist/backend/app.js
-  checksum: 6971e59d7606dffd2cb5d5a367cdeb907f1cb92d6c1af0959f8bc66ffed081016835650cbed06ba57a584e47038972f96ae2e8ccc107a263b4251584cf8f268b
+  checksum: 439303a1da092324cf50a47e6be664d00dad648c2148899cf06602b9fca6f231ae7f3af0510882cb88f3222a5ee81ec3522be9aec676523acca7e26ba45e44e5
   languageName: node
   linkType: hard
 
@@ -9012,10 +9022,10 @@ __metadata:
     "@editorjs/checklist": ^1.6.0
     "@editorjs/code": ^2.9.0
     "@editorjs/delimiter": ^1.4.0
-    "@editorjs/editorjs": ^2.29.0
-    "@editorjs/embed": ^2.7.0
-    "@editorjs/header": ^2.8.1
-    "@editorjs/image": ^2.9.0
+    "@editorjs/editorjs": ^2.30.2
+    "@editorjs/embed": ^2.7.4
+    "@editorjs/header": ^2.8.5
+    "@editorjs/image": ^2.9.1
     "@editorjs/inline-code": ^1.5.0
     "@editorjs/link": ^2.6.2
     "@editorjs/marker": ^1.4.0
@@ -9025,7 +9035,7 @@ __metadata:
     "@editorjs/table": ^2.3.0
     "@editorjs/warning": ^1.4.0
     "@nuxt/kit": ^3.0.0
-    codex.docs: ^2.2.2
+    codex.docs: ^2.2.3
     http-server: ^14.1.1
     modern-css-reset: ^1.4.0
     nuxt: ^3.2.0
