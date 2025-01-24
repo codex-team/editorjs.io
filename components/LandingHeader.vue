@@ -11,10 +11,10 @@
       </div>
 
       <div class="landing-header__title">
-        Free block-style editor with a universal JSON output
+       A Free, Block-Style Editor with Universal JSON Output
       </div>
       <div class="landing-header__description">
-        Editor.js provides maximum power for developers and products staying focused on the end-user experience
+        Editor.js empowers developers and products by offering a seamless, end-user-focused experience.
       </div>
       <UiButton
         type="primary"

@@ -24,20 +24,20 @@
 
 const advantages = [
   {
-    title: 'Free and open-source',
-    text: 'Improves by the whole world. You can join.'
+    title: 'Free and Open-Source',
+    text: 'Evolving with global contributions. Join and be part of the innovation.'
   },
   {
     title: 'Clean UI/UX',
-    text: 'Modern look. Customizable. Out of the box.'
+    text: 'Modern, customizable, and ready to use right out of the box.'
   },
   {
-    title: 'Simple API driven',
-    text: 'Simple but powerful. Create any tool. Lots of already created.'
+    title: 'API-Driven Simplicity',
+    text: 'Simple yet powerful. Build or use existing tools.'
   },
   {
     title: 'Powered by CodeX',
-    text: 'The team of senior developers loving Open Source'
+    text: 'Built by passionate open-source developers.'
   },
 ]
 </script>
