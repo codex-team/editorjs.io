@@ -3,7 +3,7 @@
     <Section>
       <SectionHeader
         title="Clean JSON Output"
-        text="Versatile and developer-friendly. Use it seamlessly across Web, iOS, Android, AMP, Instant Articles, speech readers, and more. Easy to sanitize, extend, and integrate with your logic."
+        text="Use it across Web, iOS, Android, Chat bots, RSS, AMP/IA, speech readers — everywhere. Easy to sanitize, extend and integrate with your logic. <b>Developers will thank you</b>"
         class="section-output__header"
       />
       <SectionOutputCode />

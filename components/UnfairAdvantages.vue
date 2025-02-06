@@ -24,15 +24,15 @@
 
 const advantages = [
   {
-    title: 'Free and Open-Source',
+    title: 'Free and open-source',
     text: 'Evolving with global contributions. Join and be part of the innovation.'
   },
   {
     title: 'Clean UI/UX',
-    text: 'Modern, customizable, and ready to use right out of the box.'
+    text: 'Modern look. Customizable. Out of the box.'
   },
   {
-    title: 'API-Driven Simplicity',
+    title: 'Driven by a simple API',
     text: 'Simple yet powerful. Build or use existing tools.'
   },
   {

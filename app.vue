@@ -5,8 +5,8 @@
   <SectionOutput />
   <Section>
     <SectionHeader
-      title="API-Driven Flexibility"
-      text="Every block is powered by plugins—easy to create and customize. Explore dozens of ready-made options for blocks, inline formatting, and block tunes."
+      title="API is the feature"
+      text="Every block is powered by plugins — easy to create your own. Explore dozens of ready-made options for blocks, inline formatting, and block tunes."
     />
     <ApiImage />
   </Section>
@@ -21,7 +21,7 @@
   <Section>
     <SectionHeader
       title="Global WYSIWYG ecosystem"
-      text="Editor.js is more than just an editor—it is a thriving global community of developers building tools, integrations, and innovative features. <b>Support our growth by giving us a star!</b>"
+      text="Editor.js is more than just an editor — it is a thriving global community of developers building tools, integrations, and innovative features. And <b>we really need your star</b> to support the community's growth."
     />
     <Star/>
   </Section>
