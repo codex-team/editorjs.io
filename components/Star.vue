@@ -26,7 +26,7 @@
         Star
       </div>
       <div class="star__button-count">
-        25.7k
+        {{ formattedStarCount }}
       </div>
     </a>
   </div>
@@ -34,6 +34,37 @@
 
 <script setup lang="ts">
 import AnalyticEvent from "~/utils/analytics";
+
+import { ref, onMounted } from "vue";
+
+const starCount = ref<number | null>(null);
+const formattedStarCount = ref<string>("Loading...");
+
+function formatStarCount(count: number): string {
+  if (count >= 1000) {
+    return `${(count / 1000).toFixed(1)}k`;
+  }
+  return count.toString();
+}
+
+async function fetchStarCount() {
+  try {
+    const response = await fetch(`https://api.github.com/repositories/47039255`);
+    if (!response.ok) {
+      throw new Error("Failed to fetch star count");
+    }
+    const data = await response.json();
+    starCount.value = data.stargazers_count;
+    formattedStarCount.value = formatStarCount(data.stargazers_count);
+  } catch (error) {
+    console.error("Error fetching star count:", error);
+    formattedStarCount.value = "Error";
+  }
+}
+
+onMounted(() => {
+  fetchStarCount();
+});
 </script>
 
 <style lang="postcss">
