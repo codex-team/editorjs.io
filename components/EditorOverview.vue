@@ -67,7 +67,7 @@ const { $track } = useNuxtApp();
 function playDemoClicked(){
   demoEnabled.value = true;
 
-  demoCanvas.value?.scrollIntoViewIfNeeded();
+  smoothScrollToView(demoCanvas.value)
 
   const isMobile = window.matchMedia('(max-width: 710px)').matches;
 
@@ -92,6 +92,26 @@ function playDemoClicked(){
    * Send analytics event
    */
   $track(AnalyticEvent.PlayWithDemoClicked)
+}
+
+
+/**
+   * Scroll the target element to 33% from top of the screen
+   */
+function smoothScrollToView(targetEle:HTMLElement|null) {
+    
+    if (!targetEle) {
+        return;
+    }
+    
+    const targetPosition = targetEle.getBoundingClientRect().top + window.scrollY;
+    const screenHeight = window.innerHeight;
+    const targetOffset = targetPosition - (screenHeight / 3); 
+    
+    window.scrollTo({
+        top: targetOffset,
+        behavior: 'smooth'
+    });
 }
 </script>
 
