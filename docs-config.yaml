@@ -15,7 +15,7 @@ frontend:
     - title: Awesome Plugins
       uri: https://github.com/editor-js/awesome-editorjs
     - title: Digest
-      uri: https://digest.editorjs.io/
+      uri: https://mailbob.io/u/editorjs
     - title: GitHub
       uri: https://github.com/codex-team/editor.js
     - title: Support Editor.js
