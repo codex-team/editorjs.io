@@ -38,7 +38,7 @@
         <a target="_blank" href="https://github.com/editor-js/awesome-editorjs" class="header__link" @click="$track(AnalyticEvent.AwesomePluginsClicked)">
           Awesome Plugins
         </a>
-        <a target="_blank" href="https://digest.editorjs.io" class="header__link" @click="$track(AnalyticEvent.DigestClicked)">
+        <a target="_blank" href="https://mailbob.io/u/editorjs" class="header__link" @click="$track(AnalyticEvent.DigestClicked)">
           Digest
         </a>
         <a target="_blank" href="https://github.com/codex-team/editor.js" class="header__link" @click="$track(AnalyticEvent.GitHubClicked)">
